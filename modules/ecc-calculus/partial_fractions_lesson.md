@@ -22,7 +22,7 @@ from sympy import Symbol, Eq, solve_undetermined_coeffs, apart
 
 # Understanding Partial Fraction Decomposition
 
-**Estimated Time**: 30-45 Minutes  
+**Estimated Time**: 30-45 Minutes
 **Developers**: Jonathan Ferrari
 
 ---
