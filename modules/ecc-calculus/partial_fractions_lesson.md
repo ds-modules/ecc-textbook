@@ -29,7 +29,7 @@ from sympy import Symbol, Eq, solve_undetermined_coeffs, apart
 
 ## Table of Contents
 
-- 1. **Introduction**
+- 1. **Introduction** 
    - 1.1. Learning Objectives
    - 1.2. What is Partial Fraction Decomposition?
    - 1.3. Importance in Mathematics
