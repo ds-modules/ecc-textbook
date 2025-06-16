@@ -30,7 +30,7 @@ parts:
   chapters:
   - file: Incarceration/Incarcerations
   - file: Incarceration/otter
-  - file: intro/intro
+  - file: introduction/introduction
   - file: race-and-health/Health
 - caption: ecc-sociology
   chapters:
