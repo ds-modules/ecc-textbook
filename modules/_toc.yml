@@ -1,6 +1,41 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
-root: intro
+root: index
 parts:
+- caption: Modules
+  chapters:
+  - file: ecc-biology/cancer_mutations/cancer_mutations
+    sections:
+    - file: ecc-biology/enzymes/enzymes_bioinformatics
+    - file: ecc-biology/intro
+    - file: ecc-biology/polarity/bond_polarity
+  - file: ecc-business/marketing-fast-food/marketing_case_study
+    sections:
+    - file: ecc-business/sba/sba
+  - file: ecc-calculus/partial_fractions_lesson
+    sections:
+    - file: ecc-calculus/pfd
+    - file: ecc-calculus/riemann_sum
+    - file: ecc-calculus/sums
+  - file: ecc-cs9/Modeling_CA_Housing_lab
+    sections:
+    - file: ecc-cs9/ces/nb-archive/CES1-intro
+    - file: ecc-cs9/ces/nb-archive/CES2-CommColl
+    - file: ecc-cs9/ces/nb-archive/CES_Mapping
+    - file: ecc-cs9/ces/nb-archive/ECC CalEnviroScreen
+    - file: ecc-cs9/ces/proj1/proj1
+    - file: ecc-cs9/ces/proj2
+  - file: ecc-ethnic-studies/Incarceration/Incarcerations
+    sections:
+    - file: ecc-ethnic-studies/Incarceration/otter
+    - file: ecc-ethnic-studies/intro/intro
+    - file: ecc-ethnic-studies/race-and-health/Health
+  - file: ecc-sociology/Incarcerations/Incarcerations
+    sections:
+    - file: ecc-sociology/environment/environmental-justice
+    - file: ecc-sociology/intro/intro
+    - file: ecc-sociology/race-and-health/Health
+  - file: ecc-statistics/anova/anova
+    sections:
+    - file: ecc-statistics/data_representation/Data-Rep-Module
+    - file: ecc-statistics/probability_distribution/Probability-Distributions
+    - file: ecc-statistics/sampling_distribution/sampling_distribution
