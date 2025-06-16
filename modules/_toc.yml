@@ -36,7 +36,7 @@ parts:
   chapters:
   - file: Incarcerations/Incarcerations
   - file: environment/environmental-justice
-  - file: intro/intro
+  - file: introduction/introduction
   - file: race-and-health/Health
 - caption: ecc-statistics
   chapters:
