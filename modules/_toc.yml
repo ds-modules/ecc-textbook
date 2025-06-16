@@ -1,41 +1,46 @@
 format: jb-book
 root: intro
 parts:
-- caption: Modules
+- caption: ecc-biology
   chapters:
-  - file: ecc-biology/cancer_mutations/cancer_mutations
-    sections:
-    - file: ecc-biology/enzymes/enzymes_bioinformatics
-    - file: ecc-biology/intro
-    - file: ecc-biology/polarity/bond_polarity
-  - file: ecc-business/marketing-fast-food/marketing_case_study
-    sections:
-    - file: ecc-business/sba/sba
-  - file: ecc-calculus/partial_fractions_lesson
-    sections:
-    - file: ecc-calculus/pfd
-    - file: ecc-calculus/riemann_sum
-    - file: ecc-calculus/sums
-  - file: ecc-cs9/Modeling_CA_Housing_lab
-    sections:
-    - file: ecc-cs9/ces/nb-archive/CES1-intro
-    - file: ecc-cs9/ces/nb-archive/CES2-CommColl
-    - file: ecc-cs9/ces/nb-archive/CES_Mapping
-    - file: ecc-cs9/ces/nb-archive/ECC CalEnviroScreen
-    - file: ecc-cs9/ces/proj1/proj1
-    - file: ecc-cs9/ces/proj2
-  - file: ecc-ethnic-studies/Incarceration/Incarcerations
-    sections:
-    - file: ecc-ethnic-studies/Incarceration/otter
-    - file: ecc-ethnic-studies/intro/intro
-    - file: ecc-ethnic-studies/race-and-health/Health
-  - file: ecc-sociology/Incarcerations/Incarcerations
-    sections:
-    - file: ecc-sociology/environment/environmental-justice
-    - file: ecc-sociology/intro/intro
-    - file: ecc-sociology/race-and-health/Health
-  - file: ecc-statistics/anova/anova
-    sections:
-    - file: ecc-statistics/data_representation/Data-Rep-Module
-    - file: ecc-statistics/probability_distribution/Probability-Distributions
-    - file: ecc-statistics/sampling_distribution/sampling_distribution
+  - file: cancer_mutations/cancer_mutations
+  - file: enzymes/enzymes_bioinformatics
+  - file: intro
+  - file: polarity/bond_polarity
+- caption: ecc-business
+  chapters:
+  - file: marketing-fast-food/marketing_case_study
+  - file: sba/sba
+- caption: ecc-calculus
+  chapters:
+  - file: partial_fractions_lesson
+  - file: pfd
+  - file: riemann_sum
+  - file: sums
+- caption: ecc-cs9
+  chapters:
+  - file: Modeling_CA_Housing_lab
+  - file: ces/nb-archive/CES1-intro
+  - file: ces/nb-archive/CES2-CommColl
+  - file: ces/nb-archive/CES_Mapping
+  - file: ces/nb-archive/ECC CalEnviroScreen
+  - file: ces/proj1/proj1
+  - file: ces/proj2
+- caption: ecc-ethnic-studies
+  chapters:
+  - file: Incarceration/Incarcerations
+  - file: Incarceration/otter
+  - file: intro/intro
+  - file: race-and-health/Health
+- caption: ecc-sociology
+  chapters:
+  - file: Incarcerations/Incarcerations
+  - file: environment/environmental-justice
+  - file: intro/intro
+  - file: race-and-health/Health
+- caption: ecc-statistics
+  chapters:
+  - file: anova/anova
+  - file: data_representation/Data-Rep-Module
+  - file: probability_distribution/Probability-Distributions
+  - file: sampling_distribution/sampling_distribution
