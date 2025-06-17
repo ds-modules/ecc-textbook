@@ -239,7 +239,7 @@ Draw.MolToImage(molecule)
 
 +++
 
-#### Tug of War
+### Tug of War
 
 Imagine it’s a scorching summer afternoon and you and your friend are locked in an intense game of tug-of-war. The rope stretches taut between you, perfectly balanced. Neither side is able to overpower the other. Since you both have the same strength and the same determination, for now it remains a fair fight.
 

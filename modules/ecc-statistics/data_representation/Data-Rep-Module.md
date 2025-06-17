@@ -50,7 +50,7 @@ The makeup of the health workforce plays a critical role in shaping health outco
 
 +++
 
-# Video: Diversity in Healthcare
+## Video: Diversity in Healthcare
 
 +++
 
@@ -64,7 +64,7 @@ YouTubeVideo('9W_kzItWm28', width=650, height=400)
 YouTubeVideo('kvdHqS3ryw0', width=650, height=400)
 ```
 
-# Data
+## Data
 
 +++
 
@@ -92,7 +92,7 @@ workforce_data = pd.read_excel(xls, sheet_name='Race & Ethnicity data')
 #workforce_data
 ```
 
-# Visualizing Representation
+## Visualizing Representation
 
 +++
 
@@ -116,7 +116,7 @@ Below is a histogram displaying the distribution of highest education level achi
 run_highedu_plot(workforce_data)
 ```
 
-# Discussion
+## Discussion
 
 +++
 
@@ -138,7 +138,7 @@ Replace with your answer.
 
 +++
 
-# Conclusion
+## Conclusion
 
 +++
 

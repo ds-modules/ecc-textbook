@@ -563,7 +563,7 @@ rmse_dict
 
 +++ {"id": "DPgA_7yWvusJ"}
 
-###### Underfitting and Overfitting
+#### Underfitting and Overfitting
 
 Until now, we’ve been working solely with our training data, holding back our test data for the final evaluation. This approach helps us test our model's ability to generalize to new, unseen data.
 
@@ -609,6 +609,6 @@ rmse_df
 +++ {"id": "rYR2SV1sP56K"}
 
 ---------------------------------------------------------
-# Congratulations! You've finished the Modeling Lab
+## Congratulations! You've finished the Modeling Lab
 
 Developed by: Lan Dinh

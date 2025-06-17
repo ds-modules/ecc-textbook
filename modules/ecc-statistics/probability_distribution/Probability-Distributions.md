@@ -70,7 +70,7 @@ You may be wondering how this differs from Probability Density Function (PDF). O
 
 +++
 
-# Interacting with Parameters
+## Interacting with Parameters
 
 +++
 
@@ -228,7 +228,7 @@ q_6()
 
 +++
 
-# Conclusion
+## Conclusion
 
 +++
 

@@ -11,13 +11,13 @@ kernelspec:
   name: python3
 ---
 
-## Notebook 1: Introduction to Jupyter Notebooks and Marketing Analytics
+# Notebook 1: Introduction to Jupyter Notebooks and Marketing Analytics
 
 Welcome to a Jupyter Notebook! **Notebooks** are documents that support interactive computing in which code is interwoven with text, visualizations, and more.
 
 The way notebooks are formatted encourages **exploration**, allowing users to iteratively update code and document the results. In use cases such as **data exploration and communication**, notebooks excel. Science (and computational work in general) has become quite sophisticated: models are built upon experiments that are conducted on large swaths of data, methods and results are abstracted away into symbols, and papers are full of technical jargon. *A static document like a paper might not be sufficient to both effectively communicate a new discovery and allow someone else to discover it for themselves*.
 
-### Why Use Notebooks?
+## Why Use Notebooks?
 Notebooks are used for _literate programming_, a programming paradigm introduced by [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) in 1984, in which a programming language is accompanied with **plain, explanatory language**.
 
 This approach to programming treats software as works of literature ([Knuth](http://www.literateprogramming.com/knuthweb.pdf), "Literate Programming"), supporting users to have a strong conceptual map of what is happening in the code.
@@ -34,7 +34,7 @@ You can change the text in a markdown cell by clicking it twice. Text in markdow
 
 +++
 
-### Manipulating Cells
+## Manipulating Cells
 
 Cells can be added or deleted anywhere in a notebook. You can add cells by pressing the plus sign icon in the menu bar, to the right of the save icon. This will add (by default) a code cell immediately below your current highlighted cell.
 
@@ -43,7 +43,7 @@ To convert a cell to markdown, you can press 'Cell' in the menu bar, select 'Cel
 To delete a cell, simply press the scissors icon in the menu bar. A common fear is deleting a cell that you needed -- but don't worry! This can be undone using 'Edit' > 'Undo Delete Cells'! If you accidentally delete content in a cell, you can use `Ctrl` + `Z` to undo.
 
 
-### Saving and Loading
+## Saving and Loading
 
 Your notebook will automatically save your text and code edits, as well as any results of your code cells. However, you can also manually save the notebook in its current state by using `Ctrl` + `S`, clicking the floppy disk icon in the toolbar at the top of the page, or by going to the 'File' menu and selecting 'Save and Checkpoint'.
 
@@ -114,7 +114,7 @@ widgets.Textarea(placeholder = 'Your answer here')
 ```
 
 
-### Your Task:
+## Your Task:
 
 You were hired to lead the marketing team at *Cluck & Co.,* a new fast food chain that has only one item on the menu: a chicken wrap. 
 
@@ -123,7 +123,7 @@ It’s a bold, flavorful item aimed at attracting Gen Z and millennial foodies w
 In this case study, we will walk you through building out the marketing strategy for Cluck & Co.
 
 
-### Section 1: Product
+## Section 1: Product
 
 **Product:** what you’re selling. Whether it's a physical good, a service, or a digital product. The key is to understand what problem your product solves and how it meets the needs or wants of your target audience.
 - What features or benefits does it offer? How is it different from competitors?
@@ -146,7 +146,7 @@ In the case of **Cluck and Co.'s chicken wrap**, consumers should buy it for mor
 widgets.Textarea(placeholder = 'Your answer here')
 ```
 
-### Section 2: Price
+## Section 2: Price
 
 **Price:** how much you charge for your product. Price affects not only your profit margins but also how your product is perceived in the market.
 
@@ -163,7 +163,7 @@ widgets.Textarea(placeholder = 'Your answer here')
 widgets.Textarea(placeholder = 'Your answer here')
 ```
 
-### Section 3: Placement
+## Section 3: Placement
 
 **Placement:** where and how your product is distributed and made available to customers. It’s all about getting the product to the right place at the right time.
 - Are you selling online? in physical stores?
@@ -223,14 +223,14 @@ The above graph uses pre-selected keywords. Now it's time to choose your own!
 widgets.Textarea(placeholder='Your response here')
 ```
 
-### Section 4: Promotion
+## Section 4: Promotion
 
 **Promotion:** how you communicate the value of your product to your audience. It’s all about increasing awareness and persuading people to buy.
 - What advertising channels do you use (TV, social media, influencer marketing, etc.)?
 - What’s your messaging and tone?
 
 
-##### The Promotion Mix (a.k.a. How You Get the Word Out)
+### The Promotion Mix (a.k.a. How You Get the Word Out)
 When a company is trying to promote a product they usually don’t rely on just one method. Instead, they use a promotion mix, which is a combination of different strategies to grab attention, create interest, and encourage people to take action. There are four main parts of the promotion mix: advertising, personal selling, public relations, and sales promotion.
 
 - **Advertising** is paid communication that’s shared through mass media—things like TV commercials, social media ads, etc.
@@ -254,7 +254,7 @@ What are some impactful **promotional channels** that Cluck & Co. can use to inc
 widgets.Textarea(placeholder='Your response here')
 ```
 
-###  Targeting Strategies
+## Targeting Strategies
 
 In marketing, there are three general targeting strategies: 
 - The **undifferentiated strategy** involves offering one product or message to the entire market, treating all consumers as having the same needs. This approach aims for mass appeal and broad reach, like Coca-Cola promoting its classic drink to everyone. 

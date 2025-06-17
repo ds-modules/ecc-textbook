@@ -26,7 +26,7 @@ kernelspec:
 from utils import *
 ```
 
-### Table of Contents
+## Table of Contents
 1. Background
 2. About the Data
 3. Inspecting the Data

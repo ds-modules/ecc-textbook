@@ -371,4 +371,4 @@ Were there any features you initially thought would be useful but didn’t impro
 
 +++
 
-# Congratulations, you are finished with Project 2!
+## Congratulations, you are finished with Project 2!

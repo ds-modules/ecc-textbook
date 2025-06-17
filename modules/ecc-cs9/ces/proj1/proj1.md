@@ -1457,7 +1457,7 @@ _Type your answer here, replacing this text._
 
 +++
 
-# 6. Congratulations!
+## 6. Congratulations!
 
 Cookie 🍪 congratulates you on finishing the Project 1 notebook! You 🪨! 
 

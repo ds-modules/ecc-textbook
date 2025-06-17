@@ -15,7 +15,7 @@ kernelspec:
 
 **This notebook will put together everything you've learned so far and include new ways of interpreting data .**
 
-### Learning Objectives
+## Learning Objectives
 
 In this notebook, you will learn about:
 - *insert learning objectives*

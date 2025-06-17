@@ -81,9 +81,9 @@ warnings.filterwarnings('ignore')
 import helper as hp
 ```
 
-# Helper Video
+## Helper Video
 
-#### Use the following link for a follow-along video to help guide you through the notebook:
+### Use the following link for a follow-along video to help guide you through the notebook:
 
 ```{code-cell} ipython3
 from IPython.display import YouTubeVideo
@@ -91,7 +91,7 @@ from IPython.display import YouTubeVideo
 YouTubeVideo("X2NvxzQ2CvI", width=560, height=315)
 ```
 
-# Introduction 
+## Introduction 
 
 +++
 
@@ -186,7 +186,7 @@ In the following cell, adjust the slider to examine trends in **all felony arres
 display(widgets.interactive(lambda years : hp.plot_arrest(arrest, years), years= hp.year_slider))
 ```
 
-# War on Drugs
+## War on Drugs
 
 ## Introduction
 
@@ -363,7 +363,7 @@ _Type your answer here, replacing this text._
 
 <!-- END QUESTION -->
 
-# Redlining and Gentrification
+## Redlining and Gentrification
 
 Use the widget below to display felony arrests across different counties.  
 Explore the data and make some initial observations. Consider the following:

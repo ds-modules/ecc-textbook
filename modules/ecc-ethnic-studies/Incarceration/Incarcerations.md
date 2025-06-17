@@ -48,7 +48,7 @@ You will be learning about historical events that have impacted incarceration ra
 
 +++
 
-# Introduction 
+## Introduction 
 
 +++
 
@@ -74,9 +74,9 @@ warnings.filterwarnings('ignore')
 import helper as hp
 ```
 
-# Helper Video
+## Helper Video
 
-##### Use the following link for a follow-along video to help guide you through the notebook:
+### Use the following link for a follow-along video to help guide you through the notebook:
 
 ```{code-cell} ipython3
 from IPython.display import YouTubeVideo
@@ -168,7 +168,7 @@ In the following cell, adjust the slider to examine trends in **all felony arres
 display(widgets.interactive(lambda years : hp.plot_arrest(arrest, years), years= hp.year_slider))
 ```
 
-# War on Drugs
+## War on Drugs
 
 ## Introduction
 
@@ -344,7 +344,7 @@ With the four methods of displaying data above (table, single bar chart, grouped
 
 +++
 
-# Redlining and Gentrification
+## Redlining and Gentrification
 
 Redlining and gentrification are interconnected processes that have shaped urban landscapes and deeply impacted marginalized communities.
 
