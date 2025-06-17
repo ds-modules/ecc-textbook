@@ -1,23 +1,23 @@
 format: jb-book
 root: intro
 parts:
-- caption: ecc-biology
+- caption: Biology
   chapters:
   - file: ecc-biology/cancer_mutations/cancer_mutations
   - file: ecc-biology/enzymes/enzymes_bioinformatics
   - file: ecc-biology/introduction
   - file: ecc-biology/polarity/bond_polarity
-- caption: ecc-business
+- caption: Business
   chapters:
   - file: ecc-business/marketing-fast-food/marketing_case_study
   - file: ecc-business/sba/sba
-- caption: ecc-calculus
+- caption: Calculus
   chapters:
   - file: ecc-calculus/partial_fractions_lesson
   - file: ecc-calculus/pfd
   - file: ecc-calculus/riemann_sum
   - file: ecc-calculus/sums
-- caption: ecc-cs9
+- caption: Cs9
   chapters:
   - file: ecc-cs9/Modeling_CA_Housing_lab
   - file: ecc-cs9/ces/nb-archive/CES1-intro
@@ -26,19 +26,19 @@ parts:
   - file: ecc-cs9/ces/nb-archive/ECC CalEnviroScreen
   - file: ecc-cs9/ces/proj1/proj1
   - file: ecc-cs9/ces/proj2
-- caption: ecc-ethnic-studies
+- caption: Social Justice
   chapters:
   - file: ecc-ethnic-studies/Incarceration/Incarcerations
   - file: ecc-ethnic-studies/Incarceration/otter
   - file: ecc-ethnic-studies/introduction/introduction
   - file: ecc-ethnic-studies/race-and-health/Health
-- caption: ecc-sociology
+- caption: Sociology
   chapters:
   - file: ecc-sociology/Incarcerations/Incarcerations
   - file: ecc-sociology/environment/environmental-justice
   - file: ecc-sociology/introduction/introduction
   - file: ecc-sociology/race-and-health/Health
-- caption: ecc-statistics
+- caption: Statistics
   chapters:
   - file: ecc-statistics/anova/anova
   - file: ecc-statistics/data_representation/Data-Rep-Module

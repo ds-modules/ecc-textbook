@@ -23,26 +23,26 @@ You will be learning about historical events that have impacted incarceration ra
 
 ## 1. Introduction to Data
 
-- a. Overview of Data Table  
-- b. Explanation of Table Columns  
-- c. Question 1  
-- d. First Look  
+- a. Overview of Data Table
+- b. Explanation of Table Columns
+- c. Question 1
+- d. First Look
 
 ## 2. War on Drugs
 
-- a. Introduction to the War on Drugs  
-- b. Crack vs. Cocaine  
-- c. Growth Rate of Drug Use  
-- d. Question 2  
-- e. 1990s Drug Drop  
-- f. Percent of Arrests by Population  
-- g. Questions 3 and 4  
+- a. Introduction to the War on Drugs
+- b. Crack vs. Cocaine
+- c. Growth Rate of Drug Use
+- d. Question 2
+- e. 1990s Drug Drop
+- f. Percent of Arrests by Population
+- g. Questions 3 and 4
 
 ## 3. Redlining
 
-- a. County-Level Data  
-- b. Historical Context of Redlining in Counties  
-- c. Question 5  
+- a. County-Level Data
+- b. Historical Context of Redlining in Counties
+- c. Question 5
 
 ## 4. Sources
 
