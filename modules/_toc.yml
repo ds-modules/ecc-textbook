@@ -43,4 +43,5 @@ parts:
   - file: ecc-statistics/anova/anova
   - file: ecc-statistics/data_representation/Data-Rep-Module
   - file: ecc-statistics/probability_distribution/Probability-Distributions
+  - file: ecc-statistics/sampling_distribution/sampling_distribution-Instructor_copy
   - file: ecc-statistics/sampling_distribution/sampling_distribution
