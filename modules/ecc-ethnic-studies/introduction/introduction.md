@@ -20,25 +20,29 @@ import otter
 grader = otter.Notebook("intro.ipynb")
 ```
 
-# Introduction to Author
-
-```{code-cell} ipython3
-from IPython.display import YouTubeVideo
-
-YouTubeVideo("jprUTEihBTo", width=560, height=315)
-```
-
 +++ {"cell_id": "00001-eedf9a46-cb0c-42bc-a90f-96265663c0d3", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-## Notebook 1: Introduction to Jupyter Notebooks and Python
+# Introduction to Jupyter Notebooks and Python
 
-## **Jupyter Notebooks**
+## Jupyter Notebooks
 
 Welcome to a Jupyter Notebook! **Notebooks** are documents that support interactive computing in which code is interwoven with text, visualizations, and more.
 
 The way notebooks are formatted encourages **exploration**, allowing users to iteratively update code and document the results. In use cases such as **data exploration and communication**, notebooks excel. Science (and computational work in general) has become quite sophisticated: models are built upon experiments that are conducted on large swaths of data, methods and results are abstracted away into symbols, and papers are full of technical jargon. *A static document like a paper might not be sufficient to both effectively communicate a new discovery and allow someone else to discover it for themselves*.
 
 +++
+
+## Introduction to Author
+
++++
+
+Run the cell below to show a YouTube video about the author!
+
+```{code-cell} ipython3
+from IPython.display import YouTubeVideo
+
+YouTubeVideo("jprUTEihBTo", width=560, height=315)
+```
 
 <div class="alert alert-block alert-danger">
     <p style="font-size:15px">In this notebook, there are some more advanced topics that are <i>"optional"</i>. This means you can just read over these sections, don't worry about fully understanding these parts unless you are really interested.
