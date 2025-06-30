@@ -18,13 +18,7 @@ from data import *
 from IPython.display import YouTubeVideo
 ```
 
-# About the Author
-
-```{code-cell} ipython3
-YouTubeVideo('XtCcZtLrgCk', width=450, height=300)
-```
-
-## Environmental Justice 
+# Environmental Justice 
 
 +++
 
@@ -44,6 +38,16 @@ ___
 - Conclusion
 
 +++
+
+## About the Author
+
++++
+
+Run the cell below to display a YouTube video about the author!
+
+```{code-cell} ipython3
+YouTubeVideo('XtCcZtLrgCk', width=450, height=300)
+```
 
 ## Introduction: Environmental Justice in Sociology
 
@@ -87,7 +91,7 @@ ca_la = aqi_data[aqi_data['county_name']=='Los Angeles']
 ca_other = aqi_data[(aqi_data['state_name']=='California') & (aqi_data['county_name']!='Los Angeles')]
 ```
 
-## STEP 1: Formulating hypothesis
+### STEP 1: Formulating hypothesis
 
 **How it works:** Imagine that you and your friends wonder if drinking boba regularly affects your GPA. To test this, you set up two competing ideas: the null hypothesis (H₀), which assumes that drinking boba has no effect on GPA, and the alternative hypothesis (H₁), which suggests that drinking boba lowers GPA. Next, you collect data by surveying students about how often they drink boba and their GPA. To measure whether the difference is meaningful, you set a significance level (usually 0.05, or 5%), meaning you’re okay with a 5% chance of being wrong if you claim there’s a real effect. Then, you run a statistical test, like a t-test, to compare the GPAs of boba drinkers and non-drinkers. This test gives you a p-value, which tells you how likely it is to see a difference in GPA just by random chance. If the p-value is small (≤ 0.05), you reject the null hypothesis and conclude that drinking boba likely lowers GPA. If the p-value is large (> 0.05), you fail to reject the null hypothesis, meaning there isn’t enough evidence to say boba drinking affects GPA.
     
@@ -105,14 +109,14 @@ Significance level ($\alpha$): 5%
 
 +++
 
-## STEP 2: Determining what type of test to use
+### STEP 2: Determining what type of test to use
 
 Since we are comparing the sample means between two independent samples, we will use a two-sample t-test. For more information on statistical tests, 
 [Scribbr](https://www.scribbr.com/statistics/statistical-tests/) breaks it down in more detail. Scroll down to the bottom to find the test flow chart.
 
 +++
 
-## STEP 3: Computing the p value
+### STEP 3: Computing the p value
 
 +++
 
@@ -125,12 +129,12 @@ stats_result = stats.ttest_ind(a=ca_la['aqi'], b=ca_other['aqi'], equal_var=Fals
 print(f"p-value: {stats_result.pvalue}")
 ```
 
-## Insight:
+#### Insight:
 
 - p-value: 0.049 (less than 0.05)
 - we reject the null hypothesis in favor of alternative hypothesis
 
-## Interpretation:
+#### Interpretation:
 **There is significant statistical evidence that there is a difference in the mean AQI between Los Angeles County and the rest of California.** This makes sense due to Los Angeles being substantially more densely populated than the rest of California. Now let's explore racial factors and whether the distribution is fair across the county. That is, are certain groups more likely to live in areas with higher AQI.
 
 
@@ -144,14 +148,14 @@ Now that we have significant evidence supporting environmental conditions in LA 
 
 +++
 
-## Study Area: Los Angeles County
+### Study Area: Los Angeles County
 
 ```{code-cell} ipython3
 # our study area is encased within the red bounds 
 showLAmap()
 ```
 
-## DATA
+### DATA
 
 +++
 
@@ -185,7 +189,7 @@ enviro_data = clean_enviro_data(path)
 #enviro_data
 ```
 
-## Pollution vs Health Outcome
+### Pollution vs Health Outcome
 
 +++
 
@@ -195,7 +199,7 @@ After running the cell below, you will be shown a map that visualizes the relati
 create_pollution_map(enviro_data)  
 ```
 
-## Race Groups versus Environmental and Health Factors [MAP]
+### Race Groups versus Environmental and Health Factors [MAP]
 
 +++
 
@@ -211,7 +215,7 @@ Use the dropdowns to compare different factors and groups, gaining insights into
 interactive_pollution_map(enviro_data) 
 ```
 
-## Race Groups versus Environmental and Health Factors [PLOT]
+### Race Groups versus Environmental and Health Factors [PLOT]
 
 +++
 
@@ -243,7 +247,7 @@ Congratulations! You made it to the end.
 
 +++
 
-## Run the cell below to check your answers
+### Run the cell below to check your answers
 
 ```{code-cell} ipython3
 grader = otter.Notebook()
