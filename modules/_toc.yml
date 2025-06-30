@@ -23,7 +23,7 @@ parts:
 - caption: Child Development
   chapters:
   - file: ecc-child-development/parental-risk
-- caption: Cs9
+- caption: CS 9
   chapters:
   - file: ecc-cs9/Modeling_CA_Housing_lab
   - file: ecc-cs9/ces/nb-archive/CES1-intro
