@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Chemistry Module - Visualizing Atomic Orbitals Using Programming
+# Visualizing Atomic Orbitals Using Programming
 
 **Estimated Time:** 15-30 minutes <br>
 **Notebook Developed By:** Lan Dinh <br>
@@ -30,7 +30,7 @@ By the end of this notebook, you will:
 - Calculate and visualize the radial wavefunctions $R_{nl}(r)$ for hyrogen orbitals 1s, 2s, 3s, 2p, 3p, and  3d.
 - Visualize and compare the angular shapes of $s$, $p_{x}$, $d_{xy}$, and $d_{z^2}$ orbitals in polar coordinates.
   
-## Table of Contents
+### Table of Contents
 1. Context Background <br>
 2. Radial Wavefunctions<br>
 2.1. Mathematical Definitions<br>
@@ -84,19 +84,19 @@ Here:
 
 +++
 
-## 2.1. Radial Wavefunctions: Mathematical Definitions
+### 2.1. Radial Wavefunctions: Mathematical Definitions
 
 +++
 
-### Constants
+#### Constants
 The following constants are used in the calculations:
 - **$a_0 = 52.92 \, \mathrm{pm}$**: The Bohr radius, representing the average distance of an electron in the ground state of hydrogen.
 - **$Z = 1$**: The atomic number of hydrogen, which has one proton in the nucleus.
 
-### Radial Wavefunctions
+#### Radial Wavefunctions
 The radial wavefunctions $R_{nl}(r)$ describe the radial part of the wavefunction for hydrogen orbitals. These functions depend on the principal quantum number $n$, orbital angular momentum quantum number $l$, and the distance $r$ from the nucleus.
 
-### General Formula
+#### General Formula
 Each radial wavefunction has the general form:
 $$
 R_{nl}(r) = f(r, Z, a_0) \cdot e^{-\sigma / 2},
@@ -106,7 +106,7 @@ where:
 - **$f(r, Z, a_0)$**: A polynomial factor specific to each orbital.
 - **$e^{-\sigma / 2}$**: Exponential decay, representing the decrease in wavefunction amplitude as distance increases.
 
-### Specific Radial Wavefunctions
+#### Specific Radial Wavefunctions
 The following are the specific radial wavefunctions for hydrogen orbitals:
 
 - **$1s$ Orbital**
@@ -147,7 +147,7 @@ where $\sigma = \frac{2Zr}{3a_0}$.
 
 +++
 
-## 2.2. Radial Wavefunctions: Python 
+### 2.2. Radial Wavefunctions: Python 
 Now, let's translate the mathematical formulas into Python code. The code cell below implements the radial wavefunctions for each orbital using the equations presented earlier.
 
 Each function corresponds to the formula provided above (e.g., radial_1s for $R_{1s}(r)$) and calculates the value of the radial wavefunction at a given distance r. 
@@ -285,13 +285,13 @@ plt.show()
 
 +++
 
-## 3.1. Angular Wavefuncions in Polar Coordinates: Mathematical Definitions
+### 3.1. Angular Wavefuncions in Polar Coordinates: Mathematical Definitions
 
 +++
 
 The angular wavefunctions $Y_{lm}(\theta, \phi)$ describe the angular dependence of the wavefunction for hydrogen orbitals. These depend on the angular momentum quantum numbers $l$ and $m_l$, and the spherical coordinates $\theta$ (polar angle) and $\phi$ (azimuthal angle).
 
-### Angular Wavefunctions
+#### Angular Wavefunctions
 The following are the angular wavefunctions for selected hydrogen orbitals:
 
 - **$s$ Orbital**
@@ -318,7 +318,7 @@ Y_{d_{z^2}}(\theta, \phi) = \sqrt{\frac{5}{16\pi}} \left( 3\cos^2\theta - 1 \rig
 $$
 The $d_{z^2}$ orbital has a unique shape with a "donut-like" region around the $z$-axis, determined by $\cos^2\theta$.
 
-### Conversion to Cartesian Coordinates
+#### Conversion to Cartesian Coordinates
 To plot these angular wavefunctions in three dimensions, the spherical coordinates $(r, \theta, \phi)$ are converted to Cartesian coordinates $(x, y, z)$ using the following equations:
 
 - **$x$-coordinate**
@@ -336,13 +336,13 @@ $$
 z = r \cos\theta
 $$
 
-## Summary
+### Summary
 - **Angular wavefunctions** define the shape and orientation of orbitals.
 - **Cartesian conversion** allows visualization in 3D space by transforming spherical coordinates to Cartesian coordinates.
 
 +++
 
-## 3.2. Angular Wavefuncions in Polar Coordinates: Python Implementation
+### 3.2. Angular Wavefuncions in Polar Coordinates: Python Implementation
 
 ```{code-cell} ipython3
 # Define spherical harmonics
