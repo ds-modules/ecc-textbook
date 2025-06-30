@@ -29,7 +29,7 @@ parts:
   - file: ecc-cs9/ces/nb-archive/ECC CalEnviroScreen
   - file: ecc-cs9/ces/proj1/proj1
   - file: ecc-cs9/ces/proj2
-- caption: Social Justice
+- caption: Ethnic Studies
   chapters:
   - file: ecc-ethnic-studies/Incarceration/Incarcerations
   - file: ecc-ethnic-studies/Incarceration/otter
