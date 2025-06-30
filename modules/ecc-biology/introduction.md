@@ -531,7 +531,6 @@ print("Cells in 6.022 hours:", mitosis(6.022))
 Try calling <code>abs</code> and <code>max</code> in the cell below. What does each function do?
 
 Also try calling each function <i>incorrectly</i>, such as with the wrong number of arguments. What kinds of error messages do you see?
-</div>
 
 ```{code-cell} ipython3
 :cell_id: 00029-ba5cb6d4-659b-4236-87ba-a1cddd93da6f
