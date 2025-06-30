@@ -16,7 +16,7 @@ kernelspec:
 from utils import *
 ```
 
-# 6.5 Sampling Distributions & Central Limit Theorem
+# Sampling Distributions & Central Limit Theorem
 
 +++
 
