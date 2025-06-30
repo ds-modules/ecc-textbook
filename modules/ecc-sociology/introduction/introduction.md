@@ -22,7 +22,7 @@ grader = otter.Notebook("intro.ipynb")
 
 +++ {"cell_id": "00001-eedf9a46-cb0c-42bc-a90f-96265663c0d3", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-# Notebook 1: Introduction to Jupyter Notebooks and Python
+# Introduction to Jupyter Notebooks and Python
 
 ## Jupyter Notebooks
 
