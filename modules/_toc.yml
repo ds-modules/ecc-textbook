@@ -20,6 +20,9 @@ parts:
 - caption: Chemistry
   chapters:
   - file: ecc-chemistry/Orbitals
+- caption: Child Development
+  chapters:
+  - file: ecc-child-development/parental-risk
 - caption: Cs9
   chapters:
   - file: ecc-cs9/Modeling_CA_Housing_lab
