@@ -17,6 +17,9 @@ parts:
   - file: ecc-calculus/pfd
   - file: ecc-calculus/riemann_sum
   - file: ecc-calculus/sums
+- caption: Chemistry
+  chapters:
+  - file: ecc-chemistry/Orbitals
 - caption: Cs9
   chapters:
   - file: ecc-cs9/Modeling_CA_Housing_lab
