@@ -13,7 +13,7 @@ kernelspec:
 
 +++ {"cell_id": "00001-eedf9a46-cb0c-42bc-a90f-96265663c0d3", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-# Notebook 1: Introduction to Jupyter Notebooks and Python
+# Introduction to Jupyter Notebooks and Python
 
 **Created and developed by [Suparna Kompalli](https://www.linkedin.com/in/suparna-kompalli-79463b229/) and [Brandon Concepcion](https://www.linkedin.com/in/brandonconcepcion/), with assistance and supervision by [Jonathan Ferrari](https://www.linkedin.com/in/jonathanferrari/), [Professor Darcie McClelland](https://www.linkedin.com/in/darcie-mcclelland-descalzo-56796b1b/), and [Professor Eric Van Dusen](https://www.linkedin.com/in/ericvd/) as part of our work with UC Berkeley's [College of Computing, Data Science and Society](https://cdss.berkeley.edu/) as well as [El Camino College](https://www.elcamino.edu/)**
 
