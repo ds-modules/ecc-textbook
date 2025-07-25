@@ -18,7 +18,9 @@ kernelspec:
 
 Welcome! This notebook will help you understand and visualize atomic orbitals using Python programming. By the end of this lesson, you will be able to plot wave functions of different orbitals and gain insights into their shapes and properties.
 
-The source for this notebook is: https://weisscharlesj.github.io/SciCompforChemists/notebooks/chapter_03/chap_03_notebook.html
+The source for this notebook is: 
+
+[https://weisscharlesj.github.io/SciCompforChemists/notebooks/chapter_03/chap_03_notebook.html](https://weisscharlesj.github.io/SciCompforChemists/notebooks/chapter_03/chap_03_notebook.html)
 
 **Note: To run a cell, first move your cursor over it and click once. After that, press `Ctrl + Enter` on your keyboard. Remember to run the cells sequentially from top to bottm of this notebook to avoid errors.**
 
