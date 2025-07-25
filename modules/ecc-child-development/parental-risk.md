@@ -148,10 +148,10 @@ sites_list
 
 <!-- BEGIN QUESTION -->
 <div class="alert alert-warning">
-
-## Question 1:
-
-**Based on the table above and the chapter `2.2. Prenatal Development`, discuss how this data aligns with the concepts of prenatal development and teratogens covered in the chapter. Consider how you use this data to improve prenatal care.**
+    <h2>Question 1:</h2>
+    <p>
+        Based on the table above and the chapter <code>2.2. Prenatal Development</code>, discuss how this data aligns with the concepts of prenatal development and teratogens covered in the chapter. Consider how you use this data to improve prenatal care.
+    </p>
  
 </div>
 
@@ -231,11 +231,12 @@ There are missing data in several states due to limited available sites from PRA
 
 <!-- BEGIN QUESTION -->
 <div class="alert alert-warning">
-
-## Question 2:
-
-**Using the interactive map, select the year `2020` and the variable `Began prenatal care in 1st trimester.` Observe and describe any patterns or trends in early prenatal care initiation across the states. Which regions have higher percentages of women beginning prenatal care in the first trimester, and how might this information help target public health resources and interventions to improve prenatal care access and outcomes?**
- 
+    <h2>Question 2:</h2>
+    <p>
+        <b>
+            Using the interactive map, select the year <code>2020</code> and the variable <code>Began prenatal care in 1st trimester.</code> Observe and describe any patterns or trends in early prenatal care initiation across the states. Which regions have higher percentages of women beginning prenatal care in the first trimester, and how might this information help target public health resources and interventions to improve prenatal care access and outcomes?
+        </b>
+    </p>
 </div>
 
 +++
@@ -274,12 +275,14 @@ The generated table displays the percentage values of the selected health indica
 +++
 
 <!-- BEGIN QUESTION -->
+
 <div class="alert alert-warning">
-
-## Question 3:
-
-**Using the generated table, compare the trends in "Self-reported depression during pregnancy" from 2016 to 2021 for Massachusetts and Louisiana. What differences do you observe between these two states over time, and how might these trends reflect the effectiveness of mental health interventions for pregnant women in each state?**
- 
+    <h2>Question 3:</h2>
+    <p>
+        <b>
+            Using the generated table, compare the trends in "Self-reported depression during pregnancy" from 2016 to 2021 for Massachusetts and Louisiana. What differences do you observe between these two states over time, and how might these trends reflect the effectiveness of mental health interventions for pregnant women in each state?
+        </b>
+    </p>
 </div>
 
 +++
@@ -362,12 +365,14 @@ The bar charts generated will display the percentage values of the selected heal
 +++
 
 <!-- BEGIN QUESTION -->
+
 <div class="alert alert-warning">
-
-## Question 4:
-
-**Using the interactive tool, select the variable `Obese (BMI ≥30 kg/m2)` and compare the trends from 2016 to 2021 for Colorado and Pennsylvania. What differences do you observe between these two states over time, and what might these trends suggest about the prevalence and management of obesity among pregnant women in each state?**
- 
+    <h2>Question 4:</h2>
+    <p>
+        <b>
+            Using the interactive tool, select the variable <code>Obese (BMI ≥30 kg/m2)</code> and compare the trends from 2016 to 2021 for Colorado and Pennsylvania. What differences do you observe between these two states over time, and what might these trends suggest about the prevalence and management of obesity among pregnant women in each state?
+        </b>
+    </p>
 </div>
 
 +++
