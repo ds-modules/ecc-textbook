@@ -189,17 +189,19 @@ def radial_3d(r):
 ```
 
 <div class=" alert alert-info">
-    
-## **What Does This Code Do?**
-
-This code calculates mathematical functions called **radial wavefunctions** for the hydrogen atom. These functions describe the shape of an electron's wave in different energy levels around a hydrogen atom.
-
-Imagine an electron’s position as a "cloud" around the nucleus of the atom. These functions help us calculate:
-
-- How far the electron is likely to be from the nucleus.
-- What shape the "cloud" will have for different electron orbitals.
-  
-The goal is to use math to represent the electron cloud and understand its structure.
+    <h2>
+        What Does This Code Do?
+    </h2>
+    <p>
+        This code calculates mathematical functions called <b>radial wave-functions</b> for the hydrogen atom. These functions describe the shape of an electron's wave in different energy levels around a hydrogen atom.
+    <hr>
+        Imagine an electron’s position as a "cloud" around the nucleus of the atom. These functions help us calculate:
+    <ul>
+        <li>How far the electron is likely to be from the nucleus.</li>
+        <li>What shape the "cloud" will have for different electron orbitals.</li>
+    </ul>
+    The goal is to use math to represent the electron cloud and understand its structure.
+    </p>
 </div>
 
 ```{code-cell} ipython3
@@ -217,11 +219,14 @@ R_3d = radial_3d(r1)
 ```
 
 <div class=" alert alert-info">
-    
-## **What the Code Does**
-- `np.linspace(0, 2000, 500)`: Creates an array of 50 values, evenly spaced from 0 to 2000 pm.
-- Radial Functions (`radial_1s`, etc.): Calculate the wavefunction value for each distance r in the **array**.
-- Result Variables: `R_1s`, `R_2s`, etc., store the output of the calculations for the respective orbitals.
+    <h2>What the Code Does</h2>
+    <p>
+        <ul>    
+            <li><code>np.linspace(0, 2000, 500)</code>: Creates an array of 50 values, evenly spaced from 0 to 2000 pm.</li>
+            <li>Radial Functions (<code>radial_1s</code>, etc.): Calculate the wave-function value for each distance <b>r</b> in the <b>array</b>.</li>
+            <li>Result Variables: <code>R_1s</code>, <code>R_2s</code>, etc., store the output of the calculations for the respective orbitals.</li>
+        </ul>
+    </p>
 </div>
 
 +++
@@ -372,16 +377,17 @@ def to_cartesian(r, theta, phi):
 ```
 
 <div class=" alert alert-info">
-    
-## **What Does This Code Do?**
-
-This code calculates the **angular wavefunctions** of hydrogen atom orbitals, which describe the shape and orientation of the "electron cloud" around the nucleus. These wavefunctions depend on the angles $\theta$ (polar) and $\phi$ (azimuthal), and they help us determine the specific patterns or lobes of electron probability in 3D space.
-
-Think of the electron cloud as a 3D shape around the nucleus, where these angular wavefunctions determine:
-- How the electron cloud spreads in different directions.
-- The specific symmetries and shapes of orbitals like $s$, $p_x$, $d_{xy}$, and $d_{z^2}$.
-
-The code also includes a conversion function to transform these angular patterns into Cartesian coordinates $(x, y, z)$, which are essential for plotting the shapes of orbitals in 3D space.
+    <h2>What Does This Code Do?</h2>
+    <p>
+        This code calculates the <b>angular wave-functions</b> of hydrogen atom orbitals, which describe the shape and orientation of the "electron cloud" around the nucleus. These wave-functions depend on the angles $\theta$ (polar) and $\phi$ (azimuthal), and they help us determine the specific patterns or lobes of electron probability in 3D space.
+    <br>
+    Think of the electron cloud as a 3D shape around the nucleus, where these angular wave-functions determine:
+    <ul>
+    <li>How the electron cloud spreads in different directions.</li>
+    <li>The specific symmetries and shapes of orbitals like <b>s, p<sub>x</sub>, d<sub>xy</sub>, and d<sub>z<sup>2</sup></sub></b>.</li>
+    </ul>
+    The code also includes a conversion function to transform these angular patterns into Cartesian coordinates <code>(x, y, z)</code>, which are essential for plotting the shapes of orbitals in 3D space.
+    </p>
 </div>
 
 ```{code-cell} ipython3
@@ -393,11 +399,20 @@ theta, phi = np.meshgrid(theta, phi)
 ```
 
 <div class=" alert alert-info">
-    
-## **What The Code Does**
--`theta`(Polar Angle): Ranges from 0 (north pole) to $\pi$ (south pole). This controls the "vertical" spread of the orbital.
-- `phi` (Azimuthal Angle): Ranges from 0 to 2 $\pi$, covering a full circle around the z-axis. This controls the "horizontal" rotation of the orbital.
-- `np.meshgrid`: Creates a grid of $\theta$ and $\phi$, so the wavefunctions can be evaluated at all combinations of these angles.
+    <h2>What The Code Does</h2>
+    <p>
+        <ul>
+            <li>
+            <code>theta</code> (Polar Angle): Ranges from 0 (north pole) to &pi; (south pole). This controls the "vertical" spread of the orbital.
+            </li>
+            <li>
+            <code>phi</code> (Azimuthal Angle): Ranges from 0 to 2 &pi;, covering a full circle around the z-axis. This controls the "horizontal" rotation of the orbital.
+            </li>
+            <li>
+            <code>np.meshgrid</code>: Creates a grid of &theta; and &phi;, so the wave-functions can be evaluated at all combinations of these angles.
+            </li>
+        </ul>
+    </p>
 </div>
 
 ```{code-cell} ipython3
