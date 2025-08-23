@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from ipywidgets import interact
 import ipywidgets as widgets
+!pip install sympy
 from sympy import Symbol, Eq, solve_undetermined_coeffs, apart
 ```
 
