@@ -30,7 +30,6 @@ parts:
   - file: ecc-cs9/ces/nb-archive/CES1-intro
   - file: ecc-cs9/ces/nb-archive/CES2-CommColl
   - file: ecc-cs9/ces/nb-archive/CES_Mapping
-  - file: ecc-cs9/ces/nb-archive/ECC CalEnviroScreen
   - file: ecc-cs9/ces/proj1/proj1
   - file: ecc-cs9/ces/proj2
 - caption: Ethnic Studies
