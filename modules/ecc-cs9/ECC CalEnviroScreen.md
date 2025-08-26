@@ -42,7 +42,7 @@ import pandas as pd
 ```
 
 ```{code-cell} ipython3
-enviro = pd.read_csv('enviro.csv')
+enviro = pd.read_csv('cal_enviro_screen.csv')
 enviro
 ```
 
