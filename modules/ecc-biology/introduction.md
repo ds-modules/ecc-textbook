@@ -4,22 +4,23 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.17.2
+    jupytext_version: 1.17.3
 kernelspec:
-  display_name: ecc-bio
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-+++ {"cell_id": "00001-eedf9a46-cb0c-42bc-a90f-96265663c0d3", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
+```{code-cell} ipython3
+:deletable: false
+:editable: false
 
-# Introduction to Jupyter Notebooks and Python
+# Initialize Otter
+import otter
+grader = otter.Notebook("introduction.ipynb")
+```
 
-**Created and developed by [Suparna Kompalli](https://www.linkedin.com/in/suparna-kompalli-79463b229/) and [Brandon Concepcion](https://www.linkedin.com/in/brandonconcepcion/), with assistance and supervision by [Jonathan Ferrari](https://www.linkedin.com/in/jonathanferrari/), [Professor Darcie McClelland](https://www.linkedin.com/in/darcie-mcclelland-descalzo-56796b1b/), and [Professor Eric Van Dusen](https://www.linkedin.com/in/ericvd/) as part of our work with UC Berkeley's [College of Computing, Data Science and Society](https://cdss.berkeley.edu/) as well as [El Camino College](https://www.elcamino.edu/)**
-
-+++
-
-## **Jupyter Notebooks**
+# **Jupyter Notebooks**
 
 Welcome to a Jupyter Notebook! **Notebooks** are documents that support interactive computing in which code is interwoven with text, visualizations, and more.
 
@@ -64,13 +65,6 @@ Though the Jupyter Notebook interface has been around only about a decade, the f
 
 +++
 
-<br>
-<center><img src="assets/mathematica.png" alt="Early Mathematica Interface" style="width: 350px;"></center>
-<center><i>The early Mathematica Interface.</i></center>
-<br>
-
-+++
-
 **Fun Etymology Fact!** \
 Project Jupyter's name is a reference to the three core programming languages supported by Jupyter, which are `Julia`, `Python` and `R` (`"ju"` from `"Julia"`, `"pyt"` from `"Python"`, and `"er"` from `"R"`; all together you get `"ju" + "pyt" + "er" = "jupyter"`). The word notebook is an homage to Galileo's notebooks in which he documents his discovery of the moons of Jupiter.
 
@@ -98,19 +92,19 @@ In addition to code and natural language, notebooks can include diagrams, visual
 
 ## Notebook Structure
 
-### Cell Types
+## Cell Types
 A notebook is composed of rectangular sections called **cells**. There are 2 kinds of cells: markdown and code. 
 - A **markdown cell**, such as this one, contains text. 
 - A **code cell** contains code. In this class, we'll be using Python, but in other data science classes you might use languages such as Julia or R.
 
-### Running Cells
+## Running Cells
 To "run" a code cell (i.e. tell the computer to perform the programmed instructions in the cell), select it and either:
 - Press `Shift` + `Enter` to run the cell and move to (select) the following cell.
 - Press `Command/Control` + `Enter` to run the cell but stay on the same cell. _This can be used to re-run the same cell repeatedly._
 
 - Click the Run button in the toolbar at the top of the screen. 
 
-### Results and Outputs of a Cell
+## Results and Outputs of a Cell
 When you run a code cell, a number of things can happen, depending on the type and contents of the cell:
 1. Running a markdown cell renders the text inside of it.
 2. Running a code cell returns the result of the code below the cell.
@@ -130,7 +124,7 @@ print("Hello World!") # Run the cell by using one of the methods we mentioned ab
 
 +++ {"cell_id": "00005-7327a678-bcb7-4a12-b09a-a4054660c9af", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-### Comments
+## Comments
 Notice the blue text that starts with a `#` in the code cell above. This is a **comment**. The leading `#` tells the computer to ignore whatever text follows it. Comments help programmers organize their code and make it easier interpret. Writing helpful comments is an essential tool when collaborating on a notebook.
 
 +++
@@ -154,7 +148,7 @@ You can change the text in a markdown cell by clicking it twice. Text in markdow
 
 +++ {"cell_id": "00007-068d7862-911b-48aa-aa89-fe1376726a4f", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-### Manipulating Cells
+## Manipulating Cells
 
 Cells can be added or deleted anywhere in a notebook. You can add cells by pressing the plus sign icon in the menu bar, to the right of the save icon. This will add (by default) a code cell immediately below your current highlighted cell.
 
@@ -188,7 +182,7 @@ Select a cell by clicking on the empty space to the left of the text (there will
 
 +++ {"cell_id": "00008-50df70cb-c544-42c2-8146-20897007051c", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-### Saving and Loading
+## Saving and Loading
 
 Your notebook will automatically save your text and code edits, as well as any results of your code cells. However, you can also manually save the notebook in its current state by using `Ctrl` + `S`, clicking the floppy disk icon in the toolbar at the top of the page, or by going to the 'File' menu and selecting 'Save and Checkpoint'.
 
@@ -214,7 +208,7 @@ Just like any language, Python has a set vocabulary made up of words it can unde
 
 +++
 
-### Math
+## Math
 Python is a great language for math, as it is easy to understand, and looks very similar to what it would look like in a regular scientific calculator.
 
 - `+` Is the addition operator
@@ -254,7 +248,7 @@ Let's look at some examples of using these operators. As usual, feel free to pla
 (6 + 4) * 2 - 15
 ```
 
-### Strings
+## Strings
 Strings are what we call words or text in Python. A string is surrounded in either single ('') or double ("") quotes. Here are some examples of strings
 
 ```{code-cell} ipython3
@@ -267,7 +261,7 @@ Strings are what we call words or text in Python. A string is surrounded in eith
 
 +++ {"cell_id": "00012-b219d532-3d18-4f5b-8c0b-8300087fd4fc", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-### Errors
+## Errors
 Errors in programming are common and to be expected! Don't be afraid when you see an error because more likely than not the solution lies in the error code itself. Let's see what an error looks like. **Run the cell below to see the output.**
 
 ```{code-cell} ipython3
@@ -288,7 +282,7 @@ There's a lot of terminology in programming languages, but you don't need to kno
 
 +++ {"cell_id": "00015-6798c00d-6c61-4fb9-9db5-391b056d479c", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
 
-### Variables
+## Variables
 
 In this Jupyter Notebook you will be assigning data, figures, numbers, text, or other objects to **variables**.  Variables are stored in a computer's **memory**, and can be used over and over again in future calculations.
 
@@ -340,7 +334,7 @@ y = x * 2
 y
 ```
 
-### Variable Scope
+## Variable Scope
 Variable **scope** is a relatively complex topic that we don't need to be overly concerned with yet. That said, when a variable is used in the definition of another, we can encounter behavior we don’t expect if we aren't careful. **Run the following five cells in sequence.**
 
 ```{code-cell} ipython3
@@ -371,12 +365,12 @@ Try rerunning the second and third cells above where we assign `y` and return it
 
 +++
 
-### Variable Examples
+## Variable Examples
 Let's look at a couple examples of when using variables can help us immensely!
 
 +++
 
-#### Example 1: Seconds in a Year
+### Example 1: Seconds in a Year
 Let's say we want to find out how many seconds are in a year. We could calcluate it raw as following: $$60 \cdot 60 \cdot 24 \cdot 365$$ However, someone reading this may not understand what we are calculating or why, and we have no way to use the components or result of this calculation in other cells. Let's see how we can improve this process using variables:
 
 ```{code-cell} ipython3
@@ -399,7 +393,7 @@ print("Seconds in two hundred and thirty-four years:", seconds_per_year * 243)
 print("Seconds in 3.1415 years:", seconds_per_year * 3.1415)
 ```
 
-#### Example 2: Mitosis Mania
+### Example 2: Mitosis Mania
 Mitosis is a process that copies and separates chromosomes in a cell to create two identical daughter cells. If mitosis happens once per hour, the equation to represent the number of cells after x hours is: $$y = 2^x+b$$ We can use variables to easily calculate the $y$, and we can set $x$ (the number of hours) and $b$ (the number of cells we started with).
 
 ```{code-cell} ipython3
@@ -483,7 +477,7 @@ min(9, -34, 0, 99)
 min([9, -34, 0, 99])
 ```
 
-### User-Defined Functions
+## User-Defined Functions
 
 +++
 
@@ -516,7 +510,7 @@ print("Cells in 57 hours:", mitosis(57))
 print("Cells in 6.022 hours:", mitosis(6.022))
 ```
 
-### Practice
+## Practice
 
 +++ {"cell_id": "00028-85d551d0-1121-4f0d-9b6d-da0049cad3e7", "deepnote_cell_type": "markdown"}
 
@@ -544,7 +538,7 @@ Also try calling each function <i>incorrectly</i>, such as with the wrong number
 
 +++ {"cell_id": "00030-114d6671-9eff-4835-a25c-11b521f0f643", "deepnote_cell_type": "markdown"}
 
-#### Dot Notation
+### Dot Notation
 Python has a lot of [built-in functions](https://docs.python.org/3/library/functions.html) (that is, functions that are already named and defined in Python), but even more functions are stored in collections called **modules**. Earlier, we imported the `math` module so we could use it later. Like with the `np.mean()` example above, we can access a module's  functions by typing the name of the module, then the name of the function you want from it, separated with a `.`.
 
 +++
@@ -561,7 +555,9 @@ Python has a lot of [built-in functions](https://docs.python.org/3/library/funct
 math.factorial(5) # A call expression with the factorial function from the math module
 ```
 
-+++ {"cell_id": "00032-6d349935-df0f-4c4d-96de-7d0769f50c3f", "deepnote_cell_type": "markdown"}
++++ {"cell_id": "00032-6d349935-df0f-4c4d-96de-7d0769f50c3f", "deepnote_cell_type": "markdown", "deletable": false, "editable": false}
+
+<!-- BEGIN QUESTION -->
 
 <!-- BEGIN QUESTION -->
 
@@ -577,24 +573,17 @@ points: 1
 manual: true
 -->
 
-```{code-cell} ipython3
-:cell_id: 00032-5c32dfa7-9a29-4971-8c65-9c69c87abd56
-:deepnote_cell_type: code
-:execution_millis: 0
-:execution_start: 1605740158098
-:output_cleared: false
-:source_hash: a311e606
++++ {"tags": ["otter_answer_cell"]}
 
-... # Delete the "..." and replace it with your code!
-```
+_Type your answer here, replacing this text._
 
-**Answer:** *Double click to edit this markdown cell with your answer*
-
-+++
++++ {"deletable": false, "editable": false}
 
 <!-- END QUESTION -->
 
-### Random numbers and sampling
+<!-- END QUESTION -->
+
+## Random numbers and sampling
 Random sampling plays a key role in data science. The random module implements functions for random sampling and random number generation. For example, the cell below generates a random integer between 1 and 50. 
 
 Note that any whole number between 1 and 50 has an equal probability of being selected --- the sampling probabilities are uniform.
@@ -645,7 +634,9 @@ prisons.num_columns # Get the number of columns
 prisons.num_rows # Get the number of rows
 ```
 
-+++ {"cell_id": "00026-2e8333db-5536-4fdf-baae-ce481cd4cde1", "deepnote_cell_type": "markdown", "tags": ["include"]}
++++ {"cell_id": "00026-2e8333db-5536-4fdf-baae-ce481cd4cde1", "deepnote_cell_type": "markdown", "deletable": false, "editable": false, "tags": ["include"]}
+
+<!-- BEGIN QUESTION -->
 
 <!-- BEGIN QUESTION -->
 
@@ -661,11 +652,13 @@ points: 1
 manual: true
 -->
 
-+++
++++ {"tags": ["otter_answer_cell"]}
 
-**Answer:** *Double click to edit this markdown cell with your answer*
+_Type your answer here, replacing this text._
 
-+++ {"cell_id": "00028-e7bb87b6-8935-4c5b-a6bf-9a27a890b69b", "deepnote_cell_type": "markdown", "tags": ["ignore"]}
++++ {"cell_id": "00028-e7bb87b6-8935-4c5b-a6bf-9a27a890b69b", "deepnote_cell_type": "markdown", "deletable": false, "editable": false, "tags": ["ignore"]}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -698,7 +691,9 @@ The power of the notebook lies in its ability to include a **variety of media** 
 In a world in which algorithms and data analysis inform many aspects of life and where computation is getting more and more abstract, the ability to understand and reason about computational work is more important than ever.
 </div>
 
-+++
++++ {"deletable": false, "editable": false}
+
+<!-- BEGIN QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -716,11 +711,13 @@ points: 1
 manual: true
 -->
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
++++ {"tags": ["otter_answer_cell"]}
 
-**Answer:** *Double click to edit this markdown cell with your answer*
+_Type your answer here, replacing this text._
 
-+++
++++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 **Congratulations on finishing Notebook 1!**
 
@@ -728,8 +725,16 @@ The cell below generates a link to download your notebook as a zip file, which y
 
 **Before downloading, run all cells and save the notebook using `command`/`control` + `s` *or* clicking the save icon in the toolbar at the top of notebook. This is very important to ensure that all of your work shows up in the downloaded file!**
 
++++ {"deletable": false, "editable": false}
+
+## Submission
+
+Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. **Please save before exporting!**
+
 ```{code-cell} ipython3
-# Run all above cells, save your notebook, and then run this cell to export your submission.
-# Download the zip file, which contains a copy of your notebook and your written responses.
-generator.export("notebook1.ipynb")
+:deletable: false
+:editable: false
+
+# Save your notebook first, then run this cell to export your submission.
+grader.export()
 ```
