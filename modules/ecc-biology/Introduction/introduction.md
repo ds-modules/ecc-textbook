@@ -20,7 +20,7 @@ import otter
 grader = otter.Notebook("introduction.ipynb")
 ```
 
-# **Jupyter Notebooks**
+# ** Introduction to Jupyter Notebooks**
 
 Welcome to a Jupyter Notebook! **Notebooks** are documents that support interactive computing in which code is interwoven with text, visualizations, and more.
 
