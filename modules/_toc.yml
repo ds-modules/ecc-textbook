@@ -5,7 +5,6 @@ parts:
   chapters:
   - file: ecc-biology/Cancer_Mutations/cancer_mutations
   - file: ecc-biology/enzymes/enzymes_bioinformatics
-  - file: ecc-biology/introduction
   - file: ecc-biology/polarity/bond_polarity
 - caption: Business
   chapters:
