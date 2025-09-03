@@ -505,9 +505,9 @@ mitosis?
 ```
 
 ```{code-cell} ipython3
-print("Cells in 2 hours:", mitosis(1,50))
-print("Cells in 57 hours:", mitosis(57))
-print("Cells in 6.022 hours:", mitosis(6.022))
+print("Cells in 2 hours:", mitosis(2,50))
+print("Cells in 57 hours:", mitosis(57,50))
+print("Cells in 6.022 hours:", mitosis(6.022,50))
 ```
 
 ### Practice
