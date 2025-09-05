@@ -8,6 +8,15 @@ jupytext:
 ---
 
 ```{code-cell}
+obscure_packages = ["sympy"]
+
+for pkg in obscure_packages:
+    try:
+        __import__(pkg)  # check if installed
+    except ImportError:
+        print(f":warning: {pkg} not found. Installing...")
+        !pip install {pkg}
+        __import__(pkg)
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
