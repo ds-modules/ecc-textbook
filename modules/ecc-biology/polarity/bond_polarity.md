@@ -35,8 +35,6 @@ By the end of this assignment, you will be equipped with the knowledge to analyz
 Start by running the cell below to import our neccessary libraries!
 
 ```{code-cell} ipython3
-!pip install py3Dmol
-!pip install "numpy<2" --force-reinstall
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
