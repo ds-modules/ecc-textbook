@@ -35,7 +35,7 @@ By the end of this assignment, you will be equipped with the knowledge to analyz
 Start by running the cell below to import our neccessary libraries!
 
 ```{code-cell} ipython3
-obscure_packages = ["py3Dmol", "numpy<2"]
+obscure_packages = ["py3Dmol", "rdkit"]
 
 for pkg in obscure_packages:
     try:
