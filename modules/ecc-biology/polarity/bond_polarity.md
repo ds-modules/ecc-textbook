@@ -35,6 +35,16 @@ By the end of this assignment, you will be equipped with the knowledge to analyz
 Start by running the cell below to import our neccessary libraries!
 
 ```{code-cell} ipython3
+obscure_packages = ["py3Dmol", "numpy<2"]
+
+for pkg in obscure_packages:
+    try:
+        __import__(pkg)  # check if installed
+    except ImportError:
+        print(f":warning: {pkg} not found. Installing...")
+        !pip install {pkg}
+        __import__(pkg)
+
 from utils import *
 import pandas as pd
 from rdkit import Chem
