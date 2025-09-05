@@ -35,6 +35,7 @@ By the end of this assignment, you will be equipped with the knowledge to analyz
 Start by running the cell below to import our neccessary libraries!
 
 ```{code-cell} ipython3
+from utils import *
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -47,7 +48,6 @@ import rdkit.Chem.rdCoordGen as rdCoordGen
 import py3Dmol as pm
 import rdkit
 from rdkit.Chem import rdchem
-from utils import *
 
 df = pd.read_csv("properties.csv")
 
