@@ -36,7 +36,7 @@ html:
 sphinx:
   extra_extensions: [sphinx_multitoc_numbering, sphinxext.rediraffe, sphinx_tojupyter, sphinx_exercise, sphinx_togglebutton]
   config:
-    html_theme: quantecon_book_theme
+    html_theme: sphinx_book_theme
     html_static_path: ['_static']
     html_favicon: _static/favicon.ico
     html_theme_options:

@@ -25,17 +25,21 @@ jobs:
 
       - name: Install deps
         run: |
-          pip install -U jupyter-book
+          pip install jupyter-book  # Latest version (2.0+)
           # optional: project-specific deps
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Build the book
-        run: jupyter-book build modules --path-output _site
+        run: |
+          cd modules
+          jupyter-book build --site intro.md
+          mkdir -p ../_site
+          cp -r _build/html/* ../_site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site/_build/html/
+          path: ./_site/
 
   deploy:
     needs: build
