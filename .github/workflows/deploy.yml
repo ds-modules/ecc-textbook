@@ -6,8 +6,8 @@ on:
 
 permissions:
   contents: read
-  pages: write           # for GitHub Pages
-  id-token: write        # for OIDC auth
+  pages: write
+  id-token: write
 
 concurrency:
   group: 'pages'
@@ -25,40 +25,26 @@ jobs:
 
       - name: Install deps
         run: |
-          pip install jupyter-book  # Latest version (2.0+)
-          # optional: project-specific deps
+          pip install jupyter-book
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Build the book
         run: |
           cd modules
-          # Build static HTML export (JB 2.0 equivalent of --path-output)
           jupyter book build --html .
-          echo "Build completed! Checking output..."
-          ls -la _build/
-          # Recreate the original _site structure for compatibility
-          mkdir -p ../_site/_build/html
-          if [ -d "_build" ]; then
-            cp -r _build/* ../_site/_build/html/
-            echo "Recreated original _site/_build/html structure"
-            ls -la ../_site/_build/html/
-          else
-            echo "ERROR: No _build directory found!"
-            exit 1
-          fi
+          echo "--- Build output ---"
+          ls -R _build/site
 
-      - name: Upload artifact
+      - name: Upload artifact (JB2 correct directory)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site/_build/html
+          path: ./modules/_build/site   # <—— IMPORTANT
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GH Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
