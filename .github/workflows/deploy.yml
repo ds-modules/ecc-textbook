@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./modules/_build/html
+          path: ./modules/_build
 
   deploy:
     needs: build

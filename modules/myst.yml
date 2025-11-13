@@ -68,7 +68,7 @@ site:
   title: El Camino College Showcase
   nav:
     - title: Home
-      file: intro.md
+      url: /
   actions:
     - title: Open Issue
       url: https://github.com/ds-modules/ecc-textbook/issues/new
