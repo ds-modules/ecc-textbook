@@ -29,9 +29,10 @@ jobs:
       - name: Build the Jupyter Book (JB2)
         run: |
           cd modules
-          jupyter book build --html .
+          # Use the full command path after npm install
+          npx jupyter-book build --html .
           echo "--- Build output ---"
-          ls -R _build/site
+          ls -R _build/html
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
