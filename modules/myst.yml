@@ -69,17 +69,9 @@ project:
 
 site:
   template: book-theme
-  nav:
-    - file: intro.md
-  actions:
-    - title: Open Issue
-      url: https://github.com/ds-modules/ecc-textbook/issues/new
   options:
     logo: _static/ds.svg
     favicon: _static/favicon.ico
-    logo_text: El Camino College Showcase
-    extra_css:
-      - _static/custom.css
-    navigation_with_keys: true
-    show_toc_level: 2
-    show_navbar_depth: 2
+    logo_text: "El Camino College Showcase"
+    folders: true
+    hide_authors: false

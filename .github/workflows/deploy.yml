@@ -19,14 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.13'
+          node-version: 18.x
 
-      - name: Install dependencies
-        run: |
-          pip install jupyter-book
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Install Jupyter Book (via myst)
+        run: npm install -g jupyter-book
 
       - name: Build the Jupyter Book (JB2)
         run: |
@@ -38,7 +36,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: modules/_build/site   # ← JB2 output directory
+          path: './modules/_build/html'
 
   deploy:
     needs: build

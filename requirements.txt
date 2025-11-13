@@ -1,4 +1,8 @@
 jupyter-book==2.0.2
+mystmd
+numpy
+datascience
+matplotlib
 sphinx-tojupyter==0.3.1
 sphinxext-rediraffe==0.3.0
 sphinx-exercise==1.0.1
