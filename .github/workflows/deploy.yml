@@ -32,10 +32,16 @@ jobs:
       - name: Build the book
         run: |
           cd modules
-          # Use the approach that worked locally - start the build process
-          echo -e "n\ny" | jupyter book start --headless || echo "Build process initiated"
+          # Build static HTML without starting server
+          jupyter book build --site .
           echo "Build completed! Checking output..."
-          ls -la _build/html/ || ls -la _build/
+          find . -name "_build" -type d
+          find . -name "*.html" -type f | head -5
+          # Ensure we have build output
+          if [ ! -d "_build" ]; then
+            echo "No _build directory found, trying alternative build"
+            jupyter book build --html .
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
