@@ -32,21 +32,25 @@ jobs:
       - name: Build the book
         run: |
           cd modules
-          # Build static HTML without starting server
-          jupyter book build --site .
+          # Build static HTML export (JB 2.0 equivalent of --path-output)
+          jupyter book build --html .
           echo "Build completed! Checking output..."
-          find . -name "_build" -type d
-          find . -name "*.html" -type f | head -5
-          # Ensure we have build output
-          if [ ! -d "_build" ]; then
-            echo "No _build directory found, trying alternative build"
-            jupyter book build --html .
+          ls -la _build/
+          # Recreate the original _site structure for compatibility
+          mkdir -p ../_site/_build/html
+          if [ -d "_build" ]; then
+            cp -r _build/* ../_site/_build/html/
+            echo "Recreated original _site/_build/html structure"
+            ls -la ../_site/_build/html/
+          else
+            echo "ERROR: No _build directory found!"
+            exit 1
           fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./modules/_build
+          path: ./_site/_build/html
 
   deploy:
     needs: build
