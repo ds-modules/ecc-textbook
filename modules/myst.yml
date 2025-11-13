@@ -1,4 +1,5 @@
 version: 1
+
 project:
   title: El Camino College Showcase
   authors:
@@ -8,10 +9,12 @@ project:
   bibliography:
     - references.bib
   jupyter: true
+
   exports:
     - format: pdf
       template: plain_latex_book
       output: exports/book.pdf
+
   toc:
     - file: intro.md
     - title: Biology
@@ -63,12 +66,11 @@ project:
         - file: ecc-statistics/data_representation/Data-Rep-Module.md
         - file: ecc-statistics/probability_distribution/Probability-Distributions.md
         - file: ecc-statistics/sampling_distribution/sampling_distribution.md
+
 site:
   template: book-theme
-  title: El Camino College Showcase
   nav:
-    - title: Home
-      file: intro.md
+    - file: intro.md
   actions:
     - title: Open Issue
       url: https://github.com/ds-modules/ecc-textbook/issues/new
@@ -76,23 +78,8 @@ site:
     logo: _static/ds.svg
     favicon: _static/favicon.ico
     logo_text: El Camino College Showcase
-    folders: true
     extra_css:
       - _static/custom.css
-    # launch_buttons:
-    #   notebook_interface: classic
-    #   colab_url: "https://colab.research.google.com"
-    #   deepnote_url: "https://deepnote.com"
-    #   binderhub_url: "https://mybinder.org"
-    #   thebe: true
-    repository_url: https://github.com/ds-modules/ecc-textbook
-    repository_branch: main
-    nb_repository_url: https://github.com/ds-modules/ecc-textbook.notebooks
-    use_repository_button: true
-    use_issues_button: true
-    use_fullscreen_button: true
-    use_download_button: true
-    show_toc_level: 2
-    collapse_navigation: false
     navigation_with_keys: true
+    show_toc_level: 2
     show_navbar_depth: 2
