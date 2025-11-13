@@ -23,22 +23,22 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
           pip install jupyter-book
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Build the book
+      - name: Build the Jupyter Book (JB2)
         run: |
           cd modules
           jupyter book build --html .
           echo "--- Build output ---"
           ls -R _build/site
 
-      - name: Upload artifact (JB2 correct directory)
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./modules/_build/site   # <—— IMPORTANT
+          path: modules/_build/site   # ← JB2 output directory
 
   deploy:
     needs: build
