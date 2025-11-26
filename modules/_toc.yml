@@ -1,0 +1,53 @@
+format: jb-book
+root: intro
+parts:
+- caption: Biology
+  chapters:
+  - file: ecc-biology/Cancer_Mutations/cancer_mutations
+  - file: ecc-biology/Introduction/introduction
+  - file: ecc-biology/enzymes/enzymes_bioinformatics
+  - file: ecc-biology/polarity/bond_polarity
+- caption: Business
+  chapters:
+  - file: ecc-business/marketing-fast-food/marketing_case_study
+  - file: ecc-business/sba/sba
+- caption: Calculus
+  chapters:
+  - file: ecc-calculus/partial_fractions_lesson
+  - file: ecc-calculus/pfd
+  - file: ecc-calculus/riemann_sum
+  - file: ecc-calculus/sums
+- caption: Chemistry
+  chapters:
+  - file: ecc-chemistry/Orbitals
+- caption: Child Development
+  chapters:
+  - file: ecc-child-development/parental-risk
+- caption: CS 9
+  chapters:
+  - file: ecc-cs9/ECC CalEnviroScreen
+  - file: ecc-cs9/Modeling_CA_Housing_lab
+  - file: ecc-cs9/ces/nb-archive/CES1-intro
+  - file: ecc-cs9/ces/nb-archive/CES2-CommColl
+  - file: ecc-cs9/ces/nb-archive/CES_Mapping
+  - file: ecc-cs9/ces/proj1/proj1
+  - file: ecc-cs9/ces/proj2
+  - file: ecc-cs9/policing/policing
+- caption: Ethnic Studies
+  chapters:
+  - file: ecc-ethnic-studies/Incarceration/Incarcerations
+  - file: ecc-ethnic-studies/Incarceration/otter
+  - file: ecc-ethnic-studies/introduction/introduction
+  - file: ecc-ethnic-studies/race-and-health/Health
+- caption: Sociology
+  chapters:
+  - file: ecc-sociology/Incarcerations/Incarcerations
+  - file: ecc-sociology/environment/environmental-justice
+  - file: ecc-sociology/introduction/introduction
+  - file: ecc-sociology/race-and-health/Health
+- caption: Statistics
+  chapters:
+  - file: ecc-statistics/anova/anova
+  - file: ecc-statistics/data_representation/Data-Rep-Module
+  - file: ecc-statistics/probability_distribution/Probability-Distributions
+  - file: ecc-statistics/sampling_distribution/sampling_distribution
