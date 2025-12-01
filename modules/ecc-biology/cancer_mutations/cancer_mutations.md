@@ -4,12 +4,21 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.17.2
+    jupytext_version: 1.18.1
 kernelspec:
-  display_name: ecc-bio
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
+```{code-cell} ipython3
+:deletable: false
+:editable: false
+
+# Initialize Otter
+import otter
+grader = otter.Notebook("cancer_mutations.ipynb")
+```
 
 # Investigating Cancer Genomics: Mutation Patterns and Patient Outcomes
 
@@ -80,6 +89,8 @@ print(f"There are {len(df.columns)} columns in our dataset!")
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 **Question 0.1** Wow, that’s quite a few columns! Can you think of a reason why this dataset might include so many??
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -87,6 +98,8 @@ print(f"There are {len(df.columns)} columns in our dataset!")
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -127,6 +140,8 @@ filtered_df.head()
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 Python Widgets allow us to build interactive elements such as dropdowns, sliders, and checkboxes. They’re particularly useful for dynamically visualizing and filtering datasets without having to rewrite your code. 
 
 **Question 0.2.** 
@@ -148,6 +163,8 @@ display(dropdown, output)
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -202,22 +219,21 @@ plt.grid(axis='y')
 plt.show()
 ```
 
++++ {"deletable": false, "editable": false}
+
+<!-- BEGIN QUESTION -->
+
 **Question 1.1.**  Which six genes have the highest mutation rates in the dataset? How can you tell?
 
-+++
++++ {"tags": ["otter_answer_cell"]}
 
-*Type Your Answer in Place of Each Number*
-
-1. 
-2. 
-3. 
-4. 
-5. 
-6.
-
-*Type Your Justification Here*
+_Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
 
 <!-- BEGIN QUESTION -->
 
@@ -233,6 +249,10 @@ _Type your answer here, replacing this text._
 
 <!-- BEGIN QUESTION -->
 
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
+
 **Question 1.3.** Choose one of the top six most frequently mutated genes and propose a hypothesis why this gene might be so commonly mutated in breast cancer patients. Why do you think a mutation in this particular gene could be especially indicative of cancer development?
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -240,6 +260,8 @@ _Type your answer here, replacing this text._
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -303,6 +325,8 @@ Based on the chart above, do your best to answer the following questions:
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 **Question 2.1.** Which cancer subtype shows the highest frequency of TP53 mutation? Which shows the lowest?
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -310,6 +334,10 @@ Based on the chart above, do your best to answer the following questions:
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -327,6 +355,10 @@ _Type your answer here, replacing this text._
 
 <!-- BEGIN QUESTION -->
 
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
+
 **Question 2.3.** Based on the plot alone, can we conclude that if TP53 mutation exists, it causes a subtype to be more aggressive? Why or why not?
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -334,6 +366,8 @@ _Type your answer here, replacing this text._
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -358,6 +392,8 @@ plt.show()
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 **Question 2.4.** Compare the shapes of the overlaid distributions. Among all patients *with* breast cancer, do patients with TP53 mutations tend to have larger tumors?
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -365,6 +401,8 @@ plt.show()
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -385,6 +423,8 @@ plt.show()
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 **Question 2.5.** Which group seems to have longer average overall survival? Note key parts from the graph when writing your response.
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -392,6 +432,8 @@ plt.show()
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -442,6 +484,8 @@ plt.show()
 
 <!-- BEGIN QUESTION -->
 
+<!-- BEGIN QUESTION -->
+
 **Question 2.6.** Which gene is mutated most often across all subtypes? Be sure to caculate the average mutaton frequency across all substypes when providing your answer.
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -449,6 +493,10 @@ plt.show()
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -466,6 +514,10 @@ _Type your answer here, replacing this text._
 
 <!-- BEGIN QUESTION -->
 
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
+
 **Question 2.8.** Are there genes that are highly specific to one or two subtypes? Provide at least two examples.
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -478,6 +530,10 @@ _Type your answer here, replacing this text._
 
 <!-- BEGIN QUESTION -->
 
+<!-- END QUESTION -->
+
+<!-- BEGIN QUESTION -->
+
 **Question 2.9.** Are there genes that are rarely mutated in any subtype?
 
 +++ {"tags": ["otter_answer_cell"]}
@@ -485,6 +541,8 @@ _Type your answer here, replacing this text._
 _Type your answer here, replacing this text._
 
 +++ {"deletable": false, "editable": false}
+
+<!-- END QUESTION -->
 
 <!-- END QUESTION -->
 
@@ -526,3 +584,17 @@ Below are some opportunities to explore further:
 ## Submission
 
 Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. **Please save before exporting your notebook as a PDF!**
+
++++ {"deletable": false, "editable": false}
+
+## Submission
+
+Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. **Please save before exporting!**
+
+```{code-cell} ipython3
+:deletable: false
+:editable: false
+
+# Save your notebook first, then run this cell to export your submission.
+grader.export()
+```

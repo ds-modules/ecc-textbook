@@ -6,8 +6,8 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: write           # for GitHub Pages
+  id-token: write        # for OIDC auth
 
 concurrency:
   group: 'pages'
@@ -19,31 +19,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: 18.x
+          python-version: '3.13'
 
-      - name: Install Jupyter Book (via myst)
-        run: npm install -g jupyter-book
-
-      - name: Build the Jupyter Book (JB2)
+      - name: Install deps
         run: |
-          cd modules
-          # Use the full command path after npm install
-          npx jupyter-book build --html .
-          echo "--- Build output ---"
-          ls -R _build/html
+          pip install -U jupyter-book
+          # optional: project-specific deps
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Upload artifact for GitHub Pages
+      - name: Build the book
+        run: jupyter-book build modules --path-output _site
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './modules/_build/html'
+          path: ./_site/_build/html/
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GH Pages
+        id: deployment
         uses: actions/deploy-pages@v4
