@@ -35,13 +35,9 @@ jobs:
           cd modules
           set -e  # Exit on error
           echo "--- Building Jupyter Book ---"
-          # Try JB 2.0 site build command (without --html flag)
-          jupyter book build . || {
-            echo "Build failed, trying with --html flag..."
-            jupyter book build --html . || {
-              echo "Build failed, checking for alternative command..."
-              jupyter-book build . || exit 1
-            }
+          jupyter book build --html || {
+            echo "Build failed, checking for alternative command..."
+            jupyter-book build --html || exit 1
           }
           echo "--- Checking build output ---"
           ls -la _build/ 2>/dev/null || echo "No _build directory found"
