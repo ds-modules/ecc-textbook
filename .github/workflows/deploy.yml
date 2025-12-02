@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:  # Allows manual trigger from GitHub UI
 
+env:
+  # BASE_URL determines where the website is served from, including CSS & JS assets
+  BASE_URL: /${{ github.event.repository.name }}
+
 permissions:
   contents: read
   pages: write           # for GitHub Pages
