@@ -1,0 +1,52 @@
+name: Test Build (PRs)
+
+# This workflow only builds the book to verify it works, but doesn't deploy
+# Useful for testing changes in pull requests
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          # Install modules-specific dependencies if they exist
+          if [ -f modules/requirements.txt ]; then pip install -r modules/requirements.txt; fi
+
+      - name: Build the book
+        run: |
+          cd modules
+          set -e
+          jupyter book build --html || jupyter-book build --html
+
+      - name: Determine build output path
+        id: build_path
+        run: |
+          cd modules
+          if [ -d "_build/html" ]; then
+            echo "path=./modules/_build/html" >> $GITHUB_OUTPUT
+          elif [ -d "_build/site" ]; then
+            echo "path=./modules/_build/site" >> $GITHUB_OUTPUT
+          else
+            echo "ERROR: No build output found" && exit 1
+          fi
+
+      - name: Upload artifact (for inspection)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.build_path.outputs.path }}
+          retention-days: 1  # Keep artifact for 1 day only
+

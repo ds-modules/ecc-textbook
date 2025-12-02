@@ -3,6 +3,7 @@ name: Build & deploy Jupyter Book
 on:
   push:
     branches: [main]
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 permissions:
   contents: read
@@ -21,21 +22,25 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.12'
 
       - name: Install deps
         run: |
-          pip install -U jupyter-book
-          # optional: project-specific deps
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
+          # Install modules-specific dependencies if they exist
+          if [ -f modules/requirements.txt ]; then pip install -r modules/requirements.txt; fi
 
       - name: Build the book
-        run: jupyter-book build modules --path-output _site
+        run: |
+          cd modules
+          set -e
+          jupyter book build --html || jupyter-book build --html
+          [ -d "_build/site" ] && cp -r _build/site _build/html || [ -d "_build/html" ]
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site/_build/html/
+          path: ./modules/_build/html
 
   deploy:
     needs: build
