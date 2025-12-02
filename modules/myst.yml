@@ -1,0 +1,90 @@
+version: 1
+
+project:
+  title: El Camino College Showcase
+  authors:
+    - name: Jonathan Ferrari
+    - name: Edwin Vargas Navarro
+  github: ds-modules/ecc-textbook
+  bibliography:
+    - references.bib
+  jupyter: true
+  execute:
+    execute_notebooks: 'off'
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - title: Biology
+      children:
+        - file: ecc-biology/Cancer_Mutations/cancer_mutations.md
+        - file: ecc-biology/Introduction/introduction.md
+        - file: ecc-biology/enzymes/enzymes_bioinformatics.md
+        - file: ecc-biology/polarity/bond_polarity.md
+    - title: Business
+      children:
+        - file: ecc-business/marketing-fast-food/marketing_case_study.md
+        - file: ecc-business/sba/sba.md
+    - title: Calculus
+      children:
+        - file: ecc-calculus/partial_fractions_lesson.md
+        - file: ecc-calculus/pfd.md
+        - file: ecc-calculus/riemann_sum.md
+        - file: ecc-calculus/sums.md
+    - title: Chemistry
+      children:
+        - file: ecc-chemistry/Orbitals.md
+    - title: Child Development
+      children:
+        - file: ecc-child-development/parental-risk.md
+    - title: CS 9
+      children:
+        - file: ecc-cs9/ECC CalEnviroScreen.md
+        - file: ecc-cs9/Modeling_CA_Housing_lab.md
+        - file: ecc-cs9/ces/nb-archive/CES1-intro.md
+        - file: ecc-cs9/ces/nb-archive/CES2-CommColl.md
+        - file: ecc-cs9/ces/nb-archive/CES_Mapping.md
+        - file: ecc-cs9/ces/proj1/proj1.md
+        - file: ecc-cs9/ces/proj2.md
+        - file: ecc-cs9/policing/policing.md
+    - title: Ethnic Studies
+      children:
+        - file: ecc-ethnic-studies/Incarceration/Incarcerations.md
+        - file: ecc-ethnic-studies/Incarceration/otter.md
+        - file: ecc-ethnic-studies/introduction/introduction.md
+        - file: ecc-ethnic-studies/race-and-health/Health.md
+    - title: Sociology
+      children:
+        - file: ecc-sociology/Incarcerations/Incarcerations.md
+        - file: ecc-sociology/environment/environmental-justice.md
+        - file: ecc-sociology/introduction/introduction.md
+        - file: ecc-sociology/race-and-health/Health.md
+    - title: Statistics
+      children:
+        - file: ecc-statistics/anova/anova.md
+        - file: ecc-statistics/data_representation/Data-Rep-Module.md
+        - file: ecc-statistics/probability_distribution/Probability-Distributions.md
+        - file: ecc-statistics/sampling_distribution/sampling_distribution.md
+
+site:
+  template: book-theme
+  nav:
+    - title: Home
+      url: /
+  actions:
+    - title: Open Issue
+      url: https://github.com/ds-modules/ecc-textbook/issues/new
+  options:
+    logo: _static/ds.svg
+    favicon: _static/favicon.ico
+    logo_text: El Camino College Showcase
+    extra_css:
+      - _static/custom.css
+    navigation_with_keys: true
+    show_toc_level: 2
+    show_navbar_depth: 2
+    use_issues_button: true
+    use_repository_button: true
+
