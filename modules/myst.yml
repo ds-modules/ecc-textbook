@@ -70,9 +70,6 @@ project:
 
 site:
   template: book-theme
-  nav:
-    - title: Home
-      url: /
   actions:
     - title: Open Issue
       url: https://github.com/ds-modules/ecc-textbook/issues/new
