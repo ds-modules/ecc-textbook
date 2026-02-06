@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.18.1
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -242,5 +242,27 @@ In this notebook, you learned various scenarious in which bernoulli, binomial, p
 grader = otter.Notebook()
 run_tests()
 ```
+
+## 📋 Post-Notebook Reflection Form
+
+Thank you for completing the notebook! We’d love to hear your thoughts so we can continue improving and creating content that supports your learning.
+
+Please take a few minutes to fill out this short reflection form:
+
+👉 **[Click here to fill out the Reflection Form](https://docs.google.com/forms/d/e/1FAIpQLSc6Ekczw9VexhqkEqd52zhMd_bIBojn7umv4fTLZXA3FWE1Yw/viewform?usp=dialog)**
+
+---
+
+### 🧠 Why it matters:
+Your feedback helps us understand:
+- How clear and helpful the notebook was
+- What you learned from the experience
+- How your views on data science may have changed
+- What topics you’d like to see in the future
+
+This form is anonymous and should take less than 5 minutes to complete.
+We appreciate your time and honest input! 💬
+
++++
 
 **Congratulations on making it to the end!**
