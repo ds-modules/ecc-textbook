@@ -23,7 +23,8 @@ import scipy.stats as stats
 
 ___
 **Estimated Time:** ~30 minutes  
-**Developer:** Mark David Barranda
+**Professor**: Alice Martinez <br>
+**Developer:** Mark David Barranda, Rinrada Maneenop
 ___
 
 +++

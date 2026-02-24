@@ -16,6 +16,7 @@ kernelspec:
 +++
 
 **Estimated Time**: 60 Minutes <br>
+**Professor**: Alice Martinez <br>
 **Developers**: James Geronimo, Mark Barranda
 
 +++

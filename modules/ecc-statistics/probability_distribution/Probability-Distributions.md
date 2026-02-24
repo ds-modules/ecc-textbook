@@ -27,7 +27,9 @@ from scipy.stats import binom, geom
 ```
 
 ___
-*Estimated Time: ~30 minutes*
+*Estimated Time: ~30 minutes* <br>
+**Professor**: Alice Martinez <br>
+**Developer**: Rinrada Maneenop
 ___
 
 +++
