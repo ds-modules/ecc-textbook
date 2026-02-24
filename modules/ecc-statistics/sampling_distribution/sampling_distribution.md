@@ -27,7 +27,8 @@ from utils import *
 +++
 
 **Estimated Time**: 30 Minutes <br>
-**Developers**: James Geronimo, Mark Barranda
+**Professor**: Alice Martinez <br>
+**Developers**: James Geronimo, Mark Barranda, Rinrada Maneenop
 
 +++
 
@@ -238,6 +239,26 @@ Mean of sample means **__________** the population mean which makes this a **___
 +++
 
 Mean of sample ranges **__________** the population range which makes this a **__________** estimator
+
++++
+
+### Standard Deviation and Variance
+
+- **Variance** measures how spread out the data are around the mean.  
+  - For a **population** with values $x_1, x_2, \dots, x_N$ and mean $\mu$:
+    $$
+    \sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2
+    $$
+  - For a **sample** with values $x_1, x_2, \dots, x_n$ and sample mean $\bar{x}$, the **sample variance** is:
+    $$
+    s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2
+    $$
+
+- **Standard deviation** is the square root of the variance.  
+  - For a population: $\sigma = \sqrt{\sigma^2}$  
+  - For a sample: $s = \sqrt{s^2}$  
+
+It is in the **same units** as the original data and tells you a typical distance of values from the mean.
 
 +++
 
