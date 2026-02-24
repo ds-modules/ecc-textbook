@@ -6,10 +6,16 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.19.1
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: Python 3
   language: python
   name: python3
 ---
+
+Below, we have imported the Python libraries needed for this module. Run the code in this cell before running any other code cells, and be careful **not to change** any of the code.
+You can run the cell in any of these ways:
+ - Ctrl + Enter: Run the cell and keep the cursor in the same cell.
+- Shift + Enter: Run the cell and move the cursor to the next cell.
+- Click the Play button: Click the Run (play) button to the left of the cell to execute it.
 
 ```{code-cell} ipython3
 # Necessary imports for this module
@@ -235,7 +241,19 @@ Mean of sample ranges **__________** the population range which makes this a **_
 
 +++
 
-**d)** Complete each of the following expressions:
+**d)** Find the sample standard deviation and variance of possible samples by completing the functions `standard_deviation` and `variance`. Then, run the cell to create tables that represent the probability distribution of each statistic.
+
+```{code-cell} ipython3
+def standard_deviation(number1, number2):
+    """Fill in the ... to calculate the standard deviation of two numbers."""
+    return ...
+
+def variance(number1, number2):
+    """Fill in the ... to calculate the variance of two numbers."""
+    return ...
+```
+
+Complete each of the following expressions:
 
 +++
 

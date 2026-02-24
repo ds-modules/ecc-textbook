@@ -107,8 +107,8 @@ Below is a histogram displaying the distribution of health occupations by race i
 _NOTE_: Use the interactive plot below to explore how representation in the health workforce changes across regions and occupations.
 
 You can **adjust the dropdown menus** to:
-- Select different **regions** of California
-- Focus on specific **healthcare occupations**
+- Region: Select different **regions** of California
+- Occupation: Focus on specific **healthcare occupations**
 
 As you change these options, watch how the histogram updates to show how the distribution of race and ethnicity shifts in each context.
 
@@ -127,8 +127,8 @@ Below is a histogram displaying the distribution of highest education level achi
 _NOTE_: Use the interactive plot below to explore how **highest education level** varies by race and ethnicity across regions.
 
 You can **adjust the dropdown menus** to:
-- Select different **regions** of California
-- Focus on specific **highest education levels**
+- Region: Select different **regions** of California
+- Highest Education Levels: Focus on specific **highest education levels**
 
 As you change these options, watch how the histogram updates to show how educational attainment is distributed across different race and ethnicity groups.
 

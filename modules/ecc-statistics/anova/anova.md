@@ -119,7 +119,11 @@ For the sake of this module, we will assume that these three assumptions are tru
 
 +++
 
-Below, we have imported some Python libraries that are necessary for this module. Make sure to run this cell before running any other code cells!
+Below, we have imported the Python libraries needed for this module. Run the code in this cell before running any other code cells, and be careful **not to change** any of the code.
+You can run the cell in any of these ways:
+ - Ctrl + Enter: Run the cell and keep the cursor in the same cell.
+- Shift + Enter: Run the cell and move the cursor to the next cell.
+- Click the Play button: Click the Run (play) button to the left of the cell to execute it.
 
 ```{code-cell} ipython3
 import numpy as np
