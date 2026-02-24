@@ -280,7 +280,7 @@ where \(X\) is the number of calls until the first successful resolution and \(p
    - Calls are **independent** from one another for that customer.  
    This matches the conditions for using a geometric distribution.
 
-3. **Question 1 – Probability of resolving on the 3rd attempt (p = 0.44).**  
+3. **Question 1 - Probability of resolving on the 3rd attempt (p = 0.44).**  
    Here \(p = 0.44\) and we want \(P(X = 3)\):
    $$
    P(X = 3) = (1 - 0.44)^{3-1} (0.44) = (0.56)^2 (0.44).
@@ -291,7 +291,7 @@ where \(X\) is the number of calls until the first successful resolution and \(p
    $$
    So the probability that Elizabeth resolves the issue **on the 3rd call** is about **13.8%**.
 
-4. **Question 2 – With p = 0.50, when is the probability about 30%?**  
+4. **Question 2 - With p = 0.50, when is the probability about 30%?**  
    Now set \(p = 0.50\). The geometric PMF becomes
    $$
    P(X = k) = (1 - 0.5)^{k-1} (0.5) = (0.5)^k.
@@ -363,7 +363,7 @@ def geometric_walkthrough_visualizer(p_example=0.44, k_example=3, target_prob=0.
         va="bottom",
     )
 
-    fig.suptitle("Geometric distribution – call-center walkthrough", fontsize=12)
+    fig.suptitle("Geometric distribution - call-center walkthrough", fontsize=12)
     plt.tight_layout()
     plt.show()
 
@@ -417,17 +417,17 @@ grader = otter.Notebook()
 run_tests()
 ```
 
-## 📋 Post-Notebook Reflection Form
+## Post-Notebook Reflection Form
 
 Thank you for completing the notebook! We’d love to hear your thoughts so we can continue improving and creating content that supports your learning.
 
 Please take a few minutes to fill out this short reflection form:
 
-👉 **[Click here to fill out the Reflection Form](https://docs.google.com/forms/d/e/1FAIpQLSc6Ekczw9VexhqkEqd52zhMd_bIBojn7umv4fTLZXA3FWE1Yw/viewform?usp=dialog)**
+**[Click here to fill out the Reflection Form](https://docs.google.com/forms/d/e/1FAIpQLSc6Ekczw9VexhqkEqd52zhMd_bIBojn7umv4fTLZXA3FWE1Yw/viewform?usp=dialog)**
 
 ---
 
-### 🧠 Why it matters:
+### Why it matters:
 Your feedback helps us understand:
 - How clear and helpful the notebook was
 - What you learned from the experience
@@ -435,7 +435,7 @@ Your feedback helps us understand:
 - What topics you’d like to see in the future
 
 This form is anonymous and should take less than 5 minutes to complete.
-We appreciate your time and honest input! 💬
+We appreciate your time and honest input!
 
 +++
 

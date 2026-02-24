@@ -45,9 +45,9 @@ ___
 
 +++
 
-The makeup of the health workforce plays a critical role in shaping health outcomes, especially for historically underserved populations. Despite the growing diversity of the U.S. population, racial and ethnic minorities remain underrepresented in many healthcare professions. For instance, although Black Americans make up over 12% of the working-age population, they account for just [5.4% of physicians](https://newsroom.ucla.edu/releases/proportion-black-physicians-little-change). Hispanic individuals—who represent 18.5% of the population—make up less than 6% of the physician workforce. These gaps reflect systemic barriers to access, education, and advancement in healthcare careers, and they raise concerns about the ability of the system to serve all communities equitably.
+The makeup of the health workforce plays a critical role in shaping health outcomes, especially for historically underserved populations. Despite the growing diversity of the U.S. population, racial and ethnic minorities remain underrepresented in many healthcare professions. For instance, although Black Americans make up over 12% of the working-age population, they account for just [5.4% of physicians](https://newsroom.ucla.edu/releases/proportion-black-physicians-little-change). Hispanic individuals--who represent 18.5% of the population--make up less than 6% of the physician workforce. These gaps reflect systemic barriers to access, education, and advancement in healthcare careers, and they raise concerns about the ability of the system to serve all communities equitably.
 
-[Another research](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2772682) also shows that patients often experience better outcomes and greater trust when treated by healthcare providers who share their racial or cultural background. This connection can foster better communication, more accurate diagnoses, and improved patient satisfaction. A diverse health workforce also brings a wider range of perspectives, helping institutions identify and address health disparities more effectively. In this notebook, we’ll explore the relationship between race, occupation, and education in healthcare using real-world data, and reflect on why representation is not only a matter of justice—but also one of quality care. But first, let's hear some insights from two industry professionals below.
+[Another research](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2772682) also shows that patients often experience better outcomes and greater trust when treated by healthcare providers who share their racial or cultural background. This connection can foster better communication, more accurate diagnoses, and improved patient satisfaction. A diverse health workforce also brings a wider range of perspectives, helping institutions identify and address health disparities more effectively. In this notebook, we’ll explore the relationship between race, occupation, and education in healthcare using real-world data, and reflect on why representation is not only a matter of justice--but also one of quality care. But first, let's hear some insights from two industry professionals below.
 
 +++
 
@@ -159,17 +159,17 @@ Replace with your answer.
 
 +++
 
-## 📋 Post-Notebook Reflection Form
+## Post-Notebook Reflection Form
 
 Thank you for completing the notebook! We’d love to hear your thoughts so we can continue improving and creating content that supports your learning.
 
 Please take a few minutes to fill out this short reflection form:
 
-👉 **[Click here to fill out the Reflection Form](https://forms.gle/oxkK6oh6Sv1K648L8)**
+**[Click here to fill out the Reflection Form](https://forms.gle/oxkK6oh6Sv1K648L8)**
 
 ---
 
-### 🧠 Why it matters:
+### Why it matters:
 Your feedback helps us understand:
 - How clear and helpful the notebook was
 - What you learned from the experience
@@ -177,7 +177,7 @@ Your feedback helps us understand:
 - What topics you’d like to see in the future
 
 This form is anonymous and should take less than 5 minutes to complete.
-We appreciate your time and honest input! 💬
+We appreciate your time and honest input!
 
 +++
 
