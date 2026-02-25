@@ -48,6 +48,7 @@ parts:
 - caption: Statistics
   chapters:
   - file: ecc-statistics/anova/anova
+  - file: ecc-statistics/confidence_interval/confidence_interval
   - file: ecc-statistics/data_representation/Data-Rep-Module
   - file: ecc-statistics/probability_distribution/Probability-Distributions
   - file: ecc-statistics/sampling_distribution/sampling_distribution
