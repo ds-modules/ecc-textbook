@@ -23,6 +23,10 @@ parts:
 - caption: Child Development
   chapters:
   - file: ecc-child-development/parental-risk
+- caption: Cis
+  chapters:
+  - file: ecc-cis/Stock_Market_Analysis_Lab
+  - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow
 - caption: CS 9
   chapters:
   - file: ecc-cs9/ECC CalEnviroScreen
