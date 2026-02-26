@@ -43,6 +43,9 @@ parts:
   - file: ecc-ethnic-studies/Incarceration/otter
   - file: ecc-ethnic-studies/introduction/introduction
   - file: ecc-ethnic-studies/race-and-health/Health
+- caption: Physics
+  chapters:
+  - file: ecc-physics/PKA_ATP_SingleMolecule_Kinetics
 - caption: Sociology
   chapters:
   - file: ecc-sociology/Incarcerations/Incarcerations
