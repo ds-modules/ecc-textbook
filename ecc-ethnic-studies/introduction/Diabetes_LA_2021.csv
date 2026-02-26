@@ -1,0 +1,259 @@
+name,year,denom_pop_18_over,Diabetes
+Irwindale,2021,1760,12%
+Pico-Union,2021,40192,16%
+Glendora,2021,51804,9%
+Industry,2021,22495,12%
+Sylmar,2021,77589,11%
+Torrance,2021,144717,10%
+Alhambra,2021,82877,13%
+Pico Rivera,2021,63990,13%
+Rolling Hills Estates,2021,10209,10%
+Signal Hill,2021,11292,10%
+Hawthorne,2021,88447,12%
+North Hills,2021,57629,11%
+Hacienda Heights,2021,52214,12%
+Harbor Gateway,2021,39950,13%
+Lopez/Kagel Canyons,2021,1581,10%
+Citrus,2021,12530,10%
+Lake Balboa,2021,25946,10%
+Granada Hills,2021,51311,10%
+Palms,2021,41602,6%
+Santa Monica,2021,88001,8%
+Pacoima,2021,77732,13%
+Toluca Lake,2021,8606,8%
+Veterans Administration,2021,895,25%
+Valley Village,2021,23072,8%
+Brentwood,2021,32818,7%
+Pomona,2021,149974,12%
+South Whittier,2021,52449,11%
+Pasadena,2021,139832,10%
+Winnetka,2021,50391,11%
+Palmdale,2021,154652,12%
+Porter Ranch,2021,24806,10%
+South El Monte,2021,19631,14%
+Tujunga Canyons,2021,8049,9%
+Commerce,2021,13286,14%
+San Fernando,2021,23633,12%
+Sherman Oaks,2021,67221,7%
+Bradbury,2021,1424,11%
+Panorama City,2021,68284,13%
+Northridge,2021,63151,9%
+Culver City,2021,35660,9%
+Lakewood,2021,79806,9%
+Compton,2021,98285,14%
+Vernon,2021,422,13%
+San Dimas,2021,35062,10%
+Inglewood,2021,111122,14%
+Charter Oak,2021,8392,10%
+Paramount,2021,54798,12%
+San Pedro,2021,77869,12%
+Lincoln Heights,2021,29547,16%
+Boyle Heights,2021,89840,15%
+Historic South-Central,2021,47723,15%
+Avalon,2021,3529,11%
+Westlake,2021,104017,14%
+Mission Hills,2021,18490,12%
+Quartz Hill,2021,10402,9%
+Marina del Rey,2021,8636,7%
+Bell,2021,35587,14%
+Long Beach,2021,460369,11%
+San Gabriel,2021,40860,14%
+Downey,2021,112118,11%
+Diamond Bar,2021,45273,10%
+La Canada Flintridge,2021,21358,9%
+West Covina,2021,108437,11%
+Redondo Beach,2021,66517,7%
+Vermont Square,2021,48777,15%
+Santa Fe Springs,2021,20912,12%
+Calabasas,2021,21228,8%
+Altadena,2021,41303,11%
+Bell Gardens,2021,42122,14%
+Sun Valley,2021,72929,12%
+Playa Vista,2021,8591,6%
+Carson,2021,91168,13%
+Hollywood Hills,2021,21652,7%
+Lancaster,2021,155697,12%
+Leona Valley,2021,2177,9%
+Whittier,2021,82869,10%
+Walnut,2021,29035,11%
+Castaic Canyons,2021,45733,7%
+Silver Lake,2021,29942,8%
+Whittier Narrows,2021,6452,15%
+Glendale,2021,190641,10%
+West Whittier-Los Nietos,2021,23222,12%
+Atwater Village,2021,11812,11%
+East Whittier,2021,9602,10%
+El Sereno,2021,40415,13%
+Montecito Heights,2021,17505,13%
+Florence,2021,49011,14%
+Huntington Park,2021,59917,14%
+Cheviot Hills,2021,8146,8%
+Cypress Park,2021,9172,14%
+Desert View Highlands,2021,1946,11%
+Baldwin Park,2021,75220,12%
+Montebello,2021,62443,13%
+Leimert Park,2021,12310,15%
+Santa Clarita,2021,175663,8%
+Elysian Park,2021,2273,16%
+Wilmington,2021,54489,13%
+Jefferson Park,2021,24203,15%
+Downtown,2021,48269,15%
+Encino,2021,43389,9%
+West Adams,2021,22661,14%
+Hawaiian Gardens,2021,14727,13%
+Agoura Hills,2021,17159,8%
+Baldwin Hills/Crenshaw,2021,29446,16%
+Lake View Terrace,2021,13724,12%
+Adams-Normandie,2021,17879,14%
+El Monte,2021,107777,14%
+Rancho Dominguez,2021,2342,14%
+Acton,2021,3155,9%
+Studio City,2021,36367,7%
+La Puente,2021,40198,13%
+North Hollywood,2021,80370,10%
+Rosemead,2021,51579,15%
+San Marino,2021,13137,10%
+East San Gabriel,2021,20858,12%
+South Park,2021,33602,15%
+Burbank,2021,103085,9%
+Woodland Hills,2021,57889,8%
+Angeles Crest,2021,4462,10%
+East Compton,2021,12306,13%
+Chatsworth,2021,46156,10%
+Mayflower Village,2021,10199,12%
+Koreatown,2021,104789,12%
+South Gate,2021,94454,13%
+Elysian Valley,2021,7415,13%
+Claremont,2021,38455,9%
+Avocado Heights,2021,13501,12%
+South San Gabriel,2021,8422,14%
+Northwest Antelope Valley,2021,5434,11%
+Echo Park,2021,34216,10%
+Lynwood,2021,68631,13%
+Unincorporated Santa Susana Mountains,2021,23613,8%
+Shadow Hills,2021,13667,10%
+La Habra Heights,2021,8621,10%
+Covina,2021,53845,11%
+Northwest Palmdale,2021,3838,10%
+Sawtelle,2021,37717,7%
+Rancho Park,2021,5393,8%
+East Los Angeles,2021,125326,14%
+Beverlywood,2021,7125,7%
+Bellflower,2021,76541,11%
+Azusa,2021,45385,11%
+Del Rey,2021,28454,10%
+Mid-Wilshire,2021,41330,8%
+North Whittier,2021,6799,11%
+Beverly Crest,2021,11701,9%
+Cerritos,2021,49082,12%
+West Hills,2021,37390,9%
+Vincent,2021,13266,10%
+Sun Village,2021,1748,14%
+Playa del Rey,2021,11196,7%
+Valinda,2021,18889,11%
+Tujunga,2021,27671,11%
+Exposition Park,2021,33771,14%
+Eagle Rock,2021,32762,10%
+Harbor City,2021,24093,12%
+Southeast Antelope Valley,2021,8368,12%
+Reseda,2021,67336,11%
+Willowbrook,2021,35471,15%
+Highland Park,2021,52249,12%
+Temple City,2021,36251,12%
+Westlake Village,2021,7685,8%
+Pico-Robertson,2021,17144,7%
+Monrovia,2021,38309,10%
+Broadway-Manchester,2021,26177,15%
+Sunland,2021,14182,10%
+Agua Dulce,2021,4186,9%
+Malibu,2021,9493,8%
+Topanga,2021,7142,8%
+Northeast Antelope Valley,2021,23084,14%
+Arleta,2021,34503,11%
+Van Nuys,2021,106111,12%
+Mar Vista,2021,35277,8%
+Valley Glen,2021,57015,11%
+Arcadia,2021,59985,11%
+Windsor Square,2021,6430,10%
+West Puente Valley,2021,19745,13%
+Central-Alameda,2021,43859,15%
+Arlington Heights,2021,21135,14%
+Harvard Heights,2021,18202,15%
+Harvard Park,2021,9686,15%
+East Hollywood,2021,67496,13%
+Lennox,2021,19872,13%
+Larchmont,2021,8028,9%
+Tarzana,2021,36160,9%
+Rolling Hills,2021,3055,10%
+Mid-City,2021,52453,12%
+Westchester,2021,39725,8%
+Manchester Square,2021,11363,16%
+Rowland Heights,2021,42131,12%
+Ridge Route,2021,7017,9%
+South San Jose Hills,2021,20188,12%
+Vermont-Slauson,2021,27605,16%
+Athens,2021,9176,13%
+Mount Washington,2021,14229,11%
+West Compton,2021,6673,16%
+Los Feliz,2021,32427,8%
+Chinatown,2021,13453,14%
+Century City,2021,5729,9%
+Florence-Firestone,2021,62047,14%
+University Park,2021,22330,8%
+Hollywood Hills West,2021,14723,7%
+Unincorporated Santa Monica Mountains,2021,22714,8%
+West Los Angeles,2021,12364,7%
+Hancock Park,2021,10387,8%
+Canoga Park,2021,54041,10%
+Chesterfield Square,2021,8083,15%
+Hidden Hills,2021,2361,7%
+Norwalk,2021,104879,12%
+North El Monte,2021,2360,13%
+Monterey Park,2021,60473,16%
+Hollywood,2021,71819,9%
+Fairfax,2021,13626,6%
+Glassell Park,2021,23826,12%
+Watts,2021,41096,15%
+La Verne,2021,30401,10%
+Rancho Palos Verdes,2021,40900,10%
+Green Meadows,2021,33245,14%
+Del Aire,2021,8958,10%
+Vermont Knolls,2021,22128,15%
+Castaic,2021,10971,7%
+Westwood,2021,50701,6%
+Venice,2021,35418,7%
+South Diamond Bar,2021,4763,9%
+Universal City,2021,142,7%
+Pacific Palisades,2021,23916,8%
+Bel-Air,2021,7809,8%
+East Pasadena,2021,5726,11%
+Cudahy,2021,24209,13%
+Palos Verdes Estates,2021,13113,10%
+Ladera Heights,2021,11497,12%
+Walnut Park,2021,15798,14%
+La Crescenta-Montrose,2021,18932,9%
+Gardena,2021,58507,14%
+Duarte,2021,21095,12%
+La Mirada,2021,48466,10%
+Maywood,2021,25688,14%
+Alondra Park,2021,8653,11%
+Beverly Grove,2021,20877,6%
+Vermont Vista,2021,24863,16%
+Lawndale,2021,32544,11%
+Hyde Park,2021,36554,16%
+Lomita,2021,19886,10%
+South Pasadena,2021,25474,9%
+Westmont,2021,31732,16%
+San Pasqual,2021,2018,9%
+West Hollywood,2021,34330,7%
+Artesia,2021,16458,12%
+Manhattan Beach,2021,35013,7%
+West Carson,2021,21630,12%
+Hermosa Beach,2021,19448,5%
+Carthay,2021,5281,7%
+Beverly Hills,2021,34058,8%
+El Segundo,2021,16576,7%
+View Park-Windsor Hills,2021,11053,14%
+Sierra Madre,2021,10900,9%
+Gramercy Park,2021,10354,17%
+Aggregated,2021,9777030,11%

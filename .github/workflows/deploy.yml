@@ -31,12 +31,9 @@ jobs:
       - name: Install deps
         run: |
           pip install -r requirements.txt
-          # Install modules-specific dependencies if they exist
-          if [ -f modules/requirements.txt ]; then pip install -r modules/requirements.txt; fi
 
       - name: Build the book
         run: |
-          cd modules
           set -e
           jupyter book build --html || jupyter-book build --html
           [ -d "_build/site" ] && cp -r _build/site _build/html || [ -d "_build/html" ]
@@ -44,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./modules/_build/html
+          path: ./_build/html
 
   deploy:
     needs: build
