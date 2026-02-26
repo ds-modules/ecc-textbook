@@ -194,4 +194,4 @@ cython_debug/
 .cursorindexingignore
 
 # HTML Build
-modules/_build/**/*
+_build/*
