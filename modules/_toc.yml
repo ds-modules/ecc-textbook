@@ -46,6 +46,12 @@ parts:
 - caption: Physics
   chapters:
   - file: ecc-physics/PKA_ATP_SingleMolecule_Kinetics
+- caption: Psychology
+  chapters:
+  - file: ecc-psychology/resume/InvJNB-ResumeCallbacks-NameRace-COMPLETE
+  - file: ecc-psychology/resume/InvJNB-ResumeCallbacks-NameRace-STUDENT
+  - file: ecc-psychology/soccer/InvJNB-BirthMonthSoccer-COMPLETE
+  - file: ecc-psychology/soccer/InvJNB-BirthMonthSoccer-STUDENT
 - caption: Sociology
   chapters:
   - file: ecc-sociology/Incarcerations/Incarcerations
