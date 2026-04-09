@@ -66,6 +66,11 @@ project:
     - file: ecc-ethnic-studies/Incarceration/otter.ipynb
     - file: ecc-ethnic-studies/introduction/introduction.ipynb
     - file: ecc-ethnic-studies/race-and-health/Health.ipynb
+  - title: Music
+    children:
+    - file: ecc-music/history-of-music/spotify-by-genre.ipynb
+    - file: ecc-music/history-of-rock/history-of-rock.ipynb
+    - file: ecc-music/jazz-licks/jazz_licks.ipynb
   - title: Physics
     children:
     - file: ecc-physics/PKA_ATP_SingleMolecule_Kinetics.ipynb
