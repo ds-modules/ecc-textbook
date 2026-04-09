@@ -1,0 +1,7 @@
+# Required for notebook parsing (nbgitpull / Jupyter)
+nbformat>=5.0.0
+
+# Runtime dependencies for sampling_distribution notebook (from utils.py)
+numpy
+matplotlib
+seaborn

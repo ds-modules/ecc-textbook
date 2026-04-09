@@ -1,3 +1,5 @@
+from math import log
+
 import pandas as pd 
 import numpy as np
 import ipywidgets as widgets
@@ -90,6 +92,103 @@ def plot_geometric(p=0.5, highlight=3):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
 
     plt.show()
+
+
+def plot_poisson_pmf_example(lam=5, k_highlight=7):
+    """Plot Poisson(lam) PMF with one value highlighted — illustrates P(X = k)."""
+    k_vals = np.arange(0, 16)
+    pmf_vals = stats.poisson.pmf(k_vals, lam)
+
+    plt.figure(figsize=(9, 4))
+    bars = plt.bar(k_vals, pmf_vals, color='steelblue', edgecolor='black')
+    if k_highlight < len(bars):
+        bars[k_highlight].set_color('orange')
+        bars[k_highlight].set_edgecolor('black')
+    plt.axhline(stats.poisson.pmf(k_highlight, lam), color='orange', linestyle='--', alpha=0.7)
+    plt.xlabel("k (number of events)")
+    plt.ylabel("P(X = k)")
+    plt.title(f"Poisson(λ={lam}) PMF — P(X = {k_highlight}) = {stats.poisson.pmf(k_highlight, lam):.4f}")
+    plt.xticks(k_vals)
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_poisson_cdf_example(lam=5, k_max=2):
+    """Plot Poisson(lam) PMF with k=0..k_max highlighted — illustrates P(X ≤ k)."""
+    k_vals = np.arange(0, 16)
+    pmf_vals = stats.poisson.pmf(k_vals, lam)
+    cdf_val = stats.poisson.cdf(k_max, lam)
+
+    plt.figure(figsize=(9, 4))
+    colors = ['orange' if k <= k_max else 'steelblue' for k in k_vals]
+    plt.bar(k_vals, pmf_vals, color=colors, edgecolor='black')
+    plt.axhline(cdf_val, color='green', linestyle='--', alpha=0.8, label=f'P(X ≤ {k_max}) = {cdf_val:.4f} (accumulation)')
+    # Vertical line at the right edge of the bin at k_max (default bar width 0.8)
+    x_end = k_max + 0.5
+    plt.plot([x_end, x_end], [0, cdf_val], color='green', linestyle='--', alpha=0.8)
+    plt.xlabel("k (number of events)")
+    plt.ylabel("P(X = k)")
+    plt.title(f"Poisson(λ={lam}) — orange bars k=0,...,{k_max}; green line = accumulation (sum) = P(X ≤ {k_max})")
+    plt.xticks(k_vals)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def geometric_walkthrough_visualizer(p_example=0.44, k_example=3, target_prob=0.30):
+    """Interactive visualizer that mirrors the two geometric walkthrough questions."""
+    max_k = 10
+
+    # --- Scenario 1: Probability of resolving on the k-th call with given p_example ---
+    ks = np.arange(1, max_k + 1)
+    pmf_example = stats.geom.pmf(ks, p_example)
+
+    # --- Scenario 2: For p = 0.5, how many calls until probability ~ target_prob? ---
+    p_q2 = 0.5
+    ks_q2 = np.arange(1, max_k + 1)
+    pmf_q2 = (1 - p_q2) ** (ks_q2 - 1) * p_q2
+
+    # Solve (0.5)^k ≈ target_prob  (from the walkthrough)
+    k_star = log(target_prob) / log(0.5)
+    nearest_k = int(round(k_star))
+    nearest_k = max(1, min(max_k, nearest_k))  # keep in range
+
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+
+    # Plot for Scenario 1
+    axes[0].bar(ks, pmf_example, color="lightgray", edgecolor="black")
+    if 1 <= k_example <= max_k:
+        axes[0].bar(k_example, pmf_example[k_example - 1], color="C0", edgecolor="black")
+    axes[0].set_xticks(ks)
+    axes[0].set_xlabel("Call number (k)")
+    axes[0].set_ylabel("P(X = k)")
+    axes[0].set_title(f"Scenario 1: P(X = k) with p = {p_example:.2f}")
+    if 1 <= k_example <= max_k:
+        axes[0].text(
+            k_example,
+            pmf_example[k_example - 1],
+            f"  k={k_example}, P≈{pmf_example[k_example - 1]:.3f}",
+            va="bottom",
+        )
+
+    # Plot for Scenario 2 (p fixed at 0.5)
+    axes[1].bar(ks_q2, pmf_q2, color="lightgray", edgecolor="black")
+    axes[1].bar(nearest_k, pmf_q2[nearest_k - 1], color="C1", edgecolor="black")
+    axes[1].set_xticks(ks_q2)
+    axes[1].set_xlabel("Call number (k)")
+    axes[1].set_ylabel("P(X = k)")
+    axes[1].set_title("Scenario 2: p = 0.5, target probability")
+    axes[1].text(
+        nearest_k,
+        pmf_q2[nearest_k - 1],
+        f"  k≈{k_star:.2f} (nearest k={nearest_k})",
+        va="bottom",
+    )
+
+    fig.suptitle("Geometric distribution - call-center walkthrough", fontsize=12)
+    plt.tight_layout()
+    plt.show()
+
 
 ### ---- MULTIPLE-CHOICE QUESTIONS ---- ###
 

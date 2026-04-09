@@ -91,3 +91,53 @@ def mean_range_tables(calculate_mean, calculate_range, calculate_probability):
         probability = frequency / total_samples
         print(f"| {range_val:<16.2f} | {frequency:<9} | {probability:<16.4f} |")
     print(f"Mean of Sample Ranges: {np.mean(sample_ranges)}")
+
+
+def std_var_tables(standard_deviation, variance):
+    ages = [56, 49, 59, 46]
+    all_samples = []
+    for age1 in ages:
+        for age2 in ages:
+            all_samples.append([age1, age2])
+
+    print("Calculated Sample Standard Deviations and Variances:")
+    sample_standard_deviations = []
+    sample_variances = []
+
+    for sample in all_samples:
+        age1 = sample[0]
+        age2 = sample[1]
+        std_result = standard_deviation(age1, age2)
+        var_result = variance(age1, age2)
+        sample_standard_deviations.append(std_result)
+        sample_variances.append(var_result)
+        print(f"Sample: {sample}, Standard Deviation: {std_result}, Variance: {var_result}")
+
+    print('\n')
+    print("---Probability Distribution of Sample Standard Deviation ---")
+    std_counts = Counter(sample_standard_deviations)
+    total_samples = len(all_samples)
+
+    print("| Sample Std Dev (s) | Frequency | Probability P(s) |")
+    print("|--------------------+-----------+------------------|")
+    for std_val in sorted(std_counts.keys()):
+        frequency = std_counts[std_val]
+        probability = frequency / total_samples
+        print(f"| {std_val:<18} | {frequency:<9} | {probability:<16.4f} |")
+
+    if all(isinstance(x, (int, float)) for x in sample_standard_deviations):
+        print(f"Mean of Sample Standard Deviations: {np.mean(sample_standard_deviations)}")
+
+    print('\n')
+    print("--- Probability Distribution of Sample Variance ---")
+    var_counts = Counter(sample_variances)
+
+    print("| Sample Variance (s^2) | Frequency | Probability P(s^2) |")
+    print("|-----------------------+-----------+--------------------|")
+    for var_val in sorted(var_counts.keys()):
+        frequency = var_counts[var_val]
+        probability = frequency / total_samples
+        print(f"| {var_val:<21} | {frequency:<9} | {probability:<18.4f} |")
+
+    if all(isinstance(x, (int, float)) for x in sample_variances):
+        print(f"Mean of Sample Variances: {np.mean(sample_variances)}")

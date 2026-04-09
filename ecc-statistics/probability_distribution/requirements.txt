@@ -1,0 +1,11 @@
+# Required for notebook parsing (nbgitpull / Jupyter)
+nbformat>=5.0.0
+
+# Runtime dependencies for Probability-Distributions notebook (from functions/utils.py)
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+ipywidgets
+otter-grader

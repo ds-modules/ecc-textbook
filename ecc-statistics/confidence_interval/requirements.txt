@@ -1,0 +1,9 @@
+# Dependencies for confidence_interval notebook
+numpy
+pandas
+otter-grader
+scipy
+matplotlib
+seaborn
+ipywidgets
+ipython

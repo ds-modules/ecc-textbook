@@ -29,3 +29,13 @@ def uniform():
          a=widgets.IntSlider(min=0, max=20, step=1, value=0, description="a"),
          b=widgets.IntSlider(min=1, max=30, step=1, value=10, description="b"),
          highlight=widgets.IntSlider(min=0, max=30, step=1, value=5, description="X=x"));
+
+
+def geometric_walkthrough():
+    """Launch the interactive geometric walkthrough visualizer."""
+    interact(
+        geometric_walkthrough_visualizer,
+        p_example=widgets.FloatSlider(value=0.44, min=0.1, max=0.9, step=0.02, description="p (example)"),
+        k_example=widgets.IntSlider(value=3, min=1, max=10, description="k (call #)"),
+        target_prob=widgets.FloatSlider(value=0.30, min=0.05, max=0.9, step=0.05, description="Target prob (Q2)"),
+    )

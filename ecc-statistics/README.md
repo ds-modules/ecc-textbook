@@ -2,6 +2,9 @@
 
 Repository for Statistics Modules for El Camino College
 
+[View the Statistics notebooks through JupyterBook](https://ds-modules.github.io/ecc-textbook/anova/)
+
+
 ![img](https://raw.githubusercontent.com/ds-modules/ecc-textbook/refs/heads/main/modules/_static/ecc-header.png)
 
 ## Launch ANOVA notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fanova%2Fanova.ipynb)
@@ -12,4 +15,9 @@ Repository for Statistics Modules for El Camino College
 
 ## Launch Probability Distribution notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fprobability_distribution%2FProbability-Distributions.ipynb)
 
+## Launch Confidence Interval notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fconfidence_interval%2Fdist%2Fstudent%2Fconfidence_interval.ipynb)
+
 ## [Instructor Copy for 2025 conference - sampling distribution](https://jupyter.cal-icor.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fsampling_distribution%2Fsampling_distribution-Instructor_copy.ipynb) 
+
+
+
