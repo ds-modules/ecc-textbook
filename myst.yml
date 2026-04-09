@@ -16,6 +16,10 @@ project:
     output: exports/book.pdf
   toc:
   - file: intro.md
+  - title: Artificial Intelligence
+    children:
+    - file: ecc-ai/chatbot/intro_api_keys_chatbot.ipynb
+    - file: ecc-ai/small-models/ElCaminoIntrotoAI.ipynb
   - title: Biology
     children:
     - file: ecc-biology/Air Quality/environmental-justice.ipynb
