@@ -61,8 +61,20 @@ def show_interactive_correlation():
     draw()
 
 
-def show_interactive_line_tuner(x, y, a, b, x_range, y_hat):
+def show_interactive_line_tuner(
+    x,
+    y,
+    a,
+    b,
+    x_range,
+    y_hat,
+    *,
+    x_label="Points Per Game",
+    y_label="Salary",
+    money_yaxis=True,
+):
     """Interactive visual to compare a user-selected line with least-squares."""
+    y_spread = float(np.std(y))
     b_try = widgets.FloatSlider(
         value=float(b),
         min=float(b * 0.2),
@@ -72,15 +84,26 @@ def show_interactive_line_tuner(x, y, a, b, x_range, y_hat):
         style={"description_width": "initial"},
         layout=widgets.Layout(width="500px"),
     )
-    a_try = widgets.FloatSlider(
-        value=float(a),
-        min=float(a - 8_000_000),
-        max=float(a + 8_000_000),
-        step=100_000,
-        description="Your intercept a:",
-        style={"description_width": "initial"},
-        layout=widgets.Layout(width="500px"),
-    )
+    if money_yaxis:
+        a_try = widgets.FloatSlider(
+            value=float(a),
+            min=float(a - 8_000_000),
+            max=float(a + 8_000_000),
+            step=100_000,
+            description="Your intercept a:",
+            style={"description_width": "initial"},
+            layout=widgets.Layout(width="500px"),
+        )
+    else:
+        a_try = widgets.FloatSlider(
+            value=float(a),
+            min=float(a - 4 * y_spread),
+            max=float(a + 4 * y_spread),
+            step=max(y_spread / 80, 0.05),
+            description="Your intercept a:",
+            style={"description_width": "initial"},
+            layout=widgets.Layout(width="500px"),
+        )
     out = widgets.Output()
 
     def draw(*_):
@@ -105,10 +128,11 @@ def show_interactive_line_tuner(x, y, a, b, x_range, y_hat):
                 linestyle="--",
                 label="Your line",
             )
-            ax.set_xlabel("Points Per Game")
-            ax.set_ylabel("Salary")
+            ax.set_xlabel(x_label)
+            ax.set_ylabel(y_label)
             ax.set_title("Compare Your Line vs Least-Squares Line")
-            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v/1e6:.1f}M"))
+            if money_yaxis:
+                ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v/1e6:.1f}M"))
             ax.legend()
             plt.tight_layout()
             plt.show()
@@ -124,14 +148,26 @@ def show_interactive_line_tuner(x, y, a, b, x_range, y_hat):
     draw()
 
 
-def show_prediction_slider(x, y, a, b, x_range, y_hat):
-    """Interactive visual for salary prediction from a chosen points value."""
+def show_prediction_slider(
+    x,
+    y,
+    a,
+    b,
+    x_range,
+    y_hat,
+    *,
+    x_label="Points Per Game",
+    y_label="Salary",
+    money_yaxis=True,
+    slider_description="Points per game:",
+):
+    """Interactive visual for prediction from a chosen x value (salary or plain y)."""
     slider = widgets.FloatSlider(
         value=round(float(x.mean()), 1),
         min=round(float(x.min()), 1),
         max=round(float(x.max()), 1),
         step=0.1,
-        description="Points per game:",
+        description=slider_description,
         style={"description_width": "initial"},
         layout=widgets.Layout(width="480px"),
     )
@@ -147,18 +183,23 @@ def show_prediction_slider(x, y, a, b, x_range, y_hat):
             ax.scatter(x, y, alpha=0.3, color="steelblue", edgecolors="white", s=55)
             ax.plot(x_range, y_hat, color="crimson", linewidth=2, label="Regression line")
             ax.axvline(x=x_in, color="orange", linestyle="--", alpha=0.6)
-            ax.scatter([x_in], [y_pred], color="orange", s=200, zorder=5, label=f"Predicted: ${y_pred/1e6:.2f}M")
+            pred_lbl = f"Predicted: ${y_pred/1e6:.2f}M" if money_yaxis else f"Predicted: {y_pred:.1f}"
+            ax.scatter([x_in], [y_pred], color="orange", s=200, zorder=5, label=pred_lbl)
+            ann = f"  ${y_pred/1e6:.2f}M" if money_yaxis else f"  {y_pred:.1f}"
             ax.annotate(
-                f"  ${y_pred/1e6:.2f}M",
+                ann,
                 xy=(x_in, y_pred),
                 fontsize=12,
                 color="darkorange",
                 xytext=(x_in + 0.3, y_pred),
             )
-            ax.set_xlabel("Points Per Game", fontsize=12)
-            ax.set_ylabel("Salary", fontsize=12)
-            ax.set_title(f"Predicted Salary for {x_in:.1f} points/game", fontsize=13)
-            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v/1e6:.1f}M"))
+            ax.set_xlabel(x_label, fontsize=12)
+            ax.set_ylabel(y_label, fontsize=12)
+            if money_yaxis:
+                ax.set_title(f"Predicted Salary for {x_in:.1f} points/game", fontsize=13)
+                ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v/1e6:.1f}M"))
+            else:
+                ax.set_title(f"Predicted {y_label} for {x_label.lower()} = {x_in:.1f}", fontsize=13)
             ax.legend(fontsize=11)
             plt.tight_layout()
             plt.show()

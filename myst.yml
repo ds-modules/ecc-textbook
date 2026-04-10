@@ -51,6 +51,11 @@ project:
     - file: ecc-cis/Stock_Market_Analysis_Lab.ipynb
     - file: ecc-cis/cis13/Intro_to_Databases.ipynb
     - file: ecc-cis/cis13/Intro_to_Jupyter.ipynb
+    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow.ipynb
+    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Advanced.ipynb
+    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Basic.ipynb
+    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Exercises.ipynb
+    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Instructor.ipynb
   - title: CS 9
     children:
     - file: ecc-cs9/ECC CalEnviroScreen.ipynb
@@ -92,9 +97,12 @@ project:
     children:
     - file: ecc-statistics/anova/anova.ipynb
     - file: ecc-statistics/confidence_interval/confidence_interval.ipynb
+    - file: ecc-statistics/confidence_interval/dist/autograder/confidence_interval.ipynb
+    - file: ecc-statistics/confidence_interval/dist/student/confidence_interval.ipynb
     - file: ecc-statistics/data_representation/Data-Rep-Module.ipynb
     - file: ecc-statistics/hypothesis_testing/hypothesis_testing.ipynb
     - file: ecc-statistics/linear_regression/linear_regression.ipynb
+    - file: ecc-statistics/linear_regression/linear_regression_instructor.ipynb
     - file: ecc-statistics/probability_distribution/Probability-Distributions.ipynb
     - file: ecc-statistics/sampling_distribution/sampling_distribution.ipynb
     - file: ecc-statistics/sampling_distribution/sampling_distribution_solutions.ipynb

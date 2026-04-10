@@ -97,8 +97,15 @@ def show_hypothesis_tails():
                 ax.axvline(z_crit, color=COLORS["crit"], linestyle="--", linewidth=1.8, label=f"Critical value {z_crit:.2f}")
                 ax.set_title(f"Right-Tailed Test  |  α = {alpha:.2f}  →  reject if z > {z_crit:.2f}", fontsize=12)
 
-            ax.text(0, max(y) * 0.45, "Fail to\nReject H₀", ha="center", fontsize=10,
-                    color=COLORS["null"], fontweight="bold")
+            ax.text(
+                0,
+                max(y) * 0.45,
+                r"Fail to\nReject $H_0$",
+                ha="center",
+                fontsize=10,
+                color=COLORS["null"],
+                fontweight="bold",
+            )
             ax.legend(fontsize=9)
             ax.set_xlim(-4, 4)
             plt.tight_layout()
@@ -147,7 +154,13 @@ def show_error_visual():
             fig, ax = plt.subplots(figsize=(9, 4.5))
 
             # distributions
-            ax.plot(x, y_null, color=COLORS["null"],  linewidth=2.2, label="H₀ distribution (assumed)")
+            ax.plot(
+                x,
+                y_null,
+                color=COLORS["null"],
+                linewidth=2.2,
+                label=r"$H_0$ distribution (assumed)",
+            )
             ax.plot(x, y_true, color=COLORS["alt"],   linewidth=2.2, label="True distribution (Ha)")
 
             # Type I error: area under H0 curve beyond critical value
@@ -293,9 +306,9 @@ def show_cdf_tail_visuals():
 
             fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
             titles = [
-                f"Left tail: CDF = P(X ≤ x₀) = {left_area:.4f}",
-                f"Right tail: P(X > x₀) = 1 - CDF = {right_area:.4f}",
-                f"Two-tailed: 2*(1-CDF(|x₀|)) = {two_area:.4f}",
+                fr"Left tail: CDF = $P(X \leq x_0) = {left_area:.4f}$",
+                fr"Right tail: $P(X > x_0) = 1 - \mathrm{{CDF}} = {right_area:.4f}$",
+                fr"Two-tailed: $2(1-\mathrm{{CDF}}(|x_0|)) = {two_area:.4f}$",
             ]
 
             # Left tail
@@ -321,7 +334,7 @@ def show_cdf_tail_visuals():
             for ax in axes:
                 ax.set_xlim(-4.5, 4.5)
                 ax.set_yticks([])
-                ax.set_xlabel(f"Observed stat x₀ = {x0:.2f}")
+                ax.set_xlabel(fr"Observed stat $x_0$ = {x0:.2f}")
             axes[0].set_ylabel("Density")
             fig.suptitle(f"CDF and Tail Areas on {label} distribution", fontsize=12, y=1.03)
             plt.tight_layout()
