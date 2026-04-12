@@ -22,6 +22,14 @@ COLORS = {
 }
 
 
+def _float_text(**kwargs):
+    """FloatText whose .value tracks the box while typing (ipywidgets ≥7)."""
+    try:
+        return widgets.FloatText(**kwargs, continuous_update=True)
+    except TypeError:
+        return widgets.FloatText(**kwargs)
+
+
 # ── 1. Hypothesis Tails Visual ───────────────────────────────────────────────
 def show_hypothesis_tails():
     """
@@ -210,17 +218,21 @@ def show_pvalue_visual(test_stat, tail, df=None, distribution="t"):
     y = stats.t.pdf(x, df) if use_t else stats.norm.pdf(x)
     dist_label = f"t (df={df})" if use_t else "Standard Normal (z)"
 
+    # One-sided p-values must use the signed statistic (sf/cdf), not P(Z > |z|).
     if use_t:
-        p_right = 1 - stats.t.cdf(abs(test_stat), df)
+        if tail == "two":
+            p_val = 2 * stats.t.sf(abs(test_stat), df)
+        elif tail == "right":
+            p_val = stats.t.sf(test_stat, df)
+        else:
+            p_val = stats.t.cdf(test_stat, df)
     else:
-        p_right = 1 - stats.norm.cdf(abs(test_stat))
-
-    if tail == "two":
-        p_val = 2 * p_right
-    elif tail == "right":
-        p_val = p_right
-    else:  # left
-        p_val = 1 - p_right
+        if tail == "two":
+            p_val = 2 * stats.norm.sf(abs(test_stat))
+        elif tail == "right":
+            p_val = stats.norm.sf(test_stat)
+        else:
+            p_val = stats.norm.cdf(test_stat)
 
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.plot(x, y, color=COLORS["null"], linewidth=2.5, label=dist_label)
@@ -361,7 +373,8 @@ def show_ttest_sandbox(nba_clean):
         description="Column:",
         style={"description_width": "initial"},
     )
-    mu0_box = widgets.FloatText(
+    # Sync .value while typing so "Run" matches what's in the box (not last Enter/blur).
+    mu0_box = _float_text(
         value=5_000_000 if "Salary" in numeric_cols else 10.0,
         description="H₀ mean (μ₀):",
         style={"description_width": "initial"},
@@ -373,7 +386,7 @@ def show_ttest_sandbox(nba_clean):
         description="Tail:",
         style={"description_width": "initial"},
     )
-    alpha_box = widgets.FloatText(
+    alpha_box = _float_text(
         value=0.05,
         description="α:",
         style={"description_width": "initial"},
@@ -430,8 +443,13 @@ def show_ttest_sandbox(nba_clean):
                 ax.axvline(t_plot, color=COLORS["reject"], linestyle="--", linewidth=2,
                            label=f"t = {t_stat:.3f}")
 
-            decision = "✅ Reject H₀" if p_val < alpha else "❌ Fail to Reject H₀"
-            ax.set_title(f"{col}:  H₀: μ = {mu0:,.1f}   →   {decision}", fontsize=12)
+            reject = p_val < alpha
+            decision_plain = "Reject H0" if reject else "Fail to reject H0"
+            decision_title = r"Reject $H_0$" if reject else r"Fail to reject $H_0$"
+            ax.set_title(
+                rf"{col}: $H_0$: $\mu = {mu0:,.1f}$  $\rightarrow$  {decision_title}",
+                fontsize=12,
+            )
             ax.set_xlabel("t statistic", fontsize=12)
             ax.set_yticks([])
             ax.legend(fontsize=9)
@@ -444,7 +462,7 @@ def show_ttest_sandbox(nba_clean):
             print(f"  t statistic      = {t_stat:.4f}")
             print(f"  p-value          = {p_val:.4f}")
             print(f"  α                = {alpha}")
-            print(f"  Decision         : {decision}")
+            print(f"  Decision         : {decision_plain}")
 
     run_btn.on_click(_run)
     display(
@@ -468,13 +486,13 @@ def show_proportion_sandbox(nba_clean):
         description="Column:",
         style={"description_width": "initial"},
     )
-    threshold_box = widgets.FloatText(
+    threshold_box = _float_text(
         value=15.0,
         description="'Success' if ≥:",
         style={"description_width": "initial"},
         layout=widgets.Layout(width="240px"),
     )
-    p0_box = widgets.FloatText(
+    p0_box = _float_text(
         value=0.30,
         description="H₀ proportion (p₀):",
         style={"description_width": "initial"},
@@ -486,7 +504,7 @@ def show_proportion_sandbox(nba_clean):
         description="Tail:",
         style={"description_width": "initial"},
     )
-    alpha_box = widgets.FloatText(
+    alpha_box = _float_text(
         value=0.05,
         description="α:",
         style={"description_width": "initial"},
@@ -541,8 +559,13 @@ def show_proportion_sandbox(nba_clean):
                 ax.axvline(z_plot, color=COLORS["reject"], linestyle="--", linewidth=2,
                            label=f"z = {z_stat:.3f}")
 
-            decision = "✅ Reject H₀" if p_val < alpha else "❌ Fail to Reject H₀"
-            ax.set_title(f"Proportion of {col} ≥ {threshold}:  H₀: p = {p0}   →   {decision}", fontsize=11)
+            reject = p_val < alpha
+            decision_plain = "Reject H0" if reject else "Fail to reject H0"
+            decision_title = r"Reject $H_0$" if reject else r"Fail to reject $H_0$"
+            ax.set_title(
+                rf"Proportion of {col} $\geq$ {threshold}: $H_0$: $p = {p0}$  $\rightarrow$  {decision_title}",
+                fontsize=11,
+            )
             ax.set_xlabel("z statistic", fontsize=12)
             ax.set_yticks([])
             ax.legend(fontsize=9)
@@ -555,7 +578,7 @@ def show_proportion_sandbox(nba_clean):
             print(f"  z statistic          = {z_stat:.4f}")
             print(f"  p-value              = {p_val:.4f}")
             print(f"  α                    = {alpha}")
-            print(f"  Decision             : {decision}")
+            print(f"  Decision             : {decision_plain}")
 
     run_btn.on_click(_run)
     display(
