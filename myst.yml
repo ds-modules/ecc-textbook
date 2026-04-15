@@ -8,8 +8,6 @@ project:
   bibliography:
   - references.bib
   jupyter: true
-  execute:
-    execute_notebooks: auto
   exports:
   - format: pdf
     template: plain_latex_book
