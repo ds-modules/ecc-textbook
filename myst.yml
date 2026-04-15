@@ -47,6 +47,7 @@ project:
   - title: Computer Information Systems
     children:
     - file: ecc-cis/Stock_Market_Analysis_Lab.ipynb
+    - file: ecc-cis/cis13/AI_in_Information_Systems.ipynb
     - file: ecc-cis/cis13/Intro_to_Databases.ipynb
     - file: ecc-cis/cis13/Intro_to_Jupyter.ipynb
     - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow.ipynb
