@@ -19,6 +19,8 @@ Repository for Statistics Modules for El Camino College
 
 ## Launch Hypothesis Testing notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fhypothesis_testing%2Fhypothesis_testing.ipynb)
 
+## Launch Linear Regression notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Flinear_regression%2Flinear_regression.ipynb)
+
 ## [Instructor Copy for 2025 conference - sampling distribution](https://jupyter.cal-icor.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fsampling_distribution%2Fsampling_distribution-Instructor_copy.ipynb) 
 
 
