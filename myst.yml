@@ -46,6 +46,8 @@ project:
     - file: ecc-child-development/parental-risk.ipynb
   - title: Computer Information Systems
     children:
+    - file: ecc-cis/CIS182/AI_Ethics_in_Data_Science.ipynb
+    - file: ecc-cis/CIS182/ai_trolley_problem_notebook.ipynb
     - file: ecc-cis/Stock_Market_Analysis_Lab.ipynb
     - file: ecc-cis/cis13/AI_in_Information_Systems.ipynb
     - file: ecc-cis/cis13/Intro_to_Databases.ipynb
@@ -96,8 +98,6 @@ project:
     children:
     - file: ecc-statistics/anova/anova.ipynb
     - file: ecc-statistics/confidence_interval/confidence_interval.ipynb
-    - file: ecc-statistics/confidence_interval/dist/autograder/confidence_interval.ipynb
-    - file: ecc-statistics/confidence_interval/dist/student/confidence_interval.ipynb
     - file: ecc-statistics/data_representation/Data-Rep-Module.ipynb
     - file: ecc-statistics/hypothesis_testing/hypothesis_testing.ipynb
     - file: ecc-statistics/hypothesis_testing/hypothesis_testing_instructor.ipynb
