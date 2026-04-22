@@ -110,8 +110,13 @@ def show_interactive_line_tuner(
         if abs(b_float) >= 1e-15
         else max(y_spread / 80, 0.05, 1e-9)
     )
-    step_b = min(step_b, b_rng / 5) if b_rng > 0 else step_b
-    step_b = max(step_b, 1e-12)
+    if b_rng > 0:
+        step_b = min(step_b, b_rng / 5)
+        # Never let step exceed the slider span (traitlets rejects some combinations)
+        step_b = min(step_b, b_rng / 2.01)
+        step_b = max(step_b, min(b_rng / 200, b_rng / 2.01))
+    else:
+        step_b = 1e-12
 
     b_try = widgets.FloatSlider(
         value=b_val,
@@ -141,9 +146,14 @@ def show_interactive_line_tuner(
         half = max(4 * y_spread, 1.0)
         a_lo, a_hi = a_float - half, a_float + half
         a_min, a_max, a_val = _float_slider_range(a_lo, a_hi, a_float)
+        a_rng = a_max - a_min
         step_a = max(y_spread / 80, 0.05, 1e-9)
-        step_a = min(step_a, (a_max - a_min) / 5) if a_max > a_min else step_a
-        step_a = max(step_a, 1e-12)
+        if a_rng > 0:
+            step_a = min(step_a, a_rng / 5)
+            step_a = min(step_a, a_rng / 2.01)
+            step_a = max(step_a, min(a_rng / 200, a_rng / 2.01))
+        else:
+            step_a = 1e-12
         a_try = widgets.FloatSlider(
             value=a_val,
             min=a_min,
