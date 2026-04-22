@@ -7,21 +7,20 @@ Repository for Statistics Modules for El Camino College
 
 ![img](https://raw.githubusercontent.com/ds-modules/ecc-textbook/refs/heads/main/modules/_static/ecc-header.png)
 
-## Launch ANOVA notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fanova%2Fanova.ipynb)
 
-## Launch Sampling Distribution notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fsampling_distribution%2Fsampling_distribution.ipynb)
+## Launch Notebooks (DataHub)
 
-## Launch Data Representation notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fdata_representation%2FData-Rep-Module.ipynb)
+| Module | Notebook | Launch | Instructor's |
+|---|---|---|---|
+| ANOVA | `history-of-music/spotify-by-genre.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fanova%2Fanova.ipynb)| |
+| Sampling Distribution | `sampling_distribution/sampling_distribution.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fsampling_distribution%2Fsampling_distribution.ipynb)| |
+| Data Representation | `data_representation/data_representation.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fdata_representation%2FData-Rep-Module.ipynb)| |
+| Probability Distribution | `probability_distribution/probability_distribution.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fprobability_distribution%2FProbability-Distributions.ipynb)| |
+| Confidence Interval | `confidence_interval/confidence_interval.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fconfidence_interval%2Fdist%2Fstudent%2Fconfidence_interval.ipynb)| |
+| Hypothesis Testing | `hypothesis_testing/hypothesis_testing.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fhypothesis_testing%2Fhypothesis_testing.ipynb)| |
+| Linear Regression | `linear_regression/linear_regression.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Flinear_regression%2Flinear_regression.ipynb)| |
 
-## Launch Probability Distribution notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fprobability_distribution%2FProbability-Distributions.ipynb)
 
-## Launch Confidence Interval notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fconfidence_interval%2Fdist%2Fstudent%2Fconfidence_interval.ipynb)
-
-## Launch Hypothesis Testing notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fhypothesis_testing%2Fhypothesis_testing.ipynb)
-
-## Launch Linear Regression notebook on DataHub: [![Repo on DataHub](https://img.shields.io/badge/Launch-El%20Camino%20College%20Datahub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Flinear_regression%2Flinear_regression.ipynb)
-
-## [Instructor Copy for 2025 conference - sampling distribution](https://jupyter.cal-icor.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-statistics&branch=main&urlpath=tree%2Fecc-statistics%2Fsampling_distribution%2Fsampling_distribution-Instructor_copy.ipynb) 
 
 
 
