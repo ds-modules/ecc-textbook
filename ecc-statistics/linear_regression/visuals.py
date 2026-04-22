@@ -75,11 +75,19 @@ def show_interactive_line_tuner(
 ):
     """Interactive visual to compare a user-selected line with least-squares."""
     y_spread = float(np.std(y))
+    b_float = float(b)
+    low, high = b_float * 0.2, b_float * 1.8
+    if abs(b_float) < 1e-15:
+        sx = float(np.std(x))
+        span = (y_spread / sx) if sx > 1e-15 else 1.0
+        b_min, b_max = -abs(span), abs(span)
+    else:
+        b_min, b_max = min(low, high), max(low, high)
     b_try = widgets.FloatSlider(
-        value=float(b),
-        min=float(b * 0.2),
-        max=float(b * 1.8),
-        step=max(float(abs(b) * 0.02), 1e-6),
+        value=b_float,
+        min=b_min,
+        max=b_max,
+        step=max(abs(b_float) * 0.02, 1e-6) if abs(b_float) >= 1e-15 else max(y_spread / 80, 0.05, 1e-6),
         description="Your slope b:",
         style={"description_width": "initial"},
         layout=widgets.Layout(width="500px"),

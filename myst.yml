@@ -97,6 +97,8 @@ project:
     children:
     - file: ecc-statistics/anova/anova.ipynb
     - file: ecc-statistics/confidence_interval/confidence_interval.ipynb
+    - file: ecc-statistics/confidence_interval/dist/autograder/confidence_interval.ipynb
+    - file: ecc-statistics/confidence_interval/dist/student/confidence_interval.ipynb
     - file: ecc-statistics/data_representation/Data-Rep-Module.ipynb
     - file: ecc-statistics/hypothesis_testing/hypothesis_testing.ipynb
     - file: ecc-statistics/hypothesis_testing/hypothesis_testing_instructor.ipynb
