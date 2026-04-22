@@ -10,6 +10,22 @@ import ipywidgets as widgets
 from IPython.display import display, clear_output
 
 
+def _float_slider_range(lo: float, hi: float, value: float, *, eps: float = 1e-12):
+    """Return (min_, max_, clamped_value) with max_ > min_; works for negative slopes and edge cases."""
+    vmin = float(min(lo, hi))
+    vmax = float(max(lo, hi))
+    if not (np.isfinite(vmin) and np.isfinite(vmax)):
+        v = float(value) if np.isfinite(value) else 0.0
+        return v - 1.0, v + 1.0, v
+    if vmax - vmin < eps:
+        v = float(value) if np.isfinite(value) else (vmin + vmax) / 2
+        half = max(eps, abs(v) * 1e-9 if v != 0 else 1e-9)
+        vmin, vmax = v - half, v + half
+    v = float(value) if np.isfinite(value) else (vmin + vmax) / 2
+    v = min(max(v, vmin), vmax)
+    return vmin, vmax, v
+
+
 def show_interactive_correlation():
     """Interactive visual for correlation direction and strength."""
     r_slider = widgets.FloatSlider(
@@ -75,39 +91,64 @@ def show_interactive_line_tuner(
 ):
     """Interactive visual to compare a user-selected line with least-squares."""
     y_spread = float(np.std(y))
+    if not np.isfinite(y_spread):
+        y_spread = 1.0
     b_float = float(b)
+    if not np.isfinite(b_float):
+        b_float = 0.0
     low, high = b_float * 0.2, b_float * 1.8
     if abs(b_float) < 1e-15:
         sx = float(np.std(x))
         span = (y_spread / sx) if sx > 1e-15 else 1.0
-        b_min, b_max = -abs(span), abs(span)
+        span = max(abs(span), 1e-9)
+        b_min, b_max, b_val = _float_slider_range(-span, span, b_float)
     else:
-        b_min, b_max = min(low, high), max(low, high)
+        b_min, b_max, b_val = _float_slider_range(low, high, b_float)
+    b_rng = b_max - b_min
+    step_b = (
+        max(abs(b_float) * 0.02, 1e-9)
+        if abs(b_float) >= 1e-15
+        else max(y_spread / 80, 0.05, 1e-9)
+    )
+    step_b = min(step_b, b_rng / 5) if b_rng > 0 else step_b
+    step_b = max(step_b, 1e-12)
+
     b_try = widgets.FloatSlider(
-        value=b_float,
+        value=b_val,
         min=b_min,
         max=b_max,
-        step=max(abs(b_float) * 0.02, 1e-6) if abs(b_float) >= 1e-15 else max(y_spread / 80, 0.05, 1e-6),
+        step=step_b,
         description="Your slope b:",
         style={"description_width": "initial"},
         layout=widgets.Layout(width="500px"),
     )
+    a_float = float(a)
+    if not np.isfinite(a_float):
+        a_float = 0.0
     if money_yaxis:
+        a_lo, a_hi = a_float - 8_000_000, a_float + 8_000_000
+        a_min, a_max, a_val = _float_slider_range(a_lo, a_hi, a_float)
         a_try = widgets.FloatSlider(
-            value=float(a),
-            min=float(a - 8_000_000),
-            max=float(a + 8_000_000),
+            value=a_val,
+            min=a_min,
+            max=a_max,
             step=100_000,
             description="Your intercept a:",
             style={"description_width": "initial"},
             layout=widgets.Layout(width="500px"),
         )
     else:
+        half = max(4 * y_spread, 1.0)
+        a_lo, a_hi = a_float - half, a_float + half
+        a_min, a_max, a_val = _float_slider_range(a_lo, a_hi, a_float)
+        step_a = max(y_spread / 80, 0.05, 1e-9)
+        step_a = min(step_a, (a_max - a_min) / 5) if a_max > a_min else step_a
+        step_a = max(step_a, 1e-12)
         a_try = widgets.FloatSlider(
-            value=float(a),
-            min=float(a - 4 * y_spread),
-            max=float(a + 4 * y_spread),
-            step=max(y_spread / 80, 0.05),
+            value=a_val,
+            min=a_min,
+            max=a_max,
+            step=step_a,
             description="Your intercept a:",
             style={"description_width": "initial"},
             layout=widgets.Layout(width="500px"),
