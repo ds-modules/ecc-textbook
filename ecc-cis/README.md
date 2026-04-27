@@ -16,10 +16,9 @@ Repository for Computer Information Systems Modules for El Camino College
 
 
 ## CIS 13 Notebooks (Prof Le)
-
 ### Launch Notebooks (DataHub)
-
 | Module | Notebook | Launch |
 |---|---|---|
-| Intro to Jupyter and Python |  | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2Fcis13%2FIntro_to_Jupyter.ipynb)|
-| Intro to Databases and SQL | | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2Fcis13%2FIntro_to_Databases.ipynb)|
+| Intro to Jupyter and Python | `cis13/Intro_to_Jupyter.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2Fcis13%2FIntro_to_Jupyter.ipynb)|
+| Intro to Databases and SQL | `cis13/Intro_to_Databases.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2Fcis13%2FIntro_to_Databases.ipynb)|
+| AI in Information Systems | `cis13/AI_in_Information_Systems.ipynb` | [![Launch](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2Fcis13%2FAI_in_Information_Systems.ipynb)|
