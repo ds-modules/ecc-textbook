@@ -48,7 +48,7 @@ def fair_die_proportions(n_samples, sample_size, population):
     plt.show()
 
 def mean_range_tables(calculate_mean, calculate_range, calculate_probability):
-    ages = [56, 49, 59, 46]
+    ages = [56, 49, 58, 46]
     all_samples = []
     for age1 in ages:
         for age2 in ages:
@@ -94,7 +94,7 @@ def mean_range_tables(calculate_mean, calculate_range, calculate_probability):
 
 
 def std_var_tables(standard_deviation, variance):
-    ages = [56, 49, 59, 46]
+    ages = [56, 49, 58, 46]
     all_samples = []
     for age1 in ages:
         for age2 in ages:
