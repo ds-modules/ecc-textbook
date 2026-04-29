@@ -48,17 +48,16 @@ project:
     children:
     - file: ecc-cis/CIS182/AI_Ethics_in_Data_Science.ipynb
     - file: ecc-cis/CIS182/ai_trolley_problem_notebook.ipynb
-    - file: ecc-cis/Stock_Market_Analysis_Lab.ipynb
-    - file: ecc-cis/Stock_Market_Analysis_Part1.ipynb
-    - file: ecc-cis/Stock_Market_Analysis_Part2.ipynb
     - file: ecc-cis/cis119/rsa_quantum_lesson.ipynb
     - file: ecc-cis/cis13/AI_in_Information_Systems.ipynb
     - file: ecc-cis/cis13/Intro_to_Databases.ipynb
     - file: ecc-cis/cis13/Intro_to_Jupyter.ipynb
-    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow.ipynb
-    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Advanced.ipynb
-    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Basic.ipynb
-    - file: ecc-cis/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Exercises.ipynb
+    - file: ecc-cis/cis26/Stock_Market_Analysis_Part1.ipynb
+    - file: ecc-cis/cis26/Stock_Market_Analysis_Part2.ipynb
+    - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow.ipynb
+    - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Advanced.ipynb
+    - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Basic.ipynb
+    - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Exercises.ipynb
   - title: CS 9
     children:
     - file: ecc-cs9/ECC CalEnviroScreen.ipynb
