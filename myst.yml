@@ -54,7 +54,6 @@ project:
     - file: ecc-cis/cis13/Intro_to_Jupyter.ipynb
     - file: ecc-cis/cis26/Stock_Market_Analysis_Part1.ipynb
     - file: ecc-cis/cis26/Stock_Market_Analysis_Part2.ipynb
-    - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow.ipynb
     - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Advanced.ipynb
     - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Basic.ipynb
     - file: ecc-cis/cis26/excel_to_pandas_zillow/Excel_to_Pandas_Zillow_Exercises.ipynb
