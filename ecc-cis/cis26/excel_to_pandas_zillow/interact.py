@@ -3,6 +3,8 @@ Interactive widgets for Excel_to_Pandas_Zillow.ipynb.
 Used for: explore data, filter markets, pivot table builder, metro trends chart.
 """
 
+from io import BytesIO
+
 import pandas as pd
 import numpy as np
 from IPython.display import display, HTML
@@ -169,51 +171,113 @@ def metro_trends_widget(df):
         return
 
     try:
-        import matplotlib.pyplot as plt
+        from matplotlib.figure import Figure
     except ImportError:
         display(HTML("<p>matplotlib is required for metro_trends_widget. Install with: pip install matplotlib</p>"))
         return
 
     metros = sorted(df[name_col].dropna().unique().astype(str).tolist())
-    if len(metros) > 100:
-        metros = metros[:100]  # limit dropdown size
 
-    def _plot(metro_choices):
+    # Selection persists across search/filter; widget shows only the subset visible in the current filter.
+    state = {
+        "accumulated": {metros[0]} if metros else set(),
+        "last_rendered": None,
+    }
+    _suppress_observer = False
+
+    def _chart_png_bytes(metro_choices):
+        """Return PNG bytes for a single chart image (no display(); avoids duplicate rich-output renders)."""
+        fig = Figure(figsize=(12, 6))
+        ax = fig.subplots()
         if not metro_choices:
-            display(HTML("<p>Select at least one metro.</p>"))
-            return
-        sub = df[df[name_col].astype(str).isin(metro_choices)].copy()
-        if sub.empty:
-            display(HTML("<p>No data for selected metros.</p>"))
-            return
-        sub[date_col] = pd.to_datetime(sub[date_col])
-        pivot = sub.pivot_table(index=date_col, columns=name_col, values=value_col)
-        fig, ax = plt.subplots(figsize=(12, 6))
-        pivot.plot(ax=ax, linewidth=2)
-        ax.set_title("Home Value Over Time by Metro", fontsize=14, fontweight="bold")
-        ax.set_xlabel(date_col)
-        ax.set_ylabel(value_col)
-        ax.legend(title=name_col, fontsize=8)
-        ax.grid(True, alpha=0.3)
-        plt.xticks(rotation=45)
-        plt.tight_layout()
-        plt.show()
+            ax.text(0.5, 0.5, "Select at least one metro.", ha="center", va="center", fontsize=12)
+            ax.axis("off")
+        else:
+            sub = df[df[name_col].astype(str).isin(metro_choices)].copy()
+            if sub.empty:
+                ax.text(0.5, 0.5, "No data for selected metros.", ha="center", va="center", fontsize=12)
+                ax.axis("off")
+            else:
+                sub[date_col] = pd.to_datetime(sub[date_col])
+                pivot = sub.pivot_table(index=date_col, columns=name_col, values=value_col)
+                pivot.plot(ax=ax, linewidth=2)
+                ax.set_title("Home Value Over Time by Metro", fontsize=14, fontweight="bold")
+                ax.set_xlabel(date_col)
+                ax.set_ylabel(value_col)
+                ax.legend(title=name_col, fontsize=8)
+                ax.grid(True, alpha=0.3)
+                for label in ax.get_xticklabels():
+                    label.set_rotation(45)
+                fig.tight_layout()
+        buf = BytesIO()
+        fig.savefig(buf, format="png", bbox_inches="tight", dpi=110)
+        return buf.getvalue()
 
-    # Multi-select for metros; interact doesn't support SelectMultiple easily, so use dropdown with a few metros
-    # or we use a single dropdown that allows multiple via a tuple. ipywidgets SelectMultiple in a Box.
+    # Keep all metros available; use search to narrow the list (selection still accumulates).
     metro_selector = widgets.SelectMultiple(
         options=metros,
-        value=[metros[0]] if metros else [],
+        value=(metros[0],) if metros else (),
         description="Metros:",
         rows=min(12, len(metros)),
     )
+    search_box = widgets.Text(
+        value="",
+        placeholder="Type to filter metros (e.g., Dallas or TX)",
+        description="Search:",
+    )
+    comparison_status = widgets.HTML()
+    # One static image widget — update `.value` with PNG bytes only (no stacked figures in VS Code / Jupyter).
+    chart_image = widgets.Image(
+        format="png",
+        layout=widgets.Layout(max_width="100%", border="0"),
+    )
 
-    def _on_change(change=None):
-        out.clear_output()
-        with out:
-            _plot(list(metro_selector.value))
+    def _render(force=False):
+        acc = sorted(state["accumulated"])
+        acc_key = tuple(acc)
+        # Guard against duplicate callback chains that request the same draw.
+        if not force and state["last_rendered"] == acc_key:
+            return
+        state["last_rendered"] = acc_key
+        preview = ", ".join(acc[:12])
+        if len(acc) > 12:
+            preview += " …"
+        comparison_status.value = (
+            f"<p><b>Comparing {len(acc)} metro(s):</b> {preview}</p>"
+            if acc
+            else "<p><b>No metros selected.</b></p>"
+        )
+        chart_image.value = _chart_png_bytes(acc)
 
-    out = widgets.Output()
-    metro_selector.observe(_on_change, names="value")
-    display(widgets.VBox([widgets.HTML("<p>Select one or more metros to compare over time:</p>"), metro_selector, out]))
-    _on_change()
+    def _on_selector_change(change):
+        nonlocal _suppress_observer
+        if _suppress_observer:
+            return
+        opts = set(metro_selector.options)
+        new = set(metro_selector.value)
+        # Replace selection for metros currently listed; keep metros not in this filter.
+        state["accumulated"] = (state["accumulated"] - opts) | new
+        _render()
+
+    def _on_search(change=None):
+        nonlocal _suppress_observer
+        query = search_box.value.strip().lower()
+        filtered = [m for m in metros if query in m.lower()] if query else metros
+        visible = tuple(sorted(m for m in state["accumulated"] if m in filtered))
+        _suppress_observer = True
+        try:
+            metro_selector.options = filtered or []
+            metro_selector.value = visible
+        finally:
+            _suppress_observer = False
+        _render()
+
+    metro_selector.observe(_on_selector_change, names="value")
+    search_box.observe(_on_search, names="value")
+    help_text = widgets.HTML(
+        "<p>Search narrows the list below. Selections <b>stay</b> when you change the search "
+        "(use the status line to see every metro in the chart).<br>"
+        "In the list: Cmd-click (Mac) or Ctrl-click (Windows/Linux) to select multiple.</p>"
+    )
+    display(widgets.VBox([help_text, search_box, metro_selector, comparison_status, chart_image]))
+    _render(force=True)
