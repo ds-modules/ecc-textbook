@@ -28,6 +28,10 @@ project:
     - file: ecc-biology/mrsa/otter/autograder/MRSA Data Analysis.ipynb
     - file: ecc-biology/mrsa/otter/student/MRSA Data Analysis.ipynb
     - file: ecc-biology/polarity/bond_polarity.ipynb
+  - title: Biotech
+    children:
+    - file: ecc-biotech/Cancer_Mutations/cancer_mutations.ipynb
+    - file: ecc-biotech/sba/sba.ipynb
   - title: Business
     children:
     - file: ecc-business/marketing-fast-food/marketing_case_study.ipynb
