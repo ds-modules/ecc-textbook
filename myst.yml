@@ -23,7 +23,7 @@ project:
     - file: ecc-biology/Air Quality/environmental-justice.ipynb
     - file: ecc-biology/Cancer_Mutations/cancer_mutations.ipynb
     - file: ecc-biology/Introduction/introduction.ipynb
-    - file: ecc-biology/SARS-CoV2/wastewater_covid_notebook_template.ipynb
+    - file: ecc-biology/SARS-CoV2/wastewater_covid_notebook.ipynb
     - file: ecc-biology/enzymes/enzymes_bioinformatics.ipynb
     - file: ecc-biology/mrsa/MRSA Data Analysis copy.ipynb
     - file: ecc-biology/mrsa/MRSA Data Analysis.ipynb
