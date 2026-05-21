@@ -25,7 +25,9 @@ project:
     - file: ecc-biology/Introduction/introduction.ipynb
     - file: ecc-biology/SARS-CoV2/wastewater_covid_notebook_template.ipynb
     - file: ecc-biology/enzymes/enzymes_bioinformatics.ipynb
+    - file: ecc-biology/mrsa/MRSA Data Analysis copy.ipynb
     - file: ecc-biology/mrsa/MRSA Data Analysis.ipynb
+    - file: ecc-biology/mrsa/MRSA_Data_Analysis_PreNursing.ipynb
     - file: ecc-biology/mrsa/otter/autograder/MRSA Data Analysis.ipynb
     - file: ecc-biology/mrsa/otter/student/MRSA Data Analysis.ipynb
     - file: ecc-biology/polarity/bond_polarity.ipynb
