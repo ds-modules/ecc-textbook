@@ -34,6 +34,7 @@ project:
   - title: Biotech
     children:
     - file: ecc-biotech/Cancer_Mutations/cancer_mutations.ipynb
+    - file: ecc-biotech/Enzymes and DNA/Mendeley_data/enzyme.ipynb
     - file: ecc-biotech/sba/sba.ipynb
   - title: Business
     children:

@@ -1,0 +1,6 @@
+.venv/
+**/__pycache__/
+*.pyc
+
+# Large IndPenSim time-series file (~2.4 GB) — use scripts/create_teaching_timeseries_sample.py locally
+Enzymes and DNA/Mendeley_data/100_Batches_IndPenSim_V3.csv
