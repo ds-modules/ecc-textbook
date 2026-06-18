@@ -3,10 +3,10 @@ OpenRouter trolley lab: API calls, classify_decision(), and interactive visualiz
 
 Use from a notebook with:
     %run openrouter_widget.ipy
-    build_openrouter_widget(scenario_prompt="...", scenario_key="s1")
+    run_openrouter_simulation(scenario_prompt="...", scenario_key="s1", model_name="GPT-4o mini")
 
-On **Run Ethics Simulation**, the selected model is queried through OpenRouter,
-then the final trolley diagram is shown using the live API decision.
+On JupyterHub, use run_openrouter_simulation() (no ipywidgets required).
+build_openrouter_widget() is optional for environments with working widget support.
 """
 import os
 import re
@@ -21,9 +21,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 from dotenv import load_dotenv
 from openai import OpenAI
-from IPython.display import Image, display
-import ipywidgets as widgets
+from IPython.display import HTML, Image, display
 import runpy
+
+try:
+    import ipywidgets as widgets
+    HAS_IPYWIDGETS = True
+except ImportError:
+    HAS_IPYWIDGETS = False
 
 # Load trolley drawing helpers once (same visualization as widget.ipy).
 if "_draw_trolley_scene" not in globals():
@@ -33,9 +38,10 @@ if "_draw_trolley_scene" not in globals():
 # --- OpenRouter setup -------------------------------------------------------
 
 ENV_PATHS = [
-    Path("/shared_readwrite/.env"),
-    Path.cwd() / ".env",
-    Path.cwd().parent / ".env",
+    Path("/shared_readwrite/.env"),   # workshop shared key (instructor)
+    Path("/home/jovyan/.env"),        # personal key on JupyterHub
+    Path.cwd() / ".env",              # CIS182/.env when notebook cwd is CIS182
+    Path.cwd().parent / ".env",       # repo root .env
 ]
 
 _loaded_from = None
@@ -63,10 +69,11 @@ def _load_api_key():
     for env_path in ENV_PATHS:
         if env_path.exists():
             load_dotenv(env_path, override=True)
-            _loaded_from = env_path
-            break
-    else:
-        load_dotenv(override=True)
+            api_key = os.getenv("OPENROUTER_API_KEY")
+            if api_key and api_key.strip() != "your_openrouter_key_here":
+                _loaded_from = env_path
+                return api_key
+    load_dotenv(override=True)
     return os.getenv("OPENROUTER_API_KEY")
 
 
@@ -80,9 +87,10 @@ def _get_client():
         searched = "\n".join(f"  - {p}" for p in ENV_PATHS)
         raise ValueError(
             "OPENROUTER_API_KEY was not found or is still the placeholder.\n\n"
-            "On JupyterHub: ask your instructor to add it to /shared_readwrite/.env\n\n"
-            "For local testing: edit CIS182/.env with your real key:\n"
-            "  OPENROUTER_API_KEY=sk-or-...\n\n"
+            "On JupyterHub / Cal-ICOR, create a .env file in Terminal:\n"
+            "  cd ~/ecc-cis/CIS182\n"
+            "  echo 'OPENROUTER_API_KEY=sk-or-YOUR-KEY-HERE' > .env\n\n"
+            "Or ask your instructor to add the key to /shared_readwrite/.env\n\n"
             f"Searched:\n{searched}"
         )
 
@@ -185,8 +193,22 @@ def _fig_to_png(fig):
     return Image(data=buffer.getvalue())
 
 
-def _show_trolley_result(display_name, result, output_area, scenario_prompt=None, scenario_key=None):
-    """Show the final trolley diagram + API response (single static frame for stability)."""
+def _result_html(display_name, result, decision_label):
+    response_text = escape(result.get("raw_response", ""))
+    return (
+        "<div style='border:1px solid #cfcfcf; border-radius:8px; "
+        "padding:12px; margin-top:10px; background:#ffffff; line-height:1.5; "
+        "max-width:100%; white-space:normal; overflow-wrap:anywhere; word-break:break-word;'>"
+        f"<strong>{escape(display_name)}</strong> "
+        f"<span style='color:#666;'>({escape(result['model'])})</span><br><br>"
+        f"<strong>Decision:</strong> {escape(decision_label)}<br><br>"
+        f"<strong>Response:</strong><br>{response_text}"
+        "</div>"
+    )
+
+
+def _render_trolley_result(display_name, result, scenario_prompt=None, scenario_key=None):
+    """Show the final trolley diagram + API response using plain notebook output."""
     resolved_scenario_key = scenario_key or _resolve_scenario_key(
         scenario_prompt or DEFAULT_SCENARIO_PROMPT
     )
@@ -211,28 +233,51 @@ def _show_trolley_result(display_name, result, output_area, scenario_prompt=None
         scenario_key=scenario_key,
     )
 
-    response_text = escape(result.get("raw_response", ""))
+    display(_fig_to_png(fig))
+    display(HTML(_result_html(display_name, result, decision_label)))
+
+
+def run_openrouter_simulation(scenario_prompt, scenario_key=None, model_name="GPT-4o mini"):
+    """
+    Run one trolley scenario against OpenRouter and display the result.
+
+    Works on JupyterHub without ipywidgets. Change model_name to compare models.
+    """
+    if model_name not in OPENROUTER_MODELS:
+        options = ", ".join(OPENROUTER_MODELS)
+        raise ValueError(f"Unknown model {model_name!r}. Choose from: {options}")
+
+    print(f"Calling OpenRouter ({model_name})…")
+    selected_model = OPENROUTER_MODELS[model_name]
+    result = classify_decision(scenario_prompt, model=selected_model)
+    _render_trolley_result(
+        display_name=model_name,
+        result=result,
+        scenario_prompt=scenario_prompt,
+        scenario_key=scenario_key,
+    )
+    return result
+
+
+def _show_trolley_result(display_name, result, output_area, scenario_prompt=None, scenario_key=None):
+    """Show result inside an ipywidgets Output area (widget UI only)."""
     output_area.clear_output(wait=True)
     with output_area:
-        display(_fig_to_png(fig))
-        display(
-            widgets.HTML(
-                value=(
-                    "<div style='border:1px solid #cfcfcf; border-radius:8px; "
-                    "padding:12px; margin-top:10px; background:#ffffff; line-height:1.5; "
-                    "max-width:100%; white-space:normal; overflow-wrap:anywhere; word-break:break-word;'>"
-                    f"<strong>{escape(display_name)}</strong> "
-                    f"<span style='color:#666;'>({escape(result['model'])})</span><br><br>"
-                    f"<strong>Decision:</strong> {escape(decision_label)}<br><br>"
-                    f"<strong>Response:</strong><br>{response_text}"
-                    "</div>"
-                )
-            )
+        _render_trolley_result(
+            display_name=display_name,
+            result=result,
+            scenario_prompt=scenario_prompt,
+            scenario_key=scenario_key,
         )
 
 
 def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropdown=None):
-    """Build the OpenRouter trolley widget UI."""
+    """Optional widget UI — requires working ipywidgets on the Jupyter server."""
+    if not HAS_IPYWIDGETS:
+        raise RuntimeError(
+            "ipywidgets is not available. Use run_openrouter_simulation() instead."
+        )
+
     if scenario_prompt is None:
         scenario_prompt = DEFAULT_SCENARIO_PROMPT
     resolved_scenario_key = scenario_key or _resolve_scenario_key(scenario_prompt)
@@ -255,7 +300,7 @@ def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropd
     def on_run_clicked(_):
         output.clear_output(wait=True)
         with output:
-            display(widgets.HTML("<em>Calling OpenRouter API…</em>"))
+            display(HTML("<em>Calling OpenRouter API…</em>"))
         try:
             selected_name = model_dropdown.value
             selected_model = OPENROUTER_MODELS[selected_name]
@@ -270,11 +315,7 @@ def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropd
         except Exception as exc:
             output.clear_output(wait=True)
             with output:
-                display(
-                    widgets.HTML(
-                        f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"
-                    )
-                )
+                display(HTML(f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"))
 
     run_button.on_click(on_run_clicked)
     display(model_dropdown, run_button, output)
