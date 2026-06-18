@@ -1,0 +1,282 @@
+"""
+OpenRouter trolley lab: API calls, classify_decision(), and interactive visualization.
+
+Use from a notebook with:
+    %run openrouter_widget.ipy
+    build_openrouter_widget(scenario_prompt="...", scenario_key="s1")
+
+On **Run Ethics Simulation**, the selected model is queried through OpenRouter,
+then the final trolley diagram is shown using the live API decision.
+"""
+import os
+import re
+from io import BytesIO
+from pathlib import Path
+from html import escape
+
+import matplotlib
+
+matplotlib.use("Agg")  # non-interactive backend — stable in VS Code / Cursor
+import matplotlib.pyplot as plt
+import numpy as np
+from dotenv import load_dotenv
+from openai import OpenAI
+from IPython.display import Image, display
+import ipywidgets as widgets
+import runpy
+
+# Load trolley drawing helpers once (same visualization as widget.ipy).
+if "_draw_trolley_scene" not in globals():
+    globals().update(runpy.run_path(str(Path.cwd() / "widget.ipy")))
+
+
+# --- OpenRouter setup -------------------------------------------------------
+
+ENV_PATHS = [
+    Path("/shared_readwrite/.env"),
+    Path.cwd() / ".env",
+    Path.cwd().parent / ".env",
+]
+
+_loaded_from = None
+_client = None
+
+OPENROUTER_MODELS = {
+    "GPT-4o mini": "openai/gpt-4o-mini",
+    "Claude Sonnet 4": "anthropic/claude-sonnet-4",
+    "Gemini 2.5 Flash": "google/gemini-2.5-flash",
+    "Llama 3.3 70B": "meta-llama/llama-3.3-70b-instruct",
+}
+
+DEFAULT_MODEL = OPENROUTER_MODELS["GPT-4o mini"]
+
+MODEL_COLORS = {
+    "GPT-4o mini": "#10a37f",
+    "Claude Sonnet 4": "#d97745",
+    "Gemini 2.5 Flash": "#4285F4",
+    "Llama 3.3 70B": "#4A6CF7",
+}
+
+
+def _load_api_key():
+    global _loaded_from
+    for env_path in ENV_PATHS:
+        if env_path.exists():
+            load_dotenv(env_path, override=True)
+            _loaded_from = env_path
+            break
+    else:
+        load_dotenv(override=True)
+    return os.getenv("OPENROUTER_API_KEY")
+
+
+def _get_client():
+    global _client
+    if _client is not None:
+        return _client
+
+    api_key = _load_api_key()
+    if not api_key or api_key.strip() == "your_openrouter_key_here":
+        searched = "\n".join(f"  - {p}" for p in ENV_PATHS)
+        raise ValueError(
+            "OPENROUTER_API_KEY was not found or is still the placeholder.\n\n"
+            "On JupyterHub: ask your instructor to add it to /shared_readwrite/.env\n\n"
+            "For local testing: edit CIS182/.env with your real key:\n"
+            "  OPENROUTER_API_KEY=sk-or-...\n\n"
+            f"Searched:\n{searched}"
+        )
+
+    _client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+        default_headers={
+            "HTTP-Referer": "https://jupyter.cal-icor.org",
+            "X-Title": "CIS182 Trolley Lab",
+        },
+    )
+    return _client
+
+
+CLASSIFY_SYSTEM_PROMPT = (
+    "You are analyzing a trolley-problem ethics scenario. "
+    "Respond in exactly this format with no extra text:\n\n"
+    "Decision: PULL\n"
+    "Reason: one short sentence\n\n"
+    "or\n\n"
+    "Decision: DO_NOT_PULL\n"
+    "Reason: one short sentence\n\n"
+    "Use PULL if you would take the active intervention described in the scenario. "
+    "Use DO_NOT_PULL if you would not intervene."
+)
+
+
+def classify_decision(scenario, model=DEFAULT_MODEL):
+    """Send a trolley scenario to an LLM and return a parsed binary decision."""
+    try:
+        response = _get_client().chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": CLASSIFY_SYSTEM_PROMPT},
+                {"role": "user", "content": scenario},
+            ],
+            temperature=0,
+        )
+    except Exception as exc:
+        err = str(exc)
+        if "No endpoints found" in err or "404" in err:
+            raise ValueError(
+                f"Model '{model}' is not available on OpenRouter. "
+                "Pick a different model from the dropdown, or browse openrouter.ai/models."
+            ) from exc
+        raise
+
+    raw_response = response.choices[0].message.content.strip()
+
+    decision_match = re.search(
+        r"Decision:\s*(PULL|DO_NOT_PULL)",
+        raw_response,
+        flags=re.IGNORECASE,
+    )
+    reason_match = re.search(
+        r"Reason:\s*(.+)",
+        raw_response,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    decision_text = decision_match.group(1).upper() if decision_match else None
+    reason = reason_match.group(1).strip() if reason_match else None
+
+    if decision_text == "PULL":
+        decision_binary = 1
+    elif decision_text == "DO_NOT_PULL":
+        decision_binary = 0
+    else:
+        decision_binary = None
+
+    return {
+        "scenario": scenario,
+        "model": model,
+        "raw_response": raw_response,
+        "decision_text": decision_text,
+        "decision_binary": decision_binary,
+        "reason": reason,
+    }
+
+
+def _api_to_animation_decision(result):
+    if result["decision_binary"] == 1:
+        return "save_people"
+    return "save_server"
+
+
+def _final_train_position(resolved_scenario_key, animation_decision):
+    if animation_decision == "save_people":
+        if resolved_scenario_key == "s1":
+            return 11.7, 2.85
+        return 10.2, 2.58
+    return 10.2, 5.12
+
+
+def _fig_to_png(fig):
+    buffer = BytesIO()
+    fig.savefig(buffer, format="png", bbox_inches="tight", dpi=110)
+    plt.close(fig)
+    buffer.seek(0)
+    return Image(data=buffer.getvalue())
+
+
+def _show_trolley_result(display_name, result, output_area, scenario_prompt=None, scenario_key=None):
+    """Show the final trolley diagram + API response (single static frame for stability)."""
+    resolved_scenario_key = scenario_key or _resolve_scenario_key(
+        scenario_prompt or DEFAULT_SCENARIO_PROMPT
+    )
+    animation_decision = _api_to_animation_decision(result)
+    decision_label = _decision_label(resolved_scenario_key, animation_decision)
+    train_x, train_y = _final_train_position(resolved_scenario_key, animation_decision)
+
+    ai_data = {
+        display_name: {
+            "color": MODEL_COLORS.get(display_name, "#333333"),
+            "decision": animation_decision,
+            "response": result.get("reason") or result.get("raw_response", ""),
+        }
+    }
+
+    fig = _draw_trolley_scene(
+        ai_data=ai_data,
+        selected_tool=display_name,
+        train_x=float(train_x),
+        train_y=float(train_y),
+        scenario_prompt=scenario_prompt,
+        scenario_key=scenario_key,
+    )
+
+    response_text = escape(result.get("raw_response", ""))
+    output_area.clear_output(wait=True)
+    with output_area:
+        display(_fig_to_png(fig))
+        display(
+            widgets.HTML(
+                value=(
+                    "<div style='border:1px solid #cfcfcf; border-radius:8px; "
+                    "padding:12px; margin-top:10px; background:#ffffff; line-height:1.5; "
+                    "max-width:100%; white-space:normal; overflow-wrap:anywhere; word-break:break-word;'>"
+                    f"<strong>{escape(display_name)}</strong> "
+                    f"<span style='color:#666;'>({escape(result['model'])})</span><br><br>"
+                    f"<strong>Decision:</strong> {escape(decision_label)}<br><br>"
+                    f"<strong>Response:</strong><br>{response_text}"
+                    "</div>"
+                )
+            )
+        )
+
+
+def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropdown=None):
+    """Build the OpenRouter trolley widget UI."""
+    if scenario_prompt is None:
+        scenario_prompt = DEFAULT_SCENARIO_PROMPT
+    resolved_scenario_key = scenario_key or _resolve_scenario_key(scenario_prompt)
+
+    if model_dropdown is None:
+        model_dropdown = widgets.Dropdown(
+            options=list(OPENROUTER_MODELS.keys()),
+            value=list(OPENROUTER_MODELS.keys())[0],
+            description="AI Model:",
+            layout=widgets.Layout(width="420px"),
+        )
+
+    run_button = widgets.Button(
+        description="Run Ethics Simulation",
+        button_style="success",
+    )
+
+    output = widgets.Output()
+
+    def on_run_clicked(_):
+        output.clear_output(wait=True)
+        with output:
+            display(widgets.HTML("<em>Calling OpenRouter API…</em>"))
+        try:
+            selected_name = model_dropdown.value
+            selected_model = OPENROUTER_MODELS[selected_name]
+            result = classify_decision(scenario_prompt, model=selected_model)
+            _show_trolley_result(
+                display_name=selected_name,
+                result=result,
+                output_area=output,
+                scenario_prompt=scenario_prompt,
+                scenario_key=resolved_scenario_key,
+            )
+        except Exception as exc:
+            output.clear_output(wait=True)
+            with output:
+                display(
+                    widgets.HTML(
+                        f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"
+                    )
+                )
+
+    run_button.on_click(on_run_clicked)
+    display(model_dropdown, run_button, output)
+
+    return model_dropdown, run_button, output

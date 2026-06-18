@@ -55,6 +55,7 @@ project:
   - title: Computer Information Systems
     children:
     - file: ecc-cis/CIS182/AI_Ethics_in_Data_Science.ipynb
+    - file: ecc-cis/CIS182/LLM_Trolley_OpenRouter.ipynb
     - file: ecc-cis/CIS182/ai_trolley_problem_notebook.ipynb
     - file: ecc-cis/cis119/rsa_quantum_lesson.ipynb
     - file: ecc-cis/cis13/AI_in_Information_Systems.ipynb
