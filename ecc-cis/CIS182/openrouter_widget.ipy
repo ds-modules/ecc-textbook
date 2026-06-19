@@ -3,10 +3,10 @@ OpenRouter trolley lab: API calls, classify_decision(), and interactive visualiz
 
 Use from a notebook with:
     %run openrouter_widget.ipy
-    run_openrouter_simulation(scenario_prompt="...", scenario_key="s1", model_name="GPT-4o mini")
+    build_openrouter_widget(scenario_prompt="...", scenario_key="s1")
 
-On JupyterHub, use run_openrouter_simulation() (no ipywidgets required).
-build_openrouter_widget() is optional for environments with working widget support.
+Requires ipywidgets + jupyterlab-widgets on the Jupyter server.
+Use run_openrouter_simulation() as a static fallback when widgets are unavailable.
 """
 import os
 import re
@@ -14,14 +14,11 @@ from io import BytesIO
 from pathlib import Path
 from html import escape
 
-import matplotlib
-
-matplotlib.use("Agg")  # non-interactive backend — stable in VS Code / Cursor
 import matplotlib.pyplot as plt
 import numpy as np
 from dotenv import load_dotenv
 from openai import OpenAI
-from IPython.display import HTML, Image, display
+from IPython.display import HTML, Image, clear_output, display
 import runpy
 
 try:
@@ -237,6 +234,17 @@ def _final_train_position(resolved_scenario_key, animation_decision):
     return 10.2, 5.12
 
 
+def _result_to_ai_data(display_name, result):
+    animation_decision = _api_to_animation_decision(result)
+    return {
+        display_name: {
+            "color": MODEL_COLORS.get(display_name, "#333333"),
+            "decision": animation_decision,
+            "response": result.get("raw_response") or result.get("reason") or "",
+        }
+    }
+
+
 def _fig_to_png(fig):
     buffer = BytesIO()
     fig.savefig(buffer, format="png", bbox_inches="tight", dpi=110)
@@ -291,9 +299,7 @@ def _render_trolley_result(display_name, result, scenario_prompt=None, scenario_
 
 def run_openrouter_simulation(scenario_prompt, scenario_key=None, model_name="GPT-4o mini"):
     """
-    Run one trolley scenario against OpenRouter and display the result.
-
-    Works on JupyterHub without ipywidgets. Change model_name to compare models.
+    Static fallback: run one scenario without ipywidgets (no dropdown or animation).
     """
     if model_name not in OPENROUTER_MODELS:
         options = ", ".join(OPENROUTER_MODELS)
@@ -311,23 +317,12 @@ def run_openrouter_simulation(scenario_prompt, scenario_key=None, model_name="GP
     return result
 
 
-def _show_trolley_result(display_name, result, output_area, scenario_prompt=None, scenario_key=None):
-    """Show result inside an ipywidgets Output area (widget UI only)."""
-    output_area.clear_output(wait=True)
-    with output_area:
-        _render_trolley_result(
-            display_name=display_name,
-            result=result,
-            scenario_prompt=scenario_prompt,
-            scenario_key=scenario_key,
-        )
-
-
 def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropdown=None):
-    """Optional widget UI — requires working ipywidgets on the Jupyter server."""
+    """Build dropdown + Run button UI; fetches live API response then animates the trolley."""
     if not HAS_IPYWIDGETS:
         raise RuntimeError(
-            "ipywidgets is not available. Use run_openrouter_simulation() instead."
+            "ipywidgets is not available. Install ipywidgets and enable jupyterlab-widgets, "
+            "or use run_openrouter_simulation() instead."
         )
 
     if scenario_prompt is None:
@@ -350,23 +345,25 @@ def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropd
     output = widgets.Output()
 
     def on_run_clicked(_):
-        output.clear_output(wait=True)
         with output:
+            clear_output(wait=True)
             display(HTML("<em>Calling OpenRouter API…</em>"))
         try:
             selected_name = model_dropdown.value
             selected_model = OPENROUTER_MODELS[selected_name]
             result = classify_decision(scenario_prompt, model=selected_model)
-            _show_trolley_result(
-                display_name=selected_name,
-                result=result,
-                output_area=output,
-                scenario_prompt=scenario_prompt,
-                scenario_key=resolved_scenario_key,
-            )
-        except Exception as exc:
-            output.clear_output(wait=True)
+            ai_data = _result_to_ai_data(selected_name, result)
             with output:
+                clear_output(wait=True)
+                _animate_trolley(
+                    ai_data=ai_data,
+                    selected_tool=selected_name,
+                    scenario_prompt=scenario_prompt,
+                    scenario_key=resolved_scenario_key,
+                )
+        except Exception as exc:
+            with output:
+                clear_output(wait=True)
                 display(HTML(f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"))
 
     run_button.on_click(on_run_clicked)
