@@ -108,40 +108,10 @@ def check_openrouter_setup():
     """Print whether an API key was found (does not reveal the key)."""
     api_key = _load_api_key()
     if _is_valid_api_key(api_key):
-        source = _loaded_from or "environment"
-        print(f"Loaded API key from: {source}")
-        print("Ready to run scenarios.")
+        print("Ready — scroll to the scenarios below.")
         return True
 
-    print("No OPENROUTER_API_KEY found yet.")
-
-    found_env = None
-    for path in ENV_PATHS:
-        if path.exists():
-            found_env = path
-            keys = _env_keys_in_file(path)
-            if "OPENROUTER_API_KEY" in keys:
-                print(f"\nFound {path} but OPENROUTER_API_KEY is empty or still a placeholder.")
-            else:
-                print(f"\nFound {path} but it does not contain OPENROUTER_API_KEY.")
-                if keys:
-                    print(f"Keys in that file: {', '.join(keys)}")
-                print("\nInstructor: add this line to that file:")
-                print('  OPENROUTER_API_KEY=sk-or-v1-...')
-                print("\nTerminal command:")
-                print(f"  echo 'OPENROUTER_API_KEY=sk-or-v1-...' >> {path}")
-            break
-
-    if found_env is None:
-        print("\nNo shared .env file found yet.")
-        print("\nFix one of these:")
-        print("  1. Run the API key cell below and paste your key")
-        print("  2. Instructor creates ~/shared-readwrite/.env or ~/shared_readwrite/.env")
-        print("  3. Instructor adds: OPENROUTER_API_KEY=sk-or-v1-...")
-
-    print("\nSearched:")
-    for path in ENV_PATHS:
-        print(f"  - {path} {'(exists)' if path.exists() else '(missing)'}")
+    print("Setup issue: the API key is not configured. Ask your instructor for help.")
     return False
 
 
@@ -171,17 +141,9 @@ def _get_client():
 
     api_key = _load_api_key()
     if not _is_valid_api_key(api_key):
-        searched = "\n".join(f"  - {p}" for p in ENV_PATHS)
         raise ValueError(
-            "OPENROUTER_API_KEY was not found or is still the placeholder.\n\n"
-            "On Cal-ICOR JupyterHub, ask your instructor to add the key to:\n"
-            "  ~/shared-readwrite/.env\n\n"
-            "The file should contain:\n"
-            "  OPENROUTER_API_KEY=sk-or-v1-...\n\n"
-            "(Instructors: merge this line into the shared .env using the instructor setup notebook.)\n\n"
-            "Quick fix — run the API key cell in the notebook:\n"
-            "  set_openrouter_api_key('sk-or-YOUR-KEY-HERE')\n\n"
-            f"Searched:\n{searched}"
+            "The API key is not configured. Ask your instructor for help, "
+            "then restart the kernel and run the setup cell again."
         )
 
     _client = OpenAI(
