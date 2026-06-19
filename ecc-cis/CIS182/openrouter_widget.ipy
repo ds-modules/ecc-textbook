@@ -38,10 +38,13 @@ if "_draw_trolley_scene" not in globals():
 # --- OpenRouter setup -------------------------------------------------------
 
 ENV_PATHS = [
-    Path.home() / "shared_readwrite" / ".env",  # Cal-ICOR JupyterHub (~/shared_readwrite/.env)
-    Path("/shared_readwrite/.env"),             # alternate hub mount
-    Path.home() / ".env",                       # personal key in home directory
-    Path.cwd() / ".env",                        # CIS182/.env when cwd is CIS182
+    Path.home() / "shared-readwrite" / ".env",   # Cal-ICOR / Cloudbank workshop hub (instructor setup)
+    Path.home() / "shared_readwrite" / ".env",  # alternate hub naming
+    Path("/home/jovyan/shared-readwrite/.env"), # explicit Cal-ICOR path
+    Path("/shared-readwrite/.env"),              # alternate mount
+    Path("/shared_readwrite/.env"),             # legacy/alternate mount
+    Path.home() / ".env",                        # personal key in home directory
+    Path.cwd() / ".env",                         # CIS182/.env when cwd is CIS182
 ]
 
 _loaded_from = None
@@ -92,8 +95,8 @@ def check_openrouter_setup():
     print("No API key found yet.")
     print("\nFix one of these:")
     print("  1. Run the API key cell below and paste your key")
-    print("  2. On Cal-ICOR: add OPENROUTER_API_KEY to ~/shared_readwrite/.env")
-    print("  3. Terminal: echo 'OPENROUTER_API_KEY=sk-or-...' > ~/shared_readwrite/.env")
+    print("  2. On Cal-ICOR: ask instructor to add OPENROUTER_API_KEY to ~/shared-readwrite/.env")
+    print("  3. Instructor Terminal: echo 'OPENROUTER_API_KEY=sk-or-...' >> ~/shared-readwrite/.env")
     print("\nSearched:")
     for path in ENV_PATHS:
         print(f"  - {path} {'(exists)' if path.exists() else '(missing)'}")
@@ -129,10 +132,11 @@ def _get_client():
         searched = "\n".join(f"  - {p}" for p in ENV_PATHS)
         raise ValueError(
             "OPENROUTER_API_KEY was not found or is still the placeholder.\n\n"
-            "On Cal-ICOR JupyterHub, add the key to:\n"
-            "  ~/shared_readwrite/.env\n\n"
+            "On Cal-ICOR JupyterHub, ask your instructor to add the key to:\n"
+            "  ~/shared-readwrite/.env\n\n"
             "The file should contain:\n"
             "  OPENROUTER_API_KEY=sk-or-v1-...\n\n"
+            "(Instructors: merge this line into the shared .env using the instructor setup notebook.)\n\n"
             "Quick fix — run the API key cell in the notebook:\n"
             "  set_openrouter_api_key('sk-or-YOUR-KEY-HERE')\n\n"
             f"Searched:\n{searched}"
