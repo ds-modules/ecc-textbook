@@ -4,6 +4,7 @@ OpenRouter trolley lab: API calls, classify_decision(), and interactive visualiz
 Use from a notebook with:
     %run openrouter_widget.ipy
     build_openrouter_widget(scenario_prompt="...", scenario_key="s1")
+    build_openrouter_custom_widget()  # Scenario 6: student prompt, no animation
 
 Requires ipywidgets + jupyterlab-widgets on the Jupyter server.
 Use run_openrouter_simulation() as a static fallback when widgets are unavailable.
@@ -370,3 +371,69 @@ def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropd
     display(model_dropdown, run_button, output)
 
     return model_dropdown, run_button, output
+
+
+def build_openrouter_custom_widget(default_prompt="", scenario_key=None):
+    """
+    Student-written prompt + model dropdown; shows a static diagram (no animation).
+
+    Use for open-ended exploration in Scenario 6.
+    """
+    if not HAS_IPYWIDGETS:
+        raise RuntimeError(
+            "ipywidgets is not available. Install ipywidgets and enable jupyterlab-widgets, "
+            "or use run_openrouter_simulation() with your own prompt instead."
+        )
+
+    prompt_box = widgets.Textarea(
+        value=default_prompt,
+        placeholder="Write your own trolley-style ethics prompt here…",
+        layout=widgets.Layout(width="100%", height="110px"),
+    )
+
+    model_dropdown = widgets.Dropdown(
+        options=list(OPENROUTER_MODELS.keys()),
+        value=list(OPENROUTER_MODELS.keys())[0],
+        description="AI Model:",
+        layout=widgets.Layout(width="420px"),
+    )
+
+    run_button = widgets.Button(
+        description="Run Ethics Simulation",
+        button_style="success",
+    )
+
+    output = widgets.Output()
+
+    def on_run_clicked(_):
+        scenario_prompt = prompt_box.value.strip()
+        if not scenario_prompt:
+            with output:
+                clear_output(wait=True)
+                display(HTML("<p style='color:#b00020;'><strong>Error:</strong> Enter a prompt first.</p>"))
+            return
+
+        with output:
+            clear_output(wait=True)
+            display(HTML("<em>Calling OpenRouter API…</em>"))
+        try:
+            selected_name = model_dropdown.value
+            selected_model = OPENROUTER_MODELS[selected_name]
+            result = classify_decision(scenario_prompt, model=selected_model)
+            with output:
+                clear_output(wait=True)
+                _render_trolley_result(
+                    display_name=selected_name,
+                    result=result,
+                    scenario_prompt=scenario_prompt,
+                    scenario_key=scenario_key,
+                )
+        except Exception as exc:
+            with output:
+                clear_output(wait=True)
+                display(HTML(f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"))
+
+    run_button.on_click(on_run_clicked)
+    display(prompt_box, model_dropdown, run_button, output)
+
+    return prompt_box, model_dropdown, run_button, output
