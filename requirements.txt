@@ -1,6 +1,6 @@
-jupyter-book==2.0.2
+jupyter-book
 mystmd
-ghp-import==2.1.0
+ghp-import
 jupyter-book
 matplotlib
 numpy
@@ -16,3 +16,16 @@ seaborn
 geopandas
 shapely
 nptdms
+ipywidgets
+plotly
+pyarrow
+openpyxl
+otter-grader
+openai
+python-dotenv
+yfinance
+sympy
+gensim
+gpt4all
+suntime
+imageio-ffmpeg
