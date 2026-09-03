@@ -36,6 +36,8 @@ if "_draw_trolley_scene" not in globals():
 # --- OpenRouter setup -------------------------------------------------------
 
 ENV_PATHS = [
+    Path.home() / "shared" / ".env",             # DataHub shared folder (instructor setup)
+    Path("/home/jovyan/shared/.env"),            # explicit DataHub path
     Path.home() / "shared-readwrite" / ".env",   # Cal-ICOR / Cloudbank workshop hub (instructor setup)
     Path.home() / "shared_readwrite" / ".env",  # alternate hub naming
     Path("/home/jovyan/shared-readwrite/.env"), # explicit Cal-ICOR path
