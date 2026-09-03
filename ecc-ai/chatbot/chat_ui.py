@@ -6,7 +6,34 @@ import html
 from typing import Any, Dict, List
 
 import ipywidgets as widgets
-from IPython.display import HTML
+from IPython.display import HTML, display
+
+_CHAT_CLASS = "ecc-chat-ui"
+
+# Keep keyboard focus inside the text box. Without this, clicking Send or Reset
+# leaves focus on the button, and the next keystroke is handled by JupyterLab's
+# command mode (for example "o" collapses the cell output).
+_FOCUS_SCRIPT = f"""
+<script>
+(function () {{
+  if (window.__eccChatFocusInstalled) return;
+  window.__eccChatFocusInstalled = true;
+  document.addEventListener("mousedown", function (event) {{
+    var button = event.target.closest(".{_CHAT_CLASS} button");
+    if (!button) return;
+    event.preventDefault();  // stop the button from taking focus
+    var box = button.closest(".{_CHAT_CLASS}");
+    var input = box && box.querySelector("input[type=text]");
+    if (input) input.focus();
+  }}, true);
+  document.addEventListener("keydown", function (event) {{
+    if (event.target.closest(".{_CHAT_CLASS} input[type=text]")) {{
+      event.stopPropagation();  // keep typed keys away from notebook shortcuts
+    }}
+  }}, true);
+}})();
+</script>
+"""
 
 
 def _render_history(messages: List[Dict[str, str]]) -> str:
@@ -61,6 +88,10 @@ def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
         transcript.value = _render_history(
             [m for m in state["messages"] if m.get("role") != "system"]
         )
+        # ipywidgets >= 8 can move focus from Python; older versions rely on the JS above.
+        focus = getattr(user_input, "focus", None)
+        if callable(focus):
+            focus()
 
     def _send(_=None) -> None:
         text = user_input.value.strip()
@@ -105,4 +136,6 @@ def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
         [send_button, reset_button], layout=widgets.Layout(justify_content="flex-start")
     )
     container = widgets.VBox([title, transcript, user_input, controls, status])
+    container.add_class(_CHAT_CLASS)
+    display(HTML(_FOCUS_SCRIPT))
     return container
