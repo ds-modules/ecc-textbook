@@ -46,5 +46,6 @@ See [`cis26/excel_to_pandas_zillow/README.md`](cis26/excel_to_pandas_zillow/READ
 |---|---|
 | How Do AI Systems Make Ethical Decisions? | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2FCIS182%2FAI_Ethics_in_Data_Science.ipynb) |
 | AI Trolley Problem (interactive) | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2FCIS182%2Fai_trolley_problem_notebook.ipynb) |
+| LLM Trolley Problem (live models via OpenRouter) | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-cis&branch=main&urlpath=tree%2Fecc-cis%2FCIS182%2FLLM_Trolley_OpenRouter.ipynb) |
 
-The ethics notebook uses [`CIS182/widget.ipy`](CIS182/widget.ipy) for the interactive trolley widget.
+The ethics notebook uses [`CIS182/widget.ipy`](CIS182/widget.ipy) for the interactive trolley widget. The LLM Trolley notebook uses [`CIS182/openrouter_widget.ipy`](CIS182/openrouter_widget.ipy), which needs an `OPENROUTER_API_KEY` in the shared `.env` file.
