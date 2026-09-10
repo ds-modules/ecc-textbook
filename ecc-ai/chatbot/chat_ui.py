@@ -1,12 +1,16 @@
 """Reusable ipywidgets chat UI for notebook-based chatbot demos.
 
-Design notes (JupyterHub / JupyterLab):
-- No JavaScript is injected. Untrusted notebooks on the hub do not run scripts,
-  so a JS-based fix never ran and its text could leak into the output.
-- No buttons. Clicking a button in an output area hands keyboard focus back to
-  the notebook, and the next keystroke is treated as a command-mode shortcut
-  (for example "o" collapses the cell output). With Enter as the only way to
-  send, focus stays in the text box while students type.
+Design notes (JupyterHub, JupyterLab, Notebook 7):
+- Enter sends. The text box uses continuous_update=False, so the browser sends
+  the complete message in one update when Enter is pressed. (The older
+  on_submit event races with throttled keystroke updates and can send only the
+  first character when the kernel is busy.)
+- No buttons. A clicked button keeps keyboard focus, and the next keystroke is
+  then handled as a notebook shortcut.
+- A small script keeps focus in the text box when the student clicks anywhere
+  in the chat area, and ignores half-typed text when the box loses focus. In
+  Notebook 7 the "o" shortcut hides cell outputs, which makes the chat vanish
+  if focus has drifted out of the box. The chat still works without the script.
 - Type /reset in the box to start a new conversation, or re-run the cell.
 - chat_loop() is a plain input() fallback that works in any Jupyter frontend.
 """
@@ -14,13 +18,68 @@ Design notes (JupyterHub / JupyterLab):
 from __future__ import annotations
 
 import html
-import warnings
 from typing import Any, Dict, List
 
 import ipywidgets as widgets
+from IPython.display import HTML, display
 
 RESET_COMMAND = "/reset"
 QUIT_WORDS = {"quit", "exit"}
+_CHAT_CLASS = "ecc-chat-ui"
+
+_FOCUS_SCRIPT = f"""
+<script>
+(function () {{
+  if (window.__eccChatFocusInstalled) return;
+  window.__eccChatFocusInstalled = true;
+  var BOX = ".{_CHAT_CLASS}";
+
+  function inputOf(el) {{
+    if (!(el instanceof Element)) return null;
+    var box = el.closest(BOX);
+    return box ? box.querySelector("input[type=text]") : null;
+  }}
+  function isEditable(el) {{
+    return el.matches("input, textarea, select, [contenteditable=true]");
+  }}
+
+  // Clicking anywhere in the chat area keeps focus in the text box.
+  window.addEventListener("mousedown", function (e) {{
+    var input = inputOf(e.target);
+    if (!input || isEditable(e.target)) return;
+    e.preventDefault();
+    input.focus();
+  }}, true);
+
+  // Keys pressed on a non-editable part of the chat area are swallowed before
+  // the notebook sees them, and focus moves to the text box.
+  window.addEventListener("keydown", function (e) {{
+    var input = inputOf(e.target);
+    if (!input || isEditable(e.target)) return;
+    e.stopPropagation();
+    e.preventDefault();
+    input.focus();
+  }}, true);
+
+  // Send on Enter only. The browser also fires "change" when the box loses
+  // focus, which would send a half-typed message; swallow those.
+  window.addEventListener("keydown", function (e) {{
+    var input = inputOf(e.target);
+    if (!input || e.target !== input) return;
+    e.stopPropagation();
+    if (e.key !== "Enter") return;
+    input.__eccEnter = true;
+    input.dispatchEvent(new Event("change", {{ bubbles: true }}));
+    input.__eccEnter = false;
+  }}, true);
+  window.addEventListener("change", function (e) {{
+    var input = inputOf(e.target);
+    if (!input || e.target !== input) return;
+    if (!input.__eccEnter) e.stopPropagation();
+  }}, true);
+}})();
+</script>
+"""
 
 
 def _render_history(messages: List[Dict[str, str]]) -> str:
@@ -37,29 +96,6 @@ def _render_history(messages: List[Dict[str, str]]) -> str:
             "</div>"
         )
     return "".join(chunks) or "<em>No messages yet. Type below and press Enter.</em>"
-
-
-def _bind_enter(text_widget: widgets.Text, callback) -> None:
-    """Run callback when the user presses Enter in the text box.
-
-    Uses the widget's submit event when available (ipywidgets 7 and 8), so a
-    half-typed message is not sent just because the box lost focus. Falls back
-    to observing value changes on versions without a submit event.
-    """
-    on_submit = getattr(text_widget, "on_submit", None)
-    if callable(on_submit):
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", DeprecationWarning)
-            on_submit(callback)
-        return
-
-    text_widget.continuous_update = False
-
-    def _on_change(change):
-        if change["new"]:
-            callback(text_widget)
-
-    text_widget.observe(_on_change, names="value")
 
 
 def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
@@ -81,6 +117,7 @@ def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
         value="",
         placeholder="Type a message and press Enter. Type /reset to start over.",
         description="You:",
+        continuous_update=False,
         layout=widgets.Layout(width="100%"),
     )
     status = widgets.HTML("<span style='color:#666;'>Ready. Press Enter to send.</span>")
@@ -91,8 +128,14 @@ def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
     def _visible_messages() -> List[Dict[str, str]]:
         return [m for m in state["messages"] if m.get("role") != "system"]
 
+    def _focus_input() -> None:
+        focus = getattr(user_input, "focus", None)  # ipywidgets >= 8
+        if callable(focus):
+            focus()
+
     def _refresh() -> None:
         transcript.value = _render_history(_visible_messages())
+        _focus_input()
 
     def _call_model() -> str:
         completion = client.chat.completions.create(
@@ -134,17 +177,21 @@ def launch_chat_ui(client: Any, model: str, system_prompt: str) -> widgets.VBox:
             _set_status(f"Error: {exc}", "#b00020")
         _refresh()
 
-    def _on_enter(_widget=None) -> None:
-        text = user_input.value
+    def _on_value(change) -> None:
+        text = change["new"]
+        if not text:
+            return
         user_input.value = ""
         send(text)
 
-    _bind_enter(user_input, _on_enter)
+    user_input.observe(_on_value, names="value")
 
     container = widgets.VBox([title, transcript, user_input, status])
+    container.add_class(_CHAT_CLASS)
     container.send = send
     container.reset = reset
     container.history = _visible_messages
+    display(HTML(_FOCUS_SCRIPT))
     return container
 
 
