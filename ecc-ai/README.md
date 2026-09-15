@@ -19,3 +19,9 @@ The chatbot notebook uses [`chatbot/chat_ui.py`](chatbot/chat_ui.py) for the int
 | Notebook | Launch on DataHub |
 |---|---|
 | Introduction to AI and LLM Technologies | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-ai&branch=main&urlpath=tree%2Fecc-ai%2Fsmall-models%2FElCaminoIntrotoAI.ipynb) |
+
+## Bias
+
+| Notebook | Launch on DataHub |
+|---|---|
+| When AI Learns the Wrong Thing: Auditing Name Bias in a Salary Prediction Model | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-ai&branch=main&urlpath=tree%2Fecc-ai%2Fbias%2FBob_and_Ray_AI_Ethics_Lab.ipynb) |

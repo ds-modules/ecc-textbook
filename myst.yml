@@ -16,6 +16,7 @@ project:
   - file: intro.md
   - title: Artificial Intelligence
     children:
+    - file: ecc-ai/bias/Bob_and_Ray_AI_Ethics_Lab.ipynb
     - file: ecc-ai/chatbot/intro_api_keys_chatbot.ipynb
     - file: ecc-ai/small-models/ElCaminoIntrotoAI.ipynb
   - title: Biology

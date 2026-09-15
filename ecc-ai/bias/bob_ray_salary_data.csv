@@ -1,0 +1,1101 @@
+name,age,education,experience_years,gender,race,salary
+Alex,28,High School,5,Female,Group C,48300
+Taylor,52,Associate,0,Nonbinary,Group B,50900
+Taylor,46,Bachelor,14,Female,Group D,84500
+Bob,61,Associate,9,Male,Group A,44700
+Ray,41,High School,8,Male,Group C,53300
+Jamie,58,Bachelor,31,Female,Group D,118100
+Pat,49,Bachelor,21,Female,Group C,106600
+Pat,51,Bachelor,30,Male,Group C,112000
+Bob,62,High School,12,Male,Group C,43100
+Bob,44,High School,9,Male,Group C,38400
+Ray,42,Master,6,Female,Group A,69700
+Bob,30,Associate,8,Male,Group C,40600
+Taylor,40,Bachelor,10,Male,Group C,86400
+Alex,56,High School,31,Male,Group C,93000
+Ray,44,High School,4,Male,Group A,61000
+Alex,23,Associate,2,Male,Group D,48800
+Pat,49,Bachelor,11,Male,Group B,86300
+Morgan,40,Master,3,Female,Group A,72100
+Jamie,37,High School,5,Female,Group B,34200
+Ray,52,Master,0,Female,Group A,69100
+Ray,47,High School,8,Female,Group D,52800
+Bob,30,Associate,0,Female,Group A,25000
+Taylor,25,Bachelor,4,Male,Group D,60900
+Casey,26,High School,5,Male,Group B,46600
+Pat,26,Master,3,Male,Group D,70400
+Pat,25,Associate,0,Male,Group B,32800
+Chris,54,Associate,2,Female,Group C,53400
+Chris,33,Master,9,Male,Group C,84300
+Bob,59,Associate,1,Male,Group B,46200
+Alex,55,Master,31,Female,Group A,117100
+Jordan,38,Bachelor,11,Female,Group B,80700
+Casey,40,High School,17,Male,Group A,80200
+Chris,45,High School,7,Female,Group C,47300
+Bob,29,Master,4,Male,Group B,64100
+Jordan,41,Associate,7,Female,Group C,61400
+Alex,27,Master,6,Male,Group D,76200
+Pat,38,High School,15,Female,Group C,72100
+Pat,23,Master,1,Female,Group D,72500
+Jamie,64,Associate,30,Female,Group B,111200
+Taylor,65,Bachelor,5,Female,Group D,76100
+Taylor,52,High School,1,Female,Group B,60000
+Bob,56,Bachelor,7,Male,Group D,55000
+Bob,45,Bachelor,13,Female,Group B,60400
+Jamie,65,High School,4,Female,Group D,51000
+Bob,56,Associate,23,Male,Group C,66600
+Morgan,36,Associate,9,Male,Group C,66800
+Bob,49,Associate,2,Female,Group D,37000
+Morgan,51,High School,27,Female,Group B,88700
+Casey,55,Associate,25,Male,Group C,106500
+Alex,38,Associate,12,Male,Group A,70400
+Jamie,53,Associate,13,Male,Group D,72200
+Morgan,37,Associate,1,Female,Group D,54200
+Casey,27,Bachelor,6,Female,Group C,75100
+Bob,36,Bachelor,3,Male,Group D,34800
+Chris,29,High School,2,Female,Group A,42700
+Morgan,34,Master,7,Female,Group D,62800
+Morgan,55,Bachelor,10,Female,Group D,86600
+Taylor,49,Master,19,Female,Group B,106300
+Ray,45,Master,3,Male,Group B,78800
+Jordan,41,Master,11,Female,Group D,91400
+Casey,41,Associate,8,Female,Group C,66900
+Taylor,62,Bachelor,26,Nonbinary,Group A,108400
+Alex,32,Associate,8,Female,Group D,61900
+Alex,32,High School,7,Female,Group B,49000
+Bob,34,Bachelor,7,Male,Group A,48200
+Casey,29,Associate,7,Male,Group A,57800
+Taylor,52,High School,14,Female,Group D,61300
+Alex,65,High School,22,Female,Group B,81200
+Bob,34,High School,8,Female,Group D,32800
+Casey,56,Master,4,Male,Group B,66900
+Morgan,47,Associate,6,Male,Group A,66600
+Casey,44,Bachelor,23,Nonbinary,Group A,99400
+Bob,26,Bachelor,1,Nonbinary,Group A,43700
+Alex,36,Associate,10,Female,Group B,57800
+Jamie,36,Bachelor,14,Male,Group D,87600
+Bob,40,Bachelor,9,Male,Group A,52000
+Chris,33,Master,4,Female,Group A,74400
+Jamie,28,High School,0,Female,Group A,31300
+Chris,59,High School,26,Male,Group D,90400
+Alex,58,High School,29,Male,Group B,94400
+Bob,42,High School,12,Female,Group D,42000
+Chris,54,Bachelor,25,Male,Group C,118000
+Ray,35,High School,5,Female,Group B,52100
+Chris,55,High School,6,Female,Group A,61300
+Bob,24,Master,3,Female,Group B,52800
+Taylor,50,Associate,29,Male,Group D,86000
+Jordan,41,High School,19,Male,Group A,63400
+Ray,34,Bachelor,7,Male,Group B,81200
+Ray,42,High School,3,Male,Group A,44600
+Chris,43,Associate,19,Male,Group A,78100
+Bob,28,High School,1,Male,Group B,25000
+Casey,35,Bachelor,0,Female,Group B,46600
+Taylor,48,Bachelor,23,Female,Group D,111600
+Bob,61,Associate,2,Male,Group B,50900
+Chris,42,High School,0,Male,Group C,32600
+Ray,31,High School,1,Female,Group C,38300
+Alex,50,Associate,7,Female,Group D,79600
+Alex,24,High School,0,Male,Group B,34200
+Casey,23,High School,0,Female,Group D,25000
+Alex,27,High School,5,Male,Group D,54300
+Ray,52,Master,1,Female,Group C,76400
+Alex,39,Master,15,Male,Group D,89400
+Bob,57,Associate,10,Male,Group D,51400
+Morgan,64,Associate,4,Male,Group B,65700
+Alex,31,High School,0,Male,Group A,49000
+Morgan,47,Associate,17,Female,Group D,78000
+Pat,57,Associate,9,Female,Group D,79600
+Bob,41,Associate,11,Male,Group B,44200
+Chris,64,Associate,11,Female,Group B,81300
+Ray,29,Associate,5,Female,Group D,54400
+Jordan,45,Bachelor,4,Male,Group B,70100
+Taylor,48,High School,10,Male,Group D,62100
+Pat,62,High School,33,Female,Group C,106900
+Taylor,51,High School,26,Male,Group A,75000
+Morgan,30,High School,9,Male,Group B,53000
+Bob,36,Associate,4,Male,Group A,31600
+Jordan,41,Associate,5,Male,Group D,46700
+Jordan,64,Master,21,Female,Group D,110700
+Alex,47,High School,13,Male,Group B,62900
+Chris,43,Master,9,Male,Group D,64000
+Morgan,27,High School,1,Male,Group B,40900
+Bob,58,Associate,0,Male,Group A,35600
+Jordan,44,Bachelor,15,Female,Group B,85300
+Jordan,51,Bachelor,14,Female,Group C,87500
+Chris,62,High School,17,Female,Group A,68100
+Pat,37,Master,13,Female,Group A,102200
+Morgan,32,Bachelor,10,Male,Group A,67900
+Ray,49,Associate,4,Female,Group A,50700
+Morgan,43,High School,12,Male,Group D,61100
+Bob,35,High School,12,Male,Group D,42300
+Morgan,22,High School,0,Male,Group D,32100
+Casey,62,Associate,2,Female,Group D,45500
+Jordan,34,High School,2,Female,Group B,50900
+Ray,64,Master,7,Male,Group C,90900
+Casey,49,Master,26,Female,Group D,119400
+Alex,57,Associate,34,Male,Group A,122500
+Ray,55,Associate,2,Female,Group B,56500
+Ray,37,High School,7,Female,Group C,44900
+Pat,30,Bachelor,3,Female,Group D,47300
+Morgan,28,Master,4,Female,Group B,74700
+Jordan,60,High School,12,Female,Group D,62700
+Jordan,28,High School,7,Male,Group B,53700
+Taylor,51,High School,26,Male,Group C,78100
+Ray,49,Master,0,Female,Group A,84400
+Casey,39,Master,6,Female,Group B,75600
+Ray,55,High School,5,Female,Group A,45900
+Bob,29,High School,8,Male,Group B,29300
+Morgan,29,High School,4,Female,Group C,45600
+Ray,23,Associate,0,Nonbinary,Group C,52100
+Ray,43,Associate,5,Female,Group C,68300
+Bob,53,High School,0,Nonbinary,Group C,25000
+Casey,42,Associate,18,Female,Group D,80700
+Chris,54,Associate,6,Male,Group D,63400
+Taylor,59,Associate,24,Male,Group D,91400
+Pat,53,Associate,12,Male,Group B,64300
+Jamie,44,Associate,17,Female,Group C,80900
+Casey,39,Bachelor,4,Male,Group A,63300
+Casey,61,High School,5,Male,Group D,65700
+Taylor,39,Associate,13,Male,Group B,77100
+Jamie,55,High School,16,Female,Group D,74300
+Pat,39,Associate,13,Female,Group B,64100
+Casey,46,High School,20,Male,Group A,68900
+Chris,26,Associate,1,Male,Group D,56100
+Ray,32,High School,3,Female,Group B,28100
+Chris,62,Associate,13,Female,Group D,81200
+Ray,27,Associate,2,Female,Group D,50300
+Chris,24,Associate,0,Male,Group D,35600
+Bob,60,Bachelor,32,Male,Group D,97100
+Taylor,37,High School,9,Female,Group B,59300
+Alex,42,Associate,12,Male,Group D,62400
+Casey,65,High School,2,Male,Group A,42800
+Alex,59,Master,11,Male,Group A,92700
+Morgan,54,Bachelor,14,Male,Group B,80600
+Jamie,37,High School,3,Female,Group A,39100
+Alex,49,Associate,0,Male,Group D,45600
+Bob,51,High School,8,Male,Group D,33900
+Jordan,55,Bachelor,14,Male,Group A,82000
+Jordan,32,Master,5,Female,Group A,62400
+Taylor,52,Bachelor,18,Male,Group B,82700
+Jamie,38,High School,10,Female,Group C,41500
+Jordan,60,High School,26,Male,Group A,86400
+Bob,57,Associate,13,Male,Group A,62700
+Taylor,29,Associate,6,Female,Group A,55300
+Ray,59,Bachelor,3,Nonbinary,Group A,69900
+Alex,32,High School,1,Male,Group D,47200
+Taylor,55,Associate,6,Female,Group A,72600
+Chris,32,Bachelor,6,Male,Group B,68300
+Bob,57,High School,4,Female,Group B,26200
+Bob,44,High School,15,Male,Group B,42200
+Ray,39,High School,7,Male,Group B,60100
+Taylor,39,Master,1,Male,Group D,70700
+Bob,32,Master,7,Female,Group A,58100
+Ray,48,Bachelor,0,Male,Group A,66300
+Morgan,54,Master,25,Male,Group D,118500
+Chris,29,High School,8,Female,Group C,51500
+Bob,32,Associate,4,Male,Group D,28800
+Pat,64,High School,10,Male,Group D,61800
+Jordan,51,High School,29,Male,Group B,99700
+Chris,57,Master,12,Female,Group D,104900
+Ray,50,Master,3,Female,Group C,74400
+Casey,26,Bachelor,3,Female,Group B,60300
+Jamie,65,Associate,12,Male,Group A,83300
+Morgan,34,Bachelor,6,Female,Group C,59600
+Casey,31,Bachelor,0,Male,Group B,59700
+Casey,58,High School,14,Female,Group D,65500
+Chris,63,Bachelor,31,Female,Group C,115300
+Taylor,35,Associate,11,Male,Group A,54900
+Pat,32,High School,8,Male,Group B,52900
+Chris,38,Associate,2,Female,Group C,53400
+Ray,41,High School,7,Male,Group D,36400
+Jamie,64,High School,6,Nonbinary,Group C,52200
+Jordan,61,Associate,7,Female,Group B,73700
+Taylor,30,High School,0,Nonbinary,Group A,37700
+Bob,25,Bachelor,3,Male,Group A,39400
+Alex,40,Bachelor,18,Male,Group D,86300
+Jamie,53,Associate,5,Female,Group A,55000
+Taylor,56,High School,28,Female,Group B,84700
+Jordan,59,Bachelor,2,Male,Group D,68000
+Jamie,31,High School,7,Male,Group B,45300
+Pat,62,Bachelor,19,Female,Group B,109200
+Morgan,41,Bachelor,6,Female,Group C,63100
+Taylor,52,Bachelor,14,Female,Group D,84700
+Jamie,41,High School,17,Female,Group A,67200
+Chris,54,Bachelor,16,Female,Group C,97600
+Alex,53,Associate,21,Male,Group D,99800
+Taylor,48,High School,13,Male,Group C,58000
+Jordan,36,Associate,8,Nonbinary,Group B,64000
+Morgan,41,High School,0,Female,Group C,41700
+Jamie,38,Bachelor,3,Female,Group D,61400
+Pat,47,Master,16,Female,Group B,100100
+Jordan,39,Associate,2,Male,Group C,55200
+Taylor,32,Associate,10,Male,Group B,50800
+Ray,57,High School,6,Female,Group A,51300
+Jordan,33,Master,6,Nonbinary,Group A,73700
+Casey,53,Master,12,Female,Group D,85200
+Ray,45,Associate,8,Female,Group A,58000
+Morgan,62,Bachelor,1,Female,Group D,67700
+Taylor,36,Bachelor,10,Male,Group C,72700
+Taylor,51,Associate,16,Female,Group C,86200
+Pat,27,Master,1,Female,Group A,65300
+Casey,65,High School,4,Female,Group C,54600
+Bob,29,High School,0,Female,Group A,25000
+Morgan,57,Bachelor,18,Female,Group A,98700
+Bob,48,Associate,22,Female,Group B,72100
+Morgan,27,High School,2,Male,Group A,41500
+Casey,46,High School,18,Male,Group A,65000
+Chris,64,Associate,33,Female,Group D,123900
+Taylor,42,High School,7,Female,Group A,49400
+Bob,37,Associate,4,Male,Group A,36300
+Casey,48,Bachelor,2,Male,Group A,57600
+Pat,49,High School,25,Female,Group C,75900
+Alex,31,Associate,9,Female,Group A,58600
+Morgan,41,Master,6,Female,Group A,69400
+Taylor,62,High School,34,Male,Group C,109200
+Taylor,32,Bachelor,0,Female,Group D,63800
+Casey,59,Bachelor,20,Female,Group C,96000
+Pat,51,High School,5,Male,Group C,59200
+Alex,59,Associate,34,Female,Group D,107300
+Casey,23,High School,2,Female,Group B,32800
+Ray,42,Bachelor,7,Female,Group D,70400
+Chris,30,High School,4,Male,Group D,44900
+Alex,62,Bachelor,5,Nonbinary,Group C,59400
+Jordan,51,Associate,12,Female,Group C,73200
+Bob,42,High School,18,Female,Group A,53900
+Jordan,35,Associate,3,Male,Group D,48500
+Ray,50,Master,1,Male,Group B,69100
+Alex,30,High School,4,Female,Group C,41200
+Ray,28,Associate,2,Male,Group B,49800
+Ray,52,Associate,6,Male,Group C,63800
+Jamie,26,High School,2,Female,Group B,35700
+Chris,22,Associate,0,Male,Group B,45400
+Jamie,22,Associate,0,Female,Group C,46700
+Bob,58,High School,8,Male,Group D,41100
+Alex,55,Bachelor,32,Male,Group B,134300
+Chris,54,Associate,18,Male,Group A,74600
+Bob,28,Master,3,Female,Group A,57200
+Chris,44,Associate,6,Nonbinary,Group B,60200
+Bob,42,Master,11,Female,Group D,62200
+Ray,46,Master,8,Male,Group B,83300
+Jamie,64,Associate,16,Male,Group A,87300
+Taylor,40,Associate,18,Male,Group D,77400
+Bob,64,Associate,14,Female,Group B,64900
+Pat,53,High School,12,Male,Group C,70800
+Jordan,33,Associate,6,Male,Group B,47900
+Bob,26,Bachelor,0,Female,Group D,26100
+Chris,61,High School,4,Male,Group C,72000
+Alex,51,High School,28,Male,Group C,80000
+Chris,63,Bachelor,35,Male,Group C,138300
+Pat,45,Associate,19,Male,Group A,90700
+Morgan,29,High School,2,Male,Group C,38000
+Casey,63,High School,29,Female,Group A,93400
+Ray,23,High School,3,Female,Group B,25600
+Bob,37,High School,3,Female,Group B,25300
+Taylor,30,Master,5,Male,Group A,69700
+Morgan,63,Bachelor,26,Male,Group B,111000
+Ray,59,Associate,7,Male,Group C,71900
+Alex,24,High School,1,Nonbinary,Group D,25300
+Pat,55,Bachelor,26,Female,Group C,104500
+Jordan,57,Master,27,Female,Group C,122100
+Ray,34,High School,2,Female,Group B,45000
+Pat,59,Master,30,Female,Group B,130700
+Chris,61,Associate,15,Male,Group A,81200
+Morgan,38,High School,10,Female,Group C,60000
+Pat,46,Bachelor,25,Female,Group C,101400
+Alex,43,Bachelor,21,Female,Group D,102000
+Jordan,45,Bachelor,6,Male,Group B,67200
+Alex,63,Bachelor,9,Male,Group A,72900
+Jamie,24,Bachelor,2,Female,Group C,56700
+Bob,25,High School,1,Male,Group C,25000
+Bob,61,Associate,25,Male,Group B,73500
+Bob,42,High School,16,Nonbinary,Group A,57900
+Taylor,42,Associate,1,Male,Group D,70500
+Ray,47,Master,2,Female,Group D,64300
+Morgan,37,Associate,15,Female,Group C,75100
+Taylor,43,High School,2,Female,Group C,58700
+Taylor,50,Bachelor,28,Female,Group D,98200
+Casey,39,High School,17,Female,Group D,73700
+Morgan,38,High School,6,Female,Group B,50100
+Jordan,51,High School,9,Female,Group B,56900
+Bob,49,Associate,22,Male,Group D,71000
+Casey,34,Master,1,Male,Group C,69900
+Pat,62,High School,25,Female,Group D,96900
+Alex,57,High School,1,Male,Group B,45600
+Pat,27,Associate,6,Male,Group D,56700
+Ray,62,Bachelor,4,Male,Group C,71800
+Bob,60,Bachelor,30,Female,Group A,98400
+Jamie,43,High School,16,Female,Group B,62600
+Ray,52,High School,6,Male,Group C,47000
+Chris,34,Master,8,Male,Group B,86000
+Bob,48,High School,20,Female,Group A,52300
+Ray,61,Bachelor,2,Male,Group A,71100
+Morgan,55,Associate,11,Female,Group A,74400
+Jamie,46,Bachelor,16,Male,Group B,82300
+Alex,65,Associate,12,Female,Group D,81900
+Ray,34,Bachelor,5,Male,Group A,67900
+Ray,62,High School,0,Female,Group C,45900
+Bob,39,High School,2,Female,Group D,25000
+Bob,47,Bachelor,22,Female,Group B,80800
+Bob,54,Bachelor,28,Male,Group B,98200
+Alex,38,High School,1,Female,Group C,49200
+Bob,63,Bachelor,35,Female,Group B,101000
+Chris,59,High School,2,Female,Group D,41600
+Chris,54,Associate,9,Female,Group A,81700
+Pat,57,Associate,5,Nonbinary,Group B,67500
+Morgan,63,Associate,4,Male,Group A,64000
+Ray,51,High School,3,Female,Group A,45800
+Jamie,33,Associate,9,Female,Group B,46300
+Jordan,33,High School,7,Male,Group A,51500
+Chris,41,Bachelor,9,Female,Group C,73700
+Ray,28,High School,8,Male,Group A,56700
+Casey,36,High School,5,Male,Group C,33100
+Morgan,55,High School,34,Male,Group A,103200
+Pat,39,High School,11,Male,Group A,63400
+Bob,48,Bachelor,22,Male,Group B,63800
+Chris,45,High School,13,Female,Group C,75100
+Morgan,63,Master,19,Female,Group A,124200
+Taylor,37,High School,2,Male,Group A,47900
+Casey,24,High School,3,Female,Group D,52100
+Jamie,28,Bachelor,0,Female,Group D,54800
+Ray,52,Bachelor,6,Male,Group D,60600
+Morgan,42,Bachelor,1,Male,Group B,64500
+Casey,47,Associate,26,Male,Group B,102000
+Alex,22,Associate,1,Male,Group A,42700
+Pat,47,Associate,15,Male,Group D,74100
+Alex,49,Bachelor,23,Male,Group C,105200
+Casey,49,Bachelor,7,Female,Group A,69900
+Ray,64,Bachelor,3,Female,Group D,57000
+Pat,48,Bachelor,16,Male,Group B,83100
+Morgan,35,Associate,0,Male,Group B,45300
+Bob,53,Associate,4,Female,Group D,46900
+Morgan,29,Master,8,Male,Group B,67500
+Alex,32,Associate,4,Male,Group D,52000
+Jamie,57,High School,32,Male,Group D,103300
+Ray,64,High School,7,Male,Group D,62100
+Ray,65,High School,6,Male,Group C,53900
+Pat,43,Bachelor,19,Male,Group B,88700
+Morgan,59,Master,2,Male,Group A,75500
+Morgan,45,Associate,2,Female,Group D,39900
+Ray,52,Bachelor,0,Female,Group A,55600
+Jamie,31,High School,6,Female,Group B,52700
+Ray,55,Master,8,Female,Group C,88700
+Morgan,62,Bachelor,22,Male,Group C,104100
+Bob,44,High School,21,Male,Group C,59800
+Bob,47,Associate,13,Female,Group D,54400
+Alex,22,Associate,0,Female,Group B,44000
+Jamie,45,Master,7,Female,Group C,75000
+Jamie,46,Associate,19,Male,Group C,80400
+Taylor,63,Bachelor,9,Female,Group A,86500
+Jamie,60,Bachelor,4,Male,Group A,72200
+Casey,54,Bachelor,1,Female,Group B,74700
+Pat,42,Master,14,Female,Group C,92300
+Bob,46,Bachelor,16,Male,Group A,66300
+Pat,57,High School,13,Male,Group D,54500
+Casey,23,High School,0,Female,Group B,32700
+Chris,60,High School,3,Female,Group B,51600
+Casey,39,Master,2,Male,Group D,63800
+Casey,54,High School,31,Female,Group D,102200
+Morgan,63,Associate,16,Male,Group C,82700
+Casey,43,High School,18,Male,Group A,76100
+Bob,32,Associate,9,Male,Group D,28100
+Morgan,35,High School,4,Male,Group D,55500
+Ray,30,Bachelor,7,Male,Group B,76900
+Bob,37,Master,2,Male,Group A,52400
+Morgan,40,Associate,4,Female,Group C,60200
+Ray,47,Master,6,Male,Group B,73300
+Bob,44,Associate,19,Female,Group A,56800
+Jamie,53,Bachelor,9,Male,Group C,83900
+Jamie,59,Master,28,Male,Group D,126000
+Bob,29,Master,2,Female,Group D,36100
+Pat,57,Associate,14,Male,Group A,64600
+Jamie,45,High School,17,Male,Group A,72800
+Chris,39,High School,15,Male,Group C,64900
+Bob,48,Bachelor,8,Female,Group A,49700
+Pat,49,Associate,16,Female,Group B,79500
+Chris,27,Bachelor,0,Male,Group B,49500
+Jamie,37,Master,9,Female,Group A,80900
+Ray,56,High School,1,Male,Group C,45900
+Pat,33,Master,11,Female,Group A,92500
+Pat,43,High School,12,Male,Group D,60400
+Bob,23,Master,1,Male,Group C,43400
+Jordan,54,Bachelor,17,Female,Group D,103100
+Bob,61,High School,34,Male,Group D,78500
+Chris,35,High School,14,Male,Group A,63300
+Bob,31,Master,6,Female,Group B,53800
+Morgan,62,Associate,15,Female,Group D,71000
+Pat,29,Bachelor,3,Female,Group A,58300
+Pat,61,High School,1,Male,Group A,43300
+Chris,36,Associate,8,Female,Group A,72900
+Taylor,26,High School,3,Male,Group C,39800
+Taylor,29,Associate,1,Male,Group A,48500
+Jamie,55,High School,1,Female,Group B,36100
+Bob,53,High School,26,Male,Group B,79300
+Bob,44,Bachelor,10,Male,Group C,50500
+Ray,50,High School,0,Female,Group A,50300
+Jordan,44,Bachelor,19,Male,Group B,94800
+Chris,65,Bachelor,1,Male,Group A,65000
+Ray,48,Bachelor,0,Male,Group B,60600
+Ray,33,High School,5,Female,Group A,55800
+Casey,35,Bachelor,10,Male,Group A,67900
+Alex,45,Associate,1,Male,Group C,43400
+Jamie,31,Bachelor,5,Male,Group D,61400
+Taylor,49,Bachelor,28,Male,Group B,119900
+Taylor,48,Bachelor,7,Female,Group A,79200
+Taylor,32,Bachelor,1,Female,Group D,56100
+Chris,30,Bachelor,4,Female,Group D,50900
+Jamie,23,High School,1,Male,Group B,41500
+Taylor,55,Bachelor,30,Female,Group B,103900
+Bob,64,Bachelor,7,Female,Group A,51200
+Pat,44,High School,13,Female,Group C,70700
+Jordan,42,Bachelor,14,Male,Group D,80200
+Casey,45,High School,9,Male,Group B,49900
+Jamie,41,High School,12,Female,Group B,68800
+Chris,47,Bachelor,16,Female,Group A,84000
+Casey,38,Bachelor,13,Female,Group C,74900
+Chris,42,Associate,0,Male,Group C,52900
+Taylor,42,Associate,2,Female,Group C,50800
+Jordan,58,Associate,10,Male,Group A,71800
+Bob,62,Bachelor,0,Female,Group A,33400
+Ray,60,High School,2,Female,Group A,48200
+Pat,45,High School,13,Female,Group B,69400
+Bob,42,High School,10,Female,Group C,30800
+Ray,63,High School,8,Female,Group D,73100
+Ray,50,Master,3,Female,Group C,81200
+Ray,64,Bachelor,3,Female,Group A,72800
+Jordan,35,Master,10,Female,Group A,90900
+Ray,50,High School,5,Male,Group B,43700
+Casey,60,Associate,4,Male,Group A,59600
+Bob,42,High School,0,Male,Group D,25000
+Bob,56,High School,4,Female,Group D,25000
+Pat,51,Bachelor,18,Male,Group B,114100
+Casey,37,Bachelor,15,Female,Group C,84200
+Bob,46,Bachelor,8,Female,Group C,45900
+Jamie,62,High School,30,Nonbinary,Group A,95200
+Alex,31,High School,4,Female,Group C,50700
+Jordan,45,Master,23,Male,Group D,112700
+Morgan,28,High School,4,Male,Group D,38000
+Jamie,52,High School,21,Female,Group A,75700
+Jordan,62,Master,21,Female,Group C,110400
+Jordan,62,Associate,5,Female,Group C,70100
+Ray,47,Associate,1,Male,Group B,60000
+Alex,63,Bachelor,24,Male,Group C,119700
+Ray,53,Master,2,Male,Group D,87000
+Pat,53,High School,16,Female,Group C,66500
+Chris,24,High School,3,Male,Group C,36200
+Jordan,28,Associate,0,Male,Group B,43300
+Casey,42,High School,2,Nonbinary,Group D,51000
+Casey,50,High School,2,Male,Group C,42800
+Pat,25,Bachelor,0,Female,Group B,53900
+Chris,33,Master,5,Male,Group B,76700
+Pat,52,Bachelor,2,Male,Group A,69400
+Bob,41,Associate,12,Male,Group A,43200
+Ray,42,Associate,2,Female,Group B,66300
+Chris,22,Associate,0,Male,Group C,44200
+Taylor,24,High School,2,Nonbinary,Group A,53300
+Pat,62,High School,32,Male,Group A,98500
+Pat,38,Bachelor,13,Female,Group B,71000
+Chris,29,Bachelor,7,Male,Group B,66700
+Bob,32,High School,9,Male,Group A,25000
+Jordan,60,Bachelor,30,Female,Group B,118100
+Ray,31,Bachelor,2,Female,Group A,58400
+Casey,36,Associate,10,Female,Group B,81800
+Jamie,30,Associate,9,Female,Group C,67000
+Jordan,45,Master,16,Male,Group C,82700
+Morgan,36,Bachelor,3,Female,Group A,78400
+Jordan,32,Bachelor,6,Male,Group C,62300
+Jamie,35,Associate,13,Male,Group D,56300
+Alex,39,Associate,5,Female,Group D,56100
+Ray,25,High School,8,Female,Group D,40600
+Ray,24,Bachelor,0,Male,Group D,44900
+Bob,51,Bachelor,29,Female,Group A,93400
+Jamie,51,Bachelor,0,Male,Group B,59400
+Jamie,41,High School,5,Male,Group D,46100
+Jordan,50,Associate,23,Female,Group A,99400
+Casey,41,High School,2,Male,Group B,40200
+Ray,54,Associate,4,Male,Group D,57000
+Morgan,26,Bachelor,5,Male,Group C,64200
+Bob,25,Associate,2,Female,Group D,42900
+Pat,29,High School,5,Male,Group B,34800
+Morgan,24,Master,1,Female,Group C,52200
+Ray,22,Associate,1,Female,Group B,38000
+Bob,24,High School,1,Male,Group A,25000
+Alex,35,Master,10,Female,Group A,91900
+Casey,24,High School,2,Female,Group C,31200
+Bob,25,Master,3,Male,Group A,52300
+Chris,43,High School,16,Male,Group C,68600
+Pat,38,Associate,4,Male,Group D,46100
+Ray,58,High School,8,Female,Group A,63900
+Morgan,53,High School,6,Female,Group B,52500
+Jamie,32,Bachelor,9,Male,Group C,76500
+Chris,39,High School,17,Female,Group C,69600
+Taylor,35,Master,7,Male,Group D,73200
+Chris,62,High School,3,Female,Group A,42500
+Ray,49,Bachelor,8,Male,Group B,72800
+Casey,47,Bachelor,0,Female,Group C,61000
+Chris,25,High School,0,Male,Group B,48200
+Alex,55,High School,23,Male,Group D,87600
+Ray,34,Associate,2,Female,Group C,48800
+Jordan,26,High School,0,Female,Group A,39800
+Jordan,32,Associate,7,Female,Group B,53000
+Jordan,61,Master,4,Female,Group A,86400
+Alex,35,Bachelor,4,Male,Group B,51100
+Pat,42,Bachelor,10,Female,Group D,78700
+Bob,34,High School,3,Female,Group D,28200
+Ray,46,High School,0,Male,Group B,38500
+Bob,58,High School,35,Female,Group B,78700
+Morgan,55,High School,20,Male,Group B,77800
+Casey,52,Bachelor,5,Male,Group C,67400
+Jordan,43,Associate,15,Female,Group C,79600
+Jamie,23,High School,2,Female,Group B,38400
+Casey,50,Associate,13,Female,Group A,77700
+Casey,49,Bachelor,6,Male,Group C,80500
+Chris,43,Bachelor,11,Male,Group D,79800
+Morgan,27,Associate,6,Female,Group D,47000
+Bob,65,High School,0,Female,Group A,36300
+Casey,36,Master,8,Male,Group A,87600
+Casey,46,High School,19,Female,Group A,83000
+Bob,26,Associate,5,Female,Group A,36400
+Jordan,41,Bachelor,17,Male,Group A,89700
+Chris,26,Associate,0,Female,Group D,42400
+Ray,63,High School,3,Female,Group B,44500
+Alex,36,Master,14,Female,Group C,102000
+Ray,44,Bachelor,0,Female,Group A,58200
+Ray,41,Bachelor,7,Male,Group C,69100
+Jamie,56,High School,1,Female,Group D,52000
+Bob,30,Associate,9,Male,Group B,47600
+Jamie,43,Bachelor,7,Female,Group A,77900
+Pat,60,Associate,21,Female,Group C,89800
+Jamie,52,High School,28,Female,Group A,88800
+Taylor,60,High School,26,Male,Group D,92400
+Morgan,40,Master,19,Female,Group B,107500
+Ray,28,Master,4,Male,Group D,63600
+Morgan,30,Associate,4,Male,Group C,52000
+Pat,60,Bachelor,23,Nonbinary,Group A,99200
+Taylor,23,Master,0,Female,Group C,60100
+Alex,43,High School,10,Male,Group C,62300
+Ray,45,Master,4,Male,Group B,75100
+Pat,60,High School,35,Male,Group C,105500
+Chris,27,High School,1,Female,Group C,26700
+Ray,24,High School,2,Male,Group D,28800
+Jamie,59,Bachelor,5,Female,Group B,75000
+Chris,51,Master,13,Male,Group A,87000
+Morgan,58,Bachelor,8,Nonbinary,Group B,85200
+Casey,28,Associate,3,Female,Group C,35100
+Morgan,22,High School,0,Female,Group A,26000
+Jordan,26,Associate,4,Male,Group D,50400
+Pat,55,Bachelor,19,Male,Group D,95400
+Taylor,23,Master,0,Male,Group A,60300
+Ray,63,High School,4,Male,Group B,47800
+Chris,37,High School,1,Male,Group A,29700
+Bob,56,Associate,34,Female,Group D,88100
+Chris,44,Bachelor,9,Female,Group B,72900
+Morgan,46,Bachelor,24,Male,Group A,108000
+Jamie,34,Bachelor,12,Male,Group B,82600
+Alex,46,Bachelor,19,Male,Group B,96700
+Chris,49,Bachelor,27,Female,Group B,94200
+Jordan,59,High School,25,Male,Group A,89700
+Morgan,36,Master,15,Female,Group B,92600
+Alex,47,Bachelor,15,Male,Group A,106000
+Ray,40,Bachelor,4,Female,Group D,70200
+Bob,64,Master,33,Nonbinary,Group B,112700
+Casey,62,High School,29,Male,Group C,95200
+Morgan,55,Master,13,Female,Group C,94100
+Jordan,65,High School,13,Female,Group B,76000
+Taylor,58,High School,17,Female,Group A,79500
+Jamie,49,Bachelor,20,Female,Group C,97400
+Bob,48,Associate,15,Male,Group C,58200
+Jordan,41,Associate,8,Female,Group A,77600
+Morgan,43,High School,19,Male,Group B,81000
+Jordan,34,Associate,0,Female,Group B,37800
+Taylor,57,Master,18,Male,Group B,111100
+Bob,48,Master,8,Female,Group C,72100
+Jordan,64,Master,30,Male,Group C,128400
+Alex,29,High School,8,Female,Group D,49200
+Bob,41,Associate,5,Male,Group B,44800
+Pat,28,Bachelor,5,Male,Group A,72800
+Casey,39,Master,7,Male,Group D,90400
+Jamie,54,High School,2,Male,Group D,50200
+Pat,36,High School,15,Female,Group B,68000
+Jamie,32,High School,0,Female,Group B,42100
+Jamie,44,Master,3,Female,Group C,61800
+Taylor,48,High School,11,Male,Group A,50500
+Ray,36,Master,6,Male,Group C,85400
+Pat,37,Associate,8,Nonbinary,Group A,59800
+Casey,49,Associate,19,Male,Group B,87400
+Casey,56,Bachelor,5,Male,Group D,81700
+Pat,30,Master,4,Male,Group D,66000
+Bob,35,Bachelor,3,Female,Group A,39900
+Jordan,57,High School,29,Female,Group A,90200
+Jamie,41,Bachelor,4,Female,Group A,74600
+Jamie,39,Master,3,Female,Group D,75100
+Ray,45,Associate,4,Female,Group A,56400
+Alex,28,High School,7,Female,Group D,50400
+Jamie,32,High School,4,Female,Group C,45200
+Pat,31,Associate,3,Male,Group D,44500
+Taylor,54,Associate,26,Male,Group B,108200
+Taylor,60,Bachelor,1,Female,Group D,81700
+Jordan,22,Associate,0,Male,Group A,50800
+Morgan,30,Associate,6,Male,Group C,57300
+Morgan,52,Bachelor,25,Female,Group A,105200
+Casey,45,Associate,1,Female,Group C,48300
+Casey,23,Master,1,Female,Group B,72400
+Taylor,47,High School,8,Female,Group C,57900
+Ray,57,Bachelor,1,Male,Group B,77700
+Ray,55,Bachelor,7,Male,Group D,78300
+Pat,40,Master,3,Female,Group D,70700
+Casey,50,Master,24,Female,Group C,113900
+Casey,59,High School,3,Male,Group D,45100
+Ray,55,Master,5,Male,Group C,76500
+Taylor,54,High School,32,Male,Group D,106600
+Ray,57,High School,7,Female,Group A,54700
+Taylor,22,Bachelor,1,Female,Group A,57600
+Morgan,60,High School,18,Female,Group C,65800
+Alex,28,Associate,3,Female,Group D,54300
+Ray,33,Master,8,Female,Group A,69600
+Alex,39,High School,8,Female,Group A,54200
+Bob,56,Associate,22,Male,Group B,69000
+Morgan,38,Bachelor,8,Male,Group D,89800
+Taylor,56,Bachelor,27,Female,Group D,96500
+Morgan,51,Bachelor,12,Male,Group A,80700
+Taylor,31,Master,1,Nonbinary,Group C,59800
+Pat,49,High School,0,Female,Group C,40500
+Jamie,23,Bachelor,1,Male,Group C,58300
+Casey,50,High School,8,Female,Group B,50400
+Ray,31,High School,1,Female,Group A,41000
+Taylor,56,Master,33,Male,Group C,129200
+Jordan,46,Bachelor,11,Female,Group C,80800
+Ray,65,High School,7,Male,Group B,55700
+Bob,59,Bachelor,1,Male,Group C,54900
+Jamie,38,High School,14,Female,Group C,52200
+Morgan,63,Associate,14,Male,Group D,67800
+Pat,34,Associate,13,Male,Group B,66000
+Ray,23,High School,5,Male,Group D,40800
+Jamie,25,Master,1,Male,Group C,67300
+Taylor,54,High School,14,Female,Group C,70300
+Jamie,63,Associate,9,Male,Group B,73600
+Pat,31,Associate,0,Male,Group B,36800
+Pat,57,Bachelor,7,Female,Group A,68000
+Ray,63,Bachelor,5,Female,Group A,74900
+Jordan,28,High School,6,Female,Group B,38800
+Bob,27,Associate,6,Female,Group A,32600
+Alex,57,Bachelor,16,Male,Group B,80200
+Pat,53,Master,32,Female,Group C,120000
+Bob,58,High School,30,Female,Group D,76500
+Casey,51,Associate,19,Male,Group D,79600
+Ray,23,High School,3,Female,Group B,38500
+Taylor,28,Bachelor,2,Male,Group A,55100
+Bob,26,Master,4,Male,Group D,48100
+Morgan,58,Associate,13,Male,Group B,74900
+Jamie,29,Associate,3,Male,Group B,52800
+Chris,51,High School,10,Male,Group A,59000
+Morgan,24,Bachelor,2,Male,Group A,56100
+Jamie,58,Master,21,Male,Group D,108200
+Jordan,52,Associate,14,Female,Group A,76000
+Ray,37,Associate,0,Female,Group B,51900
+Morgan,58,Bachelor,7,Female,Group A,61500
+Pat,60,High School,10,Male,Group D,65300
+Bob,36,Master,1,Male,Group D,35300
+Bob,25,Master,0,Male,Group C,45000
+Casey,36,High School,15,Male,Group B,57000
+Pat,34,High School,2,Male,Group C,33700
+Alex,25,Master,4,Female,Group A,79800
+Ray,44,High School,0,Female,Group D,40900
+Bob,52,Bachelor,19,Female,Group B,66200
+Ray,41,High School,0,Female,Group A,44100
+Taylor,27,Master,6,Nonbinary,Group B,76300
+Ray,65,High School,2,Female,Group A,47700
+Chris,51,Associate,4,Female,Group A,51200
+Jordan,29,Associate,2,Male,Group B,46000
+Chris,46,Associate,10,Female,Group A,63400
+Morgan,29,High School,8,Female,Group A,48900
+Morgan,40,Associate,16,Female,Group C,82800
+Jamie,41,Bachelor,4,Female,Group D,57600
+Casey,40,Bachelor,8,Male,Group D,73400
+Chris,50,Associate,15,Male,Group B,88400
+Chris,55,Associate,2,Female,Group C,60800
+Taylor,39,Bachelor,15,Female,Group A,70500
+Jordan,44,High School,18,Male,Group D,72400
+Jordan,43,High School,8,Female,Group B,40600
+Ray,41,Bachelor,4,Male,Group D,74100
+Ray,41,Bachelor,8,Female,Group B,70500
+Casey,40,Master,15,Male,Group D,86300
+Jamie,29,High School,2,Male,Group C,52300
+Chris,57,High School,14,Female,Group D,74200
+Chris,50,High School,12,Female,Group D,61100
+Taylor,41,High School,3,Female,Group C,48200
+Morgan,38,Bachelor,9,Female,Group B,66000
+Jordan,35,Bachelor,10,Female,Group C,81300
+Bob,29,Bachelor,1,Male,Group B,38300
+Jordan,30,Bachelor,3,Male,Group B,58200
+Alex,52,High School,17,Male,Group B,81300
+Bob,35,High School,0,Male,Group D,25000
+Chris,54,Associate,28,Female,Group C,100200
+Morgan,48,Bachelor,24,Female,Group C,91900
+Jamie,47,Associate,25,Male,Group C,99700
+Chris,48,Associate,17,Nonbinary,Group D,85200
+Jordan,28,Associate,7,Male,Group C,73500
+Morgan,56,Associate,5,Male,Group C,60400
+Bob,44,Associate,17,Male,Group D,59100
+Jamie,49,Associate,1,Female,Group B,58800
+Jamie,38,High School,12,Female,Group A,64600
+Alex,25,High School,1,Male,Group B,42500
+Ray,41,Bachelor,8,Female,Group B,79600
+Bob,51,High School,19,Male,Group B,50700
+Bob,34,Associate,3,Male,Group A,30900
+Alex,65,Associate,31,Female,Group B,104800
+Morgan,64,Master,28,Female,Group C,119300
+Alex,37,Master,11,Male,Group C,92700
+Chris,61,High School,17,Male,Group B,72300
+Jamie,64,High School,6,Female,Group D,48000
+Morgan,25,High School,2,Male,Group D,45100
+Taylor,61,Associate,3,Female,Group B,53700
+Jordan,60,High School,29,Female,Group A,79800
+Morgan,26,Bachelor,1,Male,Group C,59700
+Bob,30,Associate,6,Female,Group D,32500
+Ray,24,High School,0,Male,Group B,31000
+Bob,30,High School,6,Nonbinary,Group B,33000
+Pat,35,Associate,12,Female,Group A,62000
+Alex,31,Bachelor,6,Female,Group D,65600
+Pat,54,High School,13,Male,Group D,59300
+Jordan,56,High School,31,Female,Group D,97800
+Alex,49,Bachelor,3,Male,Group C,65800
+Bob,42,Bachelor,18,Female,Group B,67600
+Bob,64,Bachelor,10,Female,Group A,57600
+Taylor,28,Associate,0,Male,Group C,48700
+Chris,46,Master,15,Female,Group B,93400
+Pat,64,High School,24,Male,Group D,88000
+Taylor,36,Bachelor,0,Male,Group B,51300
+Pat,55,Master,1,Female,Group D,74400
+Chris,63,High School,34,Male,Group D,96500
+Morgan,22,Bachelor,1,Female,Group A,57600
+Ray,61,High School,8,Nonbinary,Group D,64900
+Chris,48,High School,16,Female,Group D,64400
+Jamie,40,Associate,19,Male,Group B,77000
+Casey,45,Associate,24,Male,Group A,102700
+Taylor,53,High School,5,Male,Group A,49300
+Jordan,37,Bachelor,13,Male,Group D,79200
+Jamie,56,High School,15,Male,Group D,73800
+Casey,63,Master,29,Female,Group C,128200
+Jordan,23,High School,2,Female,Group C,41600
+Casey,46,Bachelor,23,Male,Group A,108500
+Jamie,50,High School,0,Female,Group D,46200
+Jamie,58,High School,18,Female,Group D,80900
+Bob,61,High School,3,Male,Group A,25000
+Ray,32,Master,7,Male,Group B,78600
+Morgan,41,High School,14,Female,Group D,61900
+Ray,50,Master,8,Male,Group D,90300
+Jordan,52,Bachelor,24,Female,Group B,105700
+Ray,45,Master,1,Male,Group C,75600
+Chris,56,High School,1,Female,Group C,53400
+Ray,34,Associate,5,Female,Group D,58800
+Jamie,40,High School,4,Male,Group C,45000
+Chris,23,Associate,1,Female,Group A,28300
+Ray,44,Associate,7,Female,Group D,57100
+Jamie,53,High School,17,Male,Group B,70300
+Casey,24,Associate,1,Female,Group B,49500
+Pat,55,Bachelor,26,Male,Group D,106700
+Ray,48,Associate,4,Male,Group B,57800
+Bob,62,Master,13,Female,Group B,77800
+Morgan,53,High School,31,Female,Group C,101100
+Ray,56,High School,4,Female,Group C,55000
+Morgan,50,Bachelor,10,Female,Group A,78700
+Bob,48,High School,6,Female,Group A,29200
+Casey,64,Master,3,Male,Group B,90800
+Bob,38,Bachelor,4,Male,Group B,48200
+Jordan,37,High School,2,Female,Group B,40600
+Ray,60,High School,3,Female,Group C,46500
+Casey,34,High School,7,Male,Group C,53400
+Pat,64,Bachelor,12,Male,Group A,85700
+Bob,51,High School,22,Male,Group C,59300
+Taylor,40,Associate,3,Nonbinary,Group C,56300
+Jamie,48,Bachelor,25,Nonbinary,Group A,107600
+Bob,32,High School,0,Male,Group A,25000
+Jordan,26,Associate,3,Female,Group C,35000
+Pat,58,Associate,28,Male,Group D,94100
+Jordan,39,High School,3,Male,Group D,49700
+Morgan,26,Associate,5,Male,Group D,42600
+Morgan,54,High School,33,Female,Group A,95900
+Pat,43,Master,0,Male,Group B,64000
+Morgan,55,Associate,16,Female,Group C,76300
+Taylor,39,High School,6,Male,Group A,46300
+Jamie,56,Master,21,Female,Group C,107400
+Casey,27,Associate,5,Female,Group C,48200
+Bob,54,Associate,31,Male,Group A,95900
+Taylor,59,Bachelor,24,Male,Group D,98400
+Casey,65,Bachelor,22,Female,Group C,92900
+Jamie,50,Associate,19,Female,Group A,87800
+Alex,26,High School,2,Female,Group B,29800
+Jamie,65,Associate,35,Female,Group C,117500
+Jordan,27,High School,3,Female,Group C,41800
+Chris,52,Bachelor,23,Female,Group A,100200
+Ray,44,High School,5,Male,Group C,45100
+Bob,65,High School,5,Male,Group A,37400
+Pat,65,High School,33,Male,Group D,108900
+Jordan,47,Master,9,Female,Group C,78700
+Ray,59,Bachelor,7,Female,Group A,70100
+Ray,43,Bachelor,7,Male,Group D,76200
+Taylor,51,Bachelor,13,Male,Group C,85300
+Morgan,62,Master,17,Female,Group D,95200
+Chris,23,High School,2,Nonbinary,Group A,33700
+Jordan,41,Associate,13,Female,Group B,68800
+Alex,50,Bachelor,22,Male,Group D,107200
+Ray,36,High School,8,Female,Group A,64100
+Jordan,40,Bachelor,16,Female,Group B,84500
+Chris,36,High School,7,Male,Group C,51700
+Jamie,34,Master,12,Male,Group A,74400
+Ray,61,Bachelor,2,Male,Group D,68600
+Jordan,29,High School,5,Female,Group B,44100
+Casey,36,Bachelor,5,Female,Group D,71900
+Jordan,29,High School,1,Female,Group A,41100
+Bob,22,High School,1,Female,Group C,25000
+Pat,30,Associate,2,Female,Group A,53600
+Bob,59,High School,15,Female,Group C,59900
+Ray,39,High School,4,Male,Group D,41600
+Bob,28,Master,0,Female,Group A,46000
+Jordan,26,Bachelor,2,Female,Group B,55500
+Pat,60,High School,1,Female,Group D,44700
+Taylor,23,High School,1,Female,Group C,41500
+Morgan,27,Master,0,Male,Group D,62500
+Alex,36,Master,0,Female,Group C,68600
+Jamie,34,Master,6,Male,Group A,58700
+Casey,40,Master,7,Female,Group C,80100
+Chris,51,Associate,24,Male,Group D,98000
+Alex,65,Associate,9,Female,Group B,76900
+Pat,27,High School,1,Female,Group B,43300
+Morgan,33,Master,0,Male,Group C,78000
+Pat,30,Bachelor,1,Male,Group B,60700
+Pat,30,High School,7,Male,Group C,41600
+Ray,25,Bachelor,5,Female,Group A,59800
+Casey,29,Master,5,Female,Group B,65700
+Morgan,32,Bachelor,0,Male,Group A,55200
+Bob,34,High School,6,Female,Group C,25000
+Jamie,56,High School,15,Female,Group C,58200
+Alex,39,High School,4,Female,Group D,38100
+Jordan,45,Associate,13,Male,Group A,68900
+Ray,49,High School,2,Male,Group D,45100
+Alex,44,Master,10,Male,Group A,86700
+Chris,45,Bachelor,13,Female,Group C,79000
+Ray,53,Associate,4,Female,Group A,59400
+Taylor,56,Associate,27,Female,Group A,105100
+Ray,34,Associate,8,Nonbinary,Group D,70500
+Jordan,39,Master,13,Female,Group D,88900
+Ray,54,Bachelor,0,Male,Group D,62900
+Chris,62,Associate,35,Female,Group D,109300
+Alex,30,Bachelor,4,Male,Group C,57900
+Ray,41,Associate,8,Male,Group A,61800
+Pat,54,Bachelor,19,Female,Group B,97100
+Chris,31,Associate,7,Male,Group C,58200
+Casey,40,High School,10,Male,Group D,54100
+Taylor,37,High School,6,Male,Group C,52500
+Bob,52,Associate,13,Female,Group D,57900
+Ray,56,Bachelor,0,Female,Group D,73000
+Jamie,52,Associate,2,Male,Group D,56200
+Morgan,58,High School,15,Male,Group A,72700
+Alex,40,Associate,6,Female,Group A,61600
+Jamie,27,High School,0,Male,Group C,25000
+Ray,30,Bachelor,0,Female,Group D,61300
+Taylor,44,Bachelor,13,Female,Group B,81200
+Jordan,34,Master,10,Female,Group D,88300
+Pat,62,High School,7,Female,Group A,59400
+Ray,41,Associate,6,Female,Group C,55300
+Bob,53,Bachelor,18,Female,Group C,74400
+Morgan,51,Associate,18,Female,Group D,92100
+Jordan,37,Master,14,Male,Group B,102200
+Ray,26,Associate,2,Nonbinary,Group B,46200
+Alex,42,High School,4,Male,Group B,38100
+Ray,43,Associate,7,Male,Group C,70400
+Ray,49,High School,1,Male,Group B,34300
+Casey,53,Master,22,Female,Group A,97300
+Casey,57,Associate,32,Female,Group A,104200
+Bob,63,Bachelor,24,Male,Group A,83300
+Taylor,26,Associate,4,Female,Group B,52100
+Bob,34,Associate,3,Female,Group D,46200
+Casey,36,High School,13,Male,Group C,59200
+Taylor,49,High School,4,Male,Group C,32400
+Ray,60,Bachelor,3,Female,Group C,64600
+Chris,59,Bachelor,19,Nonbinary,Group D,101800
+Ray,24,Bachelor,5,Male,Group C,49300
+Alex,52,Bachelor,31,Female,Group D,110600
+Jordan,63,Master,2,Female,Group A,84300
+Ray,37,High School,4,Female,Group A,35200
+Bob,31,High School,0,Female,Group A,25000
+Taylor,36,Bachelor,1,Male,Group D,56900
+Taylor,52,Bachelor,1,Female,Group D,52000
+Alex,42,Bachelor,20,Male,Group A,82800
+Pat,50,High School,5,Female,Group B,51600
+Taylor,36,High School,1,Male,Group B,41000
+Taylor,37,Bachelor,11,Female,Group D,69300
+Pat,48,High School,9,Female,Group D,61400
+Jordan,36,Bachelor,10,Male,Group A,72600
+Pat,29,Associate,5,Male,Group C,65900
+Chris,57,High School,2,Male,Group B,39600
+Bob,30,High School,5,Female,Group D,30300
+Bob,43,Associate,8,Male,Group C,44100
+Taylor,58,Bachelor,21,Male,Group B,108500
+Jordan,40,Bachelor,2,Female,Group B,55700
+Jordan,22,High School,1,Male,Group B,45200
+Alex,38,High School,17,Male,Group D,76400
+Bob,55,High School,13,Female,Group C,37400
+Jamie,28,High School,7,Male,Group D,59600
+Chris,29,High School,5,Female,Group B,57900
+Chris,45,High School,17,Male,Group D,59700
+Jamie,46,High School,4,Female,Group C,44500
+Jamie,41,Master,20,Male,Group A,112400
+Morgan,49,High School,8,Male,Group B,64100
+Alex,32,Associate,7,Nonbinary,Group B,73600
+Alex,31,High School,7,Female,Group D,43500
+Taylor,40,Associate,17,Female,Group C,74600
+Bob,63,Bachelor,33,Female,Group C,100300
+Alex,57,Bachelor,16,Female,Group B,71400
+Alex,38,Bachelor,11,Male,Group D,80700
+Casey,64,Bachelor,24,Female,Group D,94700
+Jordan,23,Bachelor,0,Female,Group D,56000
+Jordan,47,Bachelor,11,Female,Group C,78600
+Jamie,48,Master,25,Female,Group A,121000
+Casey,57,High School,25,Male,Group D,86900
+Casey,49,Associate,16,Male,Group D,81200
+Ray,50,High School,4,Male,Group B,51300
+Alex,64,High School,17,Female,Group B,87800
+Casey,45,High School,8,Female,Group A,46800
+Jamie,59,Bachelor,33,Female,Group C,118800
+Jordan,36,Master,9,Male,Group D,80500
+Jordan,61,Bachelor,17,Female,Group D,99100
+Bob,26,High School,3,Female,Group A,26400
+Chris,47,Associate,25,Nonbinary,Group B,95300
+Jamie,60,Bachelor,18,Male,Group B,104500
+Pat,38,High School,12,Female,Group C,60600
+Alex,53,High School,29,Female,Group D,89800
+Alex,24,High School,2,Male,Group D,36400
+Jamie,46,High School,8,Male,Group B,48600
+Jordan,24,High School,3,Male,Group B,26100
+Bob,54,Bachelor,5,Female,Group C,49700
+Taylor,51,Master,10,Female,Group B,87500
+Alex,31,High School,9,Female,Group C,46600
+Taylor,29,High School,0,Female,Group D,41700
+Ray,28,High School,7,Female,Group A,63300
+Morgan,32,Master,5,Female,Group C,73500
+Bob,48,High School,13,Female,Group A,38300
+Bob,26,High School,2,Female,Group B,26900
+Jamie,63,High School,3,Female,Group A,48000
+Alex,32,Master,4,Female,Group B,70100
+Taylor,48,High School,19,Female,Group C,81300
+Taylor,41,High School,6,Female,Group A,51700
+Morgan,65,Bachelor,15,Male,Group B,101100
+Alex,30,Bachelor,0,Female,Group C,55600
+Bob,23,Bachelor,2,Male,Group D,33100
+Ray,48,Associate,5,Female,Group D,55400
+Alex,39,Master,4,Female,Group A,81000
+Chris,24,Master,1,Male,Group A,59000
+Ray,50,Bachelor,3,Male,Group D,65700
+Pat,38,Bachelor,3,Male,Group C,57900
+Chris,55,Associate,6,Nonbinary,Group D,52700
+Chris,38,High School,9,Male,Group C,50300
+Bob,44,Associate,13,Female,Group C,58000
+Alex,59,Bachelor,35,Male,Group B,139700
+Chris,35,High School,1,Male,Group B,35400
+Ray,48,Associate,5,Female,Group B,80500
+Jordan,64,High School,35,Female,Group A,113800
+Taylor,33,Bachelor,5,Female,Group A,68300
+Ray,25,Associate,4,Female,Group D,52400
+Jamie,25,Master,0,Female,Group B,64500
+Bob,62,Master,5,Female,Group C,59400
+Morgan,37,Bachelor,2,Female,Group B,51000
+Jordan,34,Bachelor,3,Male,Group D,65200
+Bob,58,Associate,31,Female,Group C,95000
+Taylor,59,High School,27,Male,Group B,95600
+Casey,54,High School,25,Male,Group B,86100
+Pat,49,Master,18,Male,Group C,97400
+Jordan,48,Associate,18,Male,Group B,76700
+Pat,59,Master,15,Male,Group A,93400
+Jamie,63,Bachelor,11,Male,Group A,84000
+Chris,43,High School,1,Male,Group D,35900
+Alex,50,High School,6,Male,Group A,63100
+Alex,30,Bachelor,9,Male,Group A,60800
+Morgan,30,Bachelor,1,Female,Group A,60300
+Alex,34,Bachelor,11,Female,Group D,61800
+Taylor,65,Associate,11,Female,Group B,82300
+Taylor,38,High School,4,Male,Group C,47100
+Pat,30,High School,7,Male,Group B,38900
+Alex,29,High School,8,Male,Group A,53800
+Jamie,33,Associate,9,Female,Group C,75300
+Bob,36,Master,0,Female,Group A,46200
+Ray,37,Associate,0,Male,Group A,52100
+Jamie,27,Master,4,Male,Group C,78800
+Bob,62,Associate,23,Female,Group D,73200
+Alex,38,High School,8,Male,Group C,56800
+Pat,30,High School,8,Female,Group B,56700
+Morgan,22,Master,0,Female,Group C,51300
+Chris,58,Associate,0,Female,Group A,64400
+Casey,44,High School,14,Male,Group C,68400
+Alex,45,Bachelor,1,Female,Group A,68300
+Ray,49,High School,2,Male,Group A,53300
+Ray,24,Bachelor,4,Female,Group D,46600
+Chris,38,High School,14,Male,Group C,67700
+Alex,31,High School,4,Female,Group A,51400
+Pat,50,High School,11,Female,Group D,48200
+Bob,37,Master,14,Male,Group D,67400
+Pat,49,Bachelor,26,Female,Group B,120500
+Jordan,51,Associate,7,Male,Group B,76300
+Casey,35,High School,12,Female,Group B,60400
+Ray,29,High School,7,Male,Group B,59100
+Taylor,23,Associate,0,Male,Group A,39600
+Bob,48,Associate,9,Female,Group C,54700
+Alex,30,High School,4,Female,Group D,55400
+Pat,28,Associate,3,Female,Group A,45100
+Casey,24,Master,0,Female,Group B,66600
+Jamie,30,Bachelor,8,Female,Group B,67200
+Casey,58,Bachelor,16,Male,Group B,98900
+Bob,35,Associate,14,Female,Group A,56000
+Morgan,22,Bachelor,1,Male,Group C,64300
+Chris,34,Bachelor,6,Male,Group A,65000
+Pat,64,Associate,8,Female,Group A,68600
+Bob,51,Associate,20,Female,Group B,67900
+Ray,33,Associate,2,Female,Group D,42700
+Jamie,29,High School,1,Male,Group D,34400
+Alex,47,High School,18,Female,Group D,64300
+Ray,44,Associate,8,Female,Group A,58900
+Jordan,32,Bachelor,6,Male,Group D,64900
+Taylor,38,Bachelor,17,Male,Group B,82500
+Casey,25,Associate,2,Male,Group B,54600
+Ray,40,Bachelor,5,Female,Group D,65500
+Casey,51,Associate,15,Male,Group D,80900
+Morgan,42,High School,20,Male,Group B,79300
+Chris,40,High School,11,Male,Group C,63700
+Ray,40,High School,2,Male,Group D,39400
+Chris,41,High School,1,Female,Group C,54900
+Taylor,58,High School,11,Female,Group B,62000
+Pat,29,High School,3,Male,Group C,44600
+Casey,54,High School,14,Female,Group A,62800
+Alex,64,High School,15,Female,Group B,73000
+Taylor,51,Bachelor,17,Female,Group A,92000
+Pat,27,Bachelor,1,Female,Group D,65200
+Jordan,49,Bachelor,12,Female,Group D,78500
+Jamie,65,Associate,6,Male,Group D,70300
+Casey,37,High School,13,Male,Group D,61000
+Ray,56,Associate,2,Female,Group C,55800
+Jordan,45,High School,6,Male,Group D,52700
+Pat,37,Bachelor,9,Male,Group C,76900
+Taylor,60,Associate,32,Male,Group C,115300
+Alex,65,Bachelor,30,Female,Group C,124700
+Morgan,60,High School,15,Male,Group D,70400
+Casey,55,High School,3,Male,Group A,50400
+Chris,61,High School,30,Male,Group C,110100
+Bob,29,Master,5,Male,Group A,56300
+Ray,24,High School,6,Female,Group D,47700
+Alex,25,Master,3,Male,Group B,76000
+Alex,24,Bachelor,3,Male,Group B,53000
+Ray,50,High School,2,Male,Group A,38200
+Bob,65,High School,2,Male,Group B,34800
+Bob,51,Bachelor,23,Male,Group D,88200
+Casey,50,Master,8,Female,Group A,82100
+Bob,27,Master,3,Female,Group C,58000
+Ray,63,Bachelor,3,Male,Group A,59800
+Casey,23,Bachelor,1,Male,Group C,61500
+Morgan,51,High School,30,Male,Group B,101600
+Chris,32,Associate,3,Male,Group A,55200
+Jordan,55,Bachelor,17,Female,Group C,80000
+Jordan,22,High School,0,Male,Group A,41800
+Bob,54,Associate,12,Female,Group D,39600
+Morgan,50,Bachelor,4,Male,Group B,50800
+Chris,60,Associate,1,Female,Group B,59400
