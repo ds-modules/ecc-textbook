@@ -20,6 +20,19 @@ import numpy as np
 import time
 from html import escape
 
+try:
+    from keyboard_guard import guard_widgets  # stops "o", "dd", etc. from acting on the widget cell
+except ImportError:  # keyboard_guard.py not alongside this file: plain display
+    guard_widgets = None
+
+
+def _show(*ws):
+    """Display widgets, guarded from notebook keyboard shortcuts when possible."""
+    if guard_widgets is None:
+        display(*ws)
+    else:
+        display(guard_widgets(*ws))
+
 
 # Default prompt matches Scenario 2 in the notebook.
 DEFAULT_SCENARIO_PROMPT = (
@@ -554,7 +567,7 @@ def build_ethics_widget(ai_data=None, scenario_prompt=None, scenario_key=None):
             )
 
     run_button.on_click(on_run_clicked)
-    display(tool_dropdown, run_button, output)
+    _show(tool_dropdown, run_button, output)
 
     return tool_dropdown, run_button, output
 

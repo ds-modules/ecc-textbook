@@ -15,6 +15,19 @@ from io import BytesIO
 from pathlib import Path
 from html import escape
 
+try:
+    from keyboard_guard import guard_widgets  # stops "o", "dd", etc. from acting on the widget cell
+except ImportError:  # keyboard_guard.py not alongside this file: plain display
+    guard_widgets = None
+
+
+def _show(*ws):
+    """Display widgets, guarded from notebook keyboard shortcuts when possible."""
+    if guard_widgets is None:
+        display(*ws)
+    else:
+        display(guard_widgets(*ws))
+
 import matplotlib.pyplot as plt
 import numpy as np
 from dotenv import load_dotenv
@@ -370,7 +383,7 @@ def build_openrouter_widget(scenario_prompt=None, scenario_key=None, model_dropd
                 display(HTML(f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"))
 
     run_button.on_click(on_run_clicked)
-    display(model_dropdown, run_button, output)
+    _show(model_dropdown, run_button, output)
 
     return model_dropdown, run_button, output
 
@@ -436,6 +449,6 @@ def build_openrouter_custom_widget(default_prompt="", scenario_key=None):
                 display(HTML(f"<p style='color:#b00020;'><strong>Error:</strong> {escape(str(exc))}</p>"))
 
     run_button.on_click(on_run_clicked)
-    display(prompt_box, model_dropdown, run_button, output)
+    _show(prompt_box, model_dropdown, run_button, output)
 
     return prompt_box, model_dropdown, run_button, output
