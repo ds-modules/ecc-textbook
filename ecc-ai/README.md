@@ -25,3 +25,11 @@ The chatbot notebook uses [`chatbot/chat_ui.py`](chatbot/chat_ui.py) for the int
 | Notebook | Launch on DataHub |
 |---|---|
 | When AI Learns the Wrong Thing: Auditing Name Bias in a Salary Prediction Model | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-ai&branch=main&urlpath=tree%2Fecc-ai%2Fbias%2FBob_and_Ray_AI_Ethics_Lab.ipynb) |
+
+## Fruit fly connectome
+
+| Notebook | Launch on DataHub |
+|---|---|
+| From a Fruit Fly Brain Map to an AI Model | [![Launch DataHub](https://img.shields.io/badge/Launch-DataHub-blue.svg)](https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fds-modules%2Fecc-ai&branch=main&urlpath=tree%2Fecc-ai%2Ffruit-fly%2FFrom_a_Fruit_Fly_Brain_Map_to_an_AI_Model.ipynb) |
+
+The notebook reads a six-neuron MaleCNS v1.0 excerpt from [`fruit-fly/data/`](fruit-fly/data/). Provenance and the CC BY 4.0 attribution are in [`fruit-fly/data/README.md`](fruit-fly/data/README.md).

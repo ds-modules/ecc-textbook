@@ -1,0 +1,7 @@
+body_id,type,instance,status,status_label,superclass,subclass,presynaptic_sites,postsynaptic_sites,synonyms,vfb_id
+10001,DNp01,DNp01(GF)_R,Traced,Roughly traced,descending_neuron,lt,1015,18582,Kennedy and Broadie 2018: GF,VFB_jrmc30my
+10010,DNp01,DNp01(GF)_L,Traced,Roughly traced,descending_neuron,lt,976,24896,Kennedy and Broadie 2018: GF,VFB_jrmc30mz
+800146,TTMn,TTMn_R,Traced,Reviewed,vnc_motor,wm,128,4042,,VFB_jrmc0nlk
+802401,PSI,PSI_L,Traced,Reviewed,vnc_efferent,,590,6183,,VFB_jrmc1k4p
+804642,TTMn,TTMn_L,Traced,Reviewed,vnc_motor,wm,314,2774,,VFB_jrmc0nll
+903327,PSI,PSI_R,Traced,Reviewed,vnc_efferent,,677,5864,,VFB_jrmc1k4q
