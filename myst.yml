@@ -61,6 +61,16 @@ project:
     - file: ecc-cis/CIS182/AI_Ethics_in_Data_Science.ipynb
     - file: ecc-cis/CIS182/LLM_Trolley_OpenRouter.ipynb
     - file: ecc-cis/CIS182/ai_trolley_problem_notebook.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab1/Week 02 Lab - Introduction to AI Programming.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab2/Week 04 Lab - Data Handling.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab2/Week 05 Lab - Modeling & Evaluation.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab2/Week 06 Lab - Order to Delivery (OTD) Time
+        Forecasting.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab3/Week 08 Lab - Predictive_Asset_Health_Maintanence.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab4/Week 09 Lab - Hands-On RPA Activity.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab5/Week 10 Lab - Inferencing on Edge.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab6/Week 11 Lab - Demand Forecasting.ipynb
+    - file: ecc-cis/CIS183/StudentLab/lab7/Week 13 Lab - Inspectors Ally.ipynb
     - file: ecc-cis/cis119/rsa_quantum_lesson.ipynb
     - file: ecc-cis/cis13/AI_in_Information_Systems.ipynb
     - file: ecc-cis/cis13/Intro_to_Databases.ipynb
