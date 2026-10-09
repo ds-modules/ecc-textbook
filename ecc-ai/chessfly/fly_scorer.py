@@ -20,7 +20,7 @@ NARROW_METRIC = (
 
 
 class HeldOutError(ValueError):
-    """Raised when a test position is used to choose features or to fit."""
+    """Raised when a validation or test position is used to choose features or to fit."""
 
 
 class MoveScorer:
@@ -31,17 +31,31 @@ class MoveScorer:
         name,
         neuron_index,
         train_rows,
+        validation_rows,
         test_rows,
+        initial_weights=None,
     ):
         self.name = str(name)
         self.neuron_index = np.array(neuron_index, dtype=int).copy()
         self.train_rows = tuple(int(row) for row in train_rows)
+        self.validation_rows = frozenset(int(row) for row in validation_rows)
         self.test_rows = frozenset(int(row) for row in test_rows)
         width = len(self.neuron_index)
-        self.weights = np.zeros((width, N_MOVE), dtype=np.float64)
+        if initial_weights is None:
+            self.weights = np.zeros((width, N_MOVE), dtype=np.float64)
+        else:
+            self.weights = np.array(initial_weights, dtype=np.float64).copy()
+        self.initial_weights = self.weights.copy()
         self.center = np.zeros(width, dtype=np.float64)
         self.scale = np.ones(width, dtype=np.float64)
         self.history = []
+        self.settings = {
+            "n_features": int(len(self.neuron_index)),
+            "train_rows": self.train_rows,
+            "learning_rate": None,
+            "n_rounds": 0,
+            "fit_calls": 0,
+        }
 
     @property
     def n_features(self):
@@ -61,32 +75,48 @@ class MoveScorer:
             f"{self.n_parameters} trainable numbers, "
             f"weight length {self.weight_length:.4f}. "
             f"Features were chosen from training rows {list(self.train_rows)} only. "
+            f"{len(self.validation_rows)} validation rows and "
             f"{len(self.test_rows)} test rows are blocked."
         )
 
 
-def test_row_numbers(examples):
-    """Fixed test positions. Students do not choose these."""
-    matches = examples.index[examples["split"].astype(str) == "test"]
+def _rows_for_split(examples, split_name):
+    matches = examples.index[examples["split"].astype(str) == split_name]
     return [int(row) for row in matches]
+
+
+def test_row_numbers(examples):
+    """Fixed final test positions. Students do not choose these."""
+    return _rows_for_split(examples, "test")
+
+
+def validation_row_numbers(examples):
+    """Fixed validation positions. Students do not choose these."""
+    return _rows_for_split(examples, "validation")
 
 
 def pool_row_numbers(examples):
-    matches = examples.index[examples["split"].astype(str) == "pool"]
-    return [int(row) for row in matches]
+    return _rows_for_split(examples, "pool")
 
 
 def check_training_rows(train_rows, examples):
-    """Reject any test row before feature selection or fitting."""
+    """Reject validation and test rows before feature selection or fitting."""
     requested = [int(row) for row in train_rows]
     if not requested:
         raise ValueError("Choose at least one training row from the pool.")
-    blocked = set(test_row_numbers(examples))
-    leaked = [row for row in requested if row in blocked]
+    leaked = []
+    for row in requested:
+        split_name = None
+        if row in set(validation_row_numbers(examples)):
+            split_name = "validation"
+        elif row in set(test_row_numbers(examples)):
+            split_name = "test"
+        if split_name is not None:
+            leaked.append(f"{row} ({split_name})")
     if leaked:
         raise HeldOutError(
-            "These rows are in the fixed test set and cannot be used for "
-            f"feature selection or fitting: {leaked}"
+            "These rows are held out and cannot be used for feature selection "
+            f"or fitting: {leaked}"
         )
     allowed = set(pool_row_numbers(examples))
     unknown = [row for row in requested if row not in allowed]
@@ -122,8 +152,8 @@ def _labels(examples):
 def select_activity_features(activity, train_rows, n_features):
     """Keep the training-set neurons that vary the most.
 
-    Test rows are not read. n_features is the student's choice, capped so the
-    lab stays on a small matrix.
+    Validation and test rows are not read. n_features is the student's choice,
+    capped so the lab stays on a small matrix.
     """
     n_features = int(n_features)
     if n_features < 1 or n_features > MAX_FEATURES:
@@ -140,11 +170,16 @@ def select_activity_features(activity, train_rows, n_features):
     return np.array(chosen, dtype=int)
 
 
-def create_move_scorer(activity, examples, train_rows, n_features=16, name="scorer"):
-    """Make a new scorer with its own weights, starting at zero.
+def create_move_scorer(
+    activity, examples, train_rows, n_features=16, name="scorer", like=None
+):
+    """Make a new scorer with its own weights.
 
-    Feature columns are chosen from train_rows only. A test row raises
-    HeldOutError and does not create a model.
+    Feature columns are chosen from train_rows only. A validation or test row
+    raises HeldOutError and does not create a model. Pass like= another scorer
+    to copy that scorer's neurons and its original starting weights. Use that
+    when the comparison changes learning rate or round count, and the feature
+    count stays the same.
     """
     activity = np.asarray(activity)
     if activity.ndim != 2 or activity.shape[1] != READOUT:
@@ -157,12 +192,29 @@ def create_move_scorer(activity, examples, train_rows, n_features=16, name="scor
             f"activity has {activity.shape[0]} rows and the example table has {len(examples)}."
         )
     checked = check_training_rows(train_rows, examples)
-    neuron_index = select_activity_features(activity, checked, n_features)
+    n_features = int(n_features)
+    if like is not None:
+        if n_features != int(like.settings["n_features"]):
+            raise ValueError(
+                "like= copies features from an existing model. "
+                "Leave it out when you change n_features."
+            )
+        if tuple(checked) != tuple(like.train_rows):
+            raise ValueError(
+                "like= requires the same training rows as the model you are copying."
+            )
+        neuron_index = np.array(like.neuron_index, dtype=int).copy()
+        initial_weights = np.array(like.initial_weights, dtype=np.float64).copy()
+    else:
+        neuron_index = select_activity_features(activity, checked, n_features)
+        initial_weights = None
     return MoveScorer(
         name=name,
         neuron_index=neuron_index,
         train_rows=checked,
+        validation_rows=validation_row_numbers(examples),
         test_rows=test_row_numbers(examples),
+        initial_weights=initial_weights,
     )
 
 
@@ -187,7 +239,10 @@ def baseline_move(examples, row):
 
 
 def train_scorer(model, activity, examples, train_rows, learning_rate=0.5, n_rounds=5):
-    """Update this model's weights. Test rows are refused. Other models are untouched."""
+    """Update this model's weights. Held-out rows are refused. Other models are untouched.
+
+    A second call continues from the current weights. reset_scorer starts over.
+    """
     checked = check_training_rows(train_rows, examples)
     if set(checked) != set(model.train_rows):
         raise ValueError(
@@ -209,7 +264,10 @@ def train_scorer(model, activity, examples, train_rows, learning_rate=0.5, n_rou
     scale = raw[rows].std(axis=0)
     model.scale = np.where(scale < 1e-6, 1.0, scale)
 
-    for round_index in range(1, n_rounds + 1):
+    model.settings["fit_calls"] = int(model.settings["fit_calls"]) + 1
+    model.settings["learning_rate"] = learning_rate
+    for _ in range(n_rounds):
+        round_index = len(model.history) + 1
         gradient = np.zeros_like(model.weights)
         loss = 0.0
         length_before = model.weight_length
@@ -242,16 +300,116 @@ def train_scorer(model, activity, examples, train_rows, learning_rate=0.5, n_rou
                 "learning_rate": learning_rate,
             }
         )
+    model.settings["n_rounds"] = int(model.settings["n_rounds"]) + n_rounds
     return list(model.history)
 
 
 def reset_scorer(model):
-    """Set this model's weights back to zero. Leave every other model alone."""
-    model.weights = np.zeros_like(model.weights)
-    model.center = np.zeros_like(model.center)
-    model.scale = np.ones_like(model.scale)
+    """Set this model's weights back to their original start. Leave every other model alone."""
+    model.weights = np.array(model.initial_weights, dtype=np.float64).copy()
+    model.center = np.zeros(model.initial_weights.shape[0], dtype=np.float64)
+    model.scale = np.ones(model.initial_weights.shape[0], dtype=np.float64)
     model.history = []
+    model.settings["learning_rate"] = None
+    model.settings["n_rounds"] = 0
+    model.settings["fit_calls"] = 0
     return model
+
+
+def plot_training(model):
+    """Training loss and training agreement. These plots do not include held-out rows."""
+    import matplotlib.pyplot as plt
+
+    if not model.history:
+        raise ValueError("Train the model before plotting.")
+    rounds = [item["round"] for item in model.history]
+    losses = [item["loss_before_step"] for item in model.history]
+    agreement = [
+        item["train_matches"] / item["train_total"] for item in model.history
+    ]
+    figure, axes = plt.subplots(1, 2, figsize=(8, 3))
+    axes[0].plot(rounds, losses, marker="o")
+    axes[0].set_xlabel("Round")
+    axes[0].set_ylabel("Training loss")
+    axes[0].set_title("Training loss")
+    axes[1].plot(rounds, agreement, marker="o")
+    axes[1].set_ylim(-0.05, 1.05)
+    axes[1].set_xlabel("Round")
+    axes[1].set_ylabel("Share of training rows")
+    axes[1].set_title("Training agreement")
+    figure.tight_layout()
+    return figure
+
+
+def describe_comparison(first, second):
+    """Say whether two trained models differ by exactly one stored setting."""
+    compared = ("n_features", "learning_rate", "n_rounds")
+    different = [
+        name
+        for name in compared
+        if first.settings[name] != second.settings[name]
+    ]
+    problems = []
+    if first.settings["train_rows"] != second.settings["train_rows"]:
+        problems.append("the training rows differ")
+    if first.settings["fit_calls"] != 1 or second.settings["fit_calls"] != 1:
+        problems.append(
+            "Train was run more than once on a model, so that run continued from existing weights"
+        )
+    if len(different) != 1:
+        shown = ", ".join(different) if different else "none"
+        problems.append(f"the number of changed settings is {len(different)} ({shown})")
+    feature_change = different == ["n_features"]
+    if not feature_change and len(different) == 1:
+        if not np.array_equal(first.neuron_index, second.neuron_index):
+            problems.append("the activity features differ")
+        if not np.array_equal(first.initial_weights, second.initial_weights):
+            problems.append("the initial weights differ")
+    if problems:
+        return "This is not a one-setting comparison from a fresh start. " + "; ".join(problems) + "."
+    return f"Fair comparison: only {different[0]} differs."
+
+
+def save_intact_state(model, activity):
+    """Copy weights and activity before a connection change."""
+    return {
+        "weights": np.array(model.weights, dtype=np.float64).copy(),
+        "activity": np.array(activity, dtype=np.float64).copy(),
+    }
+
+
+def describe_intervention(intact, model, activity_now, examples, rows):
+    """Compare the current network with the activity and weights saved beforehand."""
+    weights_unchanged = bool(np.allclose(model.weights, intact["weights"]))
+    activity_unchanged = bool(np.allclose(activity_now, intact["activity"]))
+    labels = _labels(examples)
+    records = []
+    changed = 0
+    for row in [int(item) for item in rows]:
+        before = predict_move(model, intact["activity"], examples, row)
+        after = predict_move(model, activity_now, examples, row)
+        if before != after:
+            changed += 1
+        records.append(
+            {
+                "index": row,
+                "split": str(examples.loc[row, "split"]),
+                "intact network": before,
+                "current network": after,
+                "Stockfish": labels[row],
+                "prediction changed": "yes" if before != after else "no",
+            }
+        )
+    intact_activity = np.asarray(intact["activity"])
+    current_activity = np.asarray(activity_now)
+    summary = {
+        "weights_unchanged": weights_unchanged,
+        "activity_unchanged": activity_unchanged,
+        "row0_sum_intact": float(intact_activity[0].sum()),
+        "row0_sum_current": float(current_activity[0].sum()),
+        "predictions_changed": changed,
+    }
+    return pd.DataFrame.from_records(records), summary
 
 
 def evaluate_scorer(model, activity, examples, rows):
