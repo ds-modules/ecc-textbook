@@ -1,1 +1,1 @@
-
+StudentLab DataHub Link: https://elcamino.cloudbank.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fberkeley-dsep-infra%2Fnbgitpuller-link-generator-webextension&branch=main&urlpath=lab%2Ftree%2Fnbgitpuller-link-generator-webextension%2Fusage.md
