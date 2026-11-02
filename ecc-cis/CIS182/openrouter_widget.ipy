@@ -64,19 +64,19 @@ _loaded_from = None
 _client = None
 
 OPENROUTER_MODELS = {
-    "GPT-4o mini": "openai/gpt-4o-mini",
-    "Claude Sonnet 4": "anthropic/claude-sonnet-4",
-    "Gemini 2.5 Flash": "google/gemini-2.5-flash",
-    "Llama 3.3 70B": "meta-llama/llama-3.3-70b-instruct",
+    "GPT-6.1 Terra": "openai/gpt-6.1-terra",
+    "Claude Sonnet 5.5": "anthropic/claude-sonnet-5.5",
+    "Gemini 3.8 Flash": "google/gemini-3.8-flash",
+    "DeepSeek V4.1 Flash": "deepseek/deepseek-v4.1-flash",
 }
 
-DEFAULT_MODEL = OPENROUTER_MODELS["GPT-4o mini"]
+DEFAULT_MODEL = OPENROUTER_MODELS["GPT-6.1 Terra"]
 
 MODEL_COLORS = {
-    "GPT-4o mini": "#10a37f",
-    "Claude Sonnet 4": "#d97745",
-    "Gemini 2.5 Flash": "#4285F4",
-    "Llama 3.3 70B": "#4A6CF7",
+    "GPT-6.1 Terra": "#10a37f",
+    "Claude Sonnet 5.5": "#d97745",
+    "Gemini 3.8 Flash": "#4285F4",
+    "DeepSeek V4.1 Flash": "#4A6CF7",
 }
 
 
@@ -313,7 +313,7 @@ def _render_trolley_result(display_name, result, scenario_prompt=None, scenario_
     display(HTML(_result_html(display_name, result, decision_label)))
 
 
-def run_openrouter_simulation(scenario_prompt, scenario_key=None, model_name="GPT-4o mini"):
+def run_openrouter_simulation(scenario_prompt, scenario_key=None, model_name="GPT-6.1 Terra"):
     """
     Static fallback: run one scenario without ipywidgets (no dropdown or animation).
     """
